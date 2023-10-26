@@ -1,0 +1,87 @@
+\documentclass[../problems.tex]{subfiles}
+
+\graphicspath{{../images/}}
+
+\begin{document}
+\section{Energy}
+\barh
+
+\paragraph{4.2}
+From the origin $O$ to point $P = (1,1)$ a two dimensional force $\vb{F} = (x^2, 2xy)$ 
+moves a point along three paths where the work done by the force is 
+\begin{equation*}
+    W = \int_O^P \vb{F} \cdot \dd{\vb{r}} = \int_O^P F_x \dd{x} + F_y \dd{y}
+\end{equation*}
+(a) Splitting the path into two parts $O \to Q=(1,0)$ and $Q \to P$, we have two integrals
+\begin{align*}
+    W &= \int_O^Q F_x \dd{x} + \int_Q^P F_y \dd{y}
+\end{align*}
+where the first integral accounts for just the $x$ component of force $F_x = x^2$ and the second
+integral accounts for just the $y$ component of force when $x=1$; $F_y = 2(1)y$. Thus
+\begin{align*}
+    W = \int_0^1 x^2 \dd{x} + \int_0^1 2y \dd{y} = \frac{4}{3}
+\end{align*}
+
+(b) The path follows the parabola $y=x^2$ from $O \to P$. From $\dd{y} = 2x \dd{x}$ the integral
+can be rewritten in terms of just $x$
+\begin{align*}
+    W = \int_0^1 x^2 \dd{x} + \int_0^1 2x (x^2) \dd{y} 
+    = \frac{1}{3} + \int_0^1 4x^4 \dd{x} = \frac{17}{15}
+\end{align*}
+
+(c) Path follows the parametric curve $x=t^3$ and $y=t^2$ where the differentials are:
+$dx = 3t^2 \dd{t}$ and $dy = 2t \dd{t}$. Thus the work done on the path is
+\begin{align*}
+    W = \int_0^1 (t^6) (3t^2 \dd{t}) + \int_0^1 (2t^3) (2t \dd{t}) 
+    = \frac{1}{3} + \frac{4}{5} = \frac{19}{15}
+\end{align*}
+
+\paragraph{4.3}
+Same as Problem 4.2 but with a force $\vb{F} = (-y,x)$ and three different paths from $P = (1,0) \to
+Q = (0,1)$.
+
+(a) This path follows a straight line $y = 0$ from $P \to O$ and then $x = 0$ from $O \to Q$. Thus 
+the work done is 
+\begin{align*}
+    W = \int_P^O F_x \dd{x} + \int_O^Q F_y \dd{y} = 0
+\end{align*}
+
+(b) A straight line from $P \to Q$ is given by $y = -x + 1$ and the differential $dy = -dx$. Thus
+the work done is
+\begin{align*}
+    W = \int_P^Q F_x \dd{x} + F_y \dd{y} 
+    = \int_1^0 (-(-x+1)) \dd{x} + (x) (-\dd{x}) = \int_1^0 -1 \dd{x} = 1
+\end{align*}
+
+(c) The path of a quarter circle centered on the origin in polar coordinates is given by
+\begin{align*}
+    x = r \cos \phi \qquad y = r \sin \phi
+\end{align*}
+where $r=1$, $\phi = 0 \to \pi/2$ and the differentials are
+\begin{align*}
+    dx = \cos \phi d{r} - r \sin \phi \dd{\phi} = - \sin \phi \dd{\phi} \qquad
+    dy = \sin \phi d{r} + r \cos \phi \dd{\phi} = \cos \phi \dd{\phi}
+\end{align*}
+Thus the work done is
+\begin{align*}
+    W = \int_P^Q F_x \dd{x} + F_y \dd{y} 
+    = \int_0^{\pi/2} (-\sin \phi) (-\sin \phi \dd{\phi}) + (\cos \phi) (\cos \phi \dd{\phi})
+    = \int_0^{\pi/2} \dd\phi = \frac{\pi}{2}
+\end{align*}
+
+\paragraph{4.5}
+(a) Given the force of gravity $\vb{F} = -mg \vu{y}$ and vertical height from 1 to 2 $h = y_2 - y_1$
+, the work done by gravity is 
+\begin{align*}
+    W_{g}(1 \to 2) = \int_1^2 \vb{F} \cdot \dd{r} = \int_0^h -mg \dd{y} = -mgh
+\end{align*}
+Since the force $\vb{F}$ depends only on position and the work done by is independent of the path
+taken, the force is conservative.
+
+(b) The gravitational potential energy of the particle is 
+\begin{align*}
+    U_g(\vb{r}) = - W_g(0 \to \vb{r}) = - \int_0^{\vb{r}} \vb{F} \cdot \dd{\vb{r}} 
+    = - \int_0^{\vb{r}} -mg \dd{y} = mgy
+\end{align*}
+where $\vb{r} = y\vu{y}$ is the position vector of the particle. The potential energy is a function
+\end{document}

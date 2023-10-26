@@ -1,0 +1,16 @@
+# Fdb version 4
+["pdflatex"] 1696449410 "/Users/junseo/note/taylor/problems/chapters/chapter1.tex" "chapter1.pdf" "chapter1" 1696449410 2
+  "../problems.tex" 0 -1 0 ""
+  "/Users/junseo/note/taylor/problems/chapters/chapter1.tex" 1696449410 31818 da59d8034080c526ed7ec59c9be3c69c ""
+  "/usr/local/texlive/2023/texmf-dist/tex/latex/import/import.sty" 1586645574 6201 0ad8b5da8e12f60a88d546b2198a56f2 ""
+  "/usr/local/texlive/2023/texmf-dist/tex/latex/subfiles/subfiles.cls" 1605478891 1507 57de335d88fde4e5c924dfed577fdb74 ""
+  "/usr/local/texlive/2023/texmf-dist/web2c/texmf.cnf" 1677365944 40745 87bb86a62d462f93a1efc6b0c65c872e ""
+  "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1679951434 7883459 b8c98df254334f4ef63ec227c7da586e ""
+  "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
+  "chapter1.aux" 1696449211 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
+  "chapters/chapter1.tex" 1696449410 31818 da59d8034080c526ed7ec59c9be3c69c ""
+  (generated)
+  "chapter1.aux"
+  "chapter1.log"
+  "chapter1.pdf"
+  (rewritten before read)

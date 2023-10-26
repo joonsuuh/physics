@@ -1,0 +1,30 @@
+\ProvidesPackage{custom}
+
+%package list
+\usepackage[dvipsnames]{xcolor}
+\usepackage{physics}
+%\usepackage{xparse} 
+%\usepackage{amsmath} loaded by physics by default
+\usepackage{esint} %for path integral symbol
+\usepackage{import}
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks   = true,    % Colours links instead of ugly boxes
+  urlcolor     = Cerulean,    % Colour for external hyperlinks
+  linkcolor    = Cerulean,    % Colour of internal links
+  citecolor    = red      % Colour of citations
+}
+\usepackage{graphicx}
+\graphicspath{{images/}} %set image path for graphicx
+
+\usepackage[a4paper,left=1in, right=1in, top=1in]{geometry}
+\usepackage{subfiles}
+\usepackage{caption}
+
+%custom formatting
+\numberwithin{figure}{section}
+\numberwithin{equation}{section}
+
+%custom commmands
+\newcommand{\vect}[1]{\mathbf{#1}} %instead use \vb{#1} from physics package
+\newcommand{\barh}{\vspace{5px} \hrule \vspace{5px}}
