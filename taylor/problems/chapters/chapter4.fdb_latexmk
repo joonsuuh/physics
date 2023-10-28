@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1698280863 "/Users/junseo/note/taylor/problems/chapters/chapter4.tex" "chapters/chapter4.pdf" "chapter4" 1698280863 0
-  "/Users/junseo/note/taylor/problems/chapters/chapter4.tex" 1698280863 3358 c0f0b5a2b8053f24388665519df023d0 ""
+["pdflatex"] 1698521496 "/Users/junseo/physics/taylor/problems/chapters/chapter4.tex" "chapters/chapter4.pdf" "chapter4" 1698521497 0
+  "/Users/junseo/physics/taylor/problems/chapters/chapter4.tex" 1698521495 6217 a424f15c03c3fc26f5e71d6721dfdad1 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1136768653 1328 c834bbb027764024c09d3d2bf908b5f0 ""
@@ -12,11 +12,13 @@
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb" 1248133631 34811 78b52f49e893bcba91bd7581cdc144c0 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1248133631 32080 340ef9bf63678554ee606688e7b5339d ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb" 1248133631 32007 e8fa0078355f39467039935974716569 ""
+  "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1248133631 30251 6afa5cb1d0204815a708a080681d4674 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1248133631 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb" 1248133631 36281 c355509802a035cadc5f15869451dcee ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1248133631 35752 024fb6c41858982481f6968b5fc26508 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb" 1248133631 32762 224316ccc9ad3ca0423a14971cfa7fc1 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
+  "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb" 1248133631 32716 08e384dc442464e7285e891af9f45947 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/esint-type1/esint10.pfb" 1136849748 34421 79309417cbb00a4641f92d2efa583bbd ""
   "/usr/local/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1461363279 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/local/texlive/2023/texmf-dist/tex/generic/atbegshi/atbegshi.sty" 1575674566 24708 5584a51a7101caf7e6bbf1fc27d8f7b1 ""
@@ -94,10 +96,11 @@
   "/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1679951467 4623355 b8cad38412faebe1ce5b780a45db67bd ""
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1679951434 7883459 b8c98df254334f4ef63ec227c7da586e ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
+  "chapters/../images/fig4_7.png" 1698427700 103253 d124102aebb48f8d73f5f993e062eb54 ""
   "chapters/../problems.tex" 1698262932 376 4c45bd58a5aa890d759f0794ebe08acb ""
-  "chapters/chapter4.aux" 1698280863 921 15f162d7558a3be3cae20cd558ee8e36 "pdflatex"
-  "chapters/chapter4.out" 1698280863 73 e8368f33bc2df66158267d1ed340d1b1 "pdflatex"
-  "chapters/chapter4.tex" 1698280863 3358 c0f0b5a2b8053f24388665519df023d0 ""
+  "chapters/chapter4.aux" 1698521497 1837 3ff7419b39c4abd2a8d4df78dc1399a9 "pdflatex"
+  "chapters/chapter4.out" 1698521497 73 e8368f33bc2df66158267d1ed340d1b1 "pdflatex"
+  "chapters/chapter4.tex" 1698521495 6217 a424f15c03c3fc26f5e71d6721dfdad1 ""
   "custom.sty" 1697762435 2356 708a1e5b6d39ecc80aa07489a7f660e7 ""
   (generated)
   "chapters/chapter4.aux"

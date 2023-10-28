@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.3.27)  25 OCT 2023 19:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.3.27)  28 OCT 2023 14:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/Users/junseo/note/taylor/problems/chapters/chapter4.tex
-(/Users/junseo/note/taylor/problems/chapters/chapter4.tex
+**/Users/junseo/physics/taylor/problems/chapters/chapter4.tex
+(/Users/junseo/physics/taylor/problems/chapters/chapter4.tex
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-02-22> (/usr/local/texlive/2023/texmf-dist/tex/latex/subfiles/subfiles.cls
 Document Class: subfiles 2020/11/14 v2.2 Multi-file projects (class)
@@ -454,23 +454,29 @@ LaTeX Font Info:    Trying to load font information for U+esint on input line 10
 File: uesint.fd 
 ) [1
 
-{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] (chapters/chapter4.aux)
+{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+<../images/fig4_7.png, id=23, 183.07458pt x 193.0964pt>
+File: ../images/fig4_7.png Graphic file (type png)
+<use ../images/fig4_7.png>
+Package pdftex.def Info: ../images/fig4_7.png  used on input line 102.
+(pdftex.def)             Requested size: 128.15132pt x 135.16655pt.
+ [2 <chapters/../images/fig4_7.png>] [3] (chapters/chapter4.aux)
 Package rerunfilecheck Info: File `chapter4.out' has not changed.
 (rerunfilecheck)             Checksum: E8368F33BC2DF66158267D1ED340D1B1;73.
  ) 
 Here is how much of TeX's memory you used:
- 17427 strings out of 476025
- 329505 string characters out of 5790017
+ 17452 strings out of 476025
+ 329906 string characters out of 5790017
  1874388 words of memory out of 5000000
- 37695 multiletter control sequences out of 15000+600000
+ 37708 multiletter control sequences out of 15000+600000
  514474 words of font info for 42 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 110i,9n,108p,418b,891s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/esint-type1/esint10.pfb>
-Output written on chapters/chapter4.pdf (2 pages, 100243 bytes).
+ 110i,9n,108p,421b,892s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/esint-type1/esint10.pfb>
+Output written on chapters/chapter4.pdf (3 pages, 219666 bytes).
 PDF statistics:
- 72 PDF objects out of 1000 (max. 8388607)
- 49 compressed objects within 1 object stream
- 7 named destinations out of 1000 (max. 500000)
- 9 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 98 PDF objects out of 1000 (max. 8388607)
+ 68 compressed objects within 1 object stream
+ 16 named destinations out of 1000 (max. 500000)
+ 14 words of extra memory for PDF output out of 10000 (max. 10000000)
 
