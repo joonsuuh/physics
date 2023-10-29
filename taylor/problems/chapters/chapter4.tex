@@ -162,4 +162,145 @@ The partial derivatives of $h$ are
 \end{align*}
 
 \paragraph{4.13}
+Calculating the gradient $\grad{f}$ of
+
+(a) $f(x,y,z) = \ln(r) = \ln(\sqrt{x^2 + y^2 + z^2})$:
+\begin{align*}
+    \pdv{f}{x} &= \frac{x}{r^2} \qquad \pdv{f}{y} = \frac{y}{r^2}
+        \qquad \pdv{f}{z} = \frac{z}{r^2} \\
+    \grad{f} &= \frac{x}{r^2} \vu{x} + \frac{y}{r^2} \vu{y} + \frac{z}{r^2} \vu{z} 
+    = \frac{\vu{r}}{r}
+\end{align*}
+
+(b) $f = r^n = (x^2 + y^2 + z^2)^{n/2}$ where $n$ is a constant:
+\begin{align*}
+    \pdv{f}{x} &= nr^{n-1} \frac{x}{r} = nr^{n-2} x \qquad \pdv{f}{y} = nr^{n-2} y
+        \qquad \pdv{f}{z} = nr^{n-2} z \\
+    \grad{f} &= nr^{n-2} x \vu{x} + nr^{n-2} y \vu{y} + nr^{n-2} z \vu{z} = nr^{n-1} \vu{r}
+\end{align*}
+
+(c) $f = g(r)$ where $g(r)$ is some unspecified function of $r$:
+\begin{align*}
+    \pdv{f}{x} &= g'(r) \pdv{r}{x} = g'(r) \frac{x}{r} \qquad 
+    \pdv{f}{y} = g'(r) \frac{y}{r} \qquad \pdv{f}{z} = g'(r) \frac{z}{r} \\
+    \grad{f} &= g'(r) \frac{x}{r} \vu{x} + g'(r) \frac{y}{r} \vu{y} + g'(r) \frac{z}{r} \vu{z}
+    = g'(r) \vu{r}
+\end{align*}
+
+\paragraph{4.15}
+Using the approximate formula for the change in $f$:
+\begin{equation*} \tag{4.35}
+    \dd{f} = \grad{f} \cdot \dd{\vb{r}}
+\end{equation*}
+For $f(\vb{r}) = x^2 + 2y^2 + 3z^2$, The approximation of moving from $\vb{r} = (1, 1, 1)$ to
+$(1.01, 1.03, 1.05)$:
+\begin{align*}
+    \dd{f} &= \grad{f} \cdot \dd{\vb{r}} = (2x \vu{x} + 4y \vu{y} + 6z \vu{z}) \cdot 
+    (0.01 \vu{x} + 0.03 \vu{y} + 0.05 \vu{z}) \\
+    &= 0.02 + 0.12 + 0.30 = 0.44
+\end{align*}
+The exact change in $f$ is
+\begin{align*}
+    \Delta f = f(1.01, 1.03, 1.05) - f(1, 1, 1) = 0.4494
+\end{align*}
+
+\paragraph{4.17}
+A charge $q$ experiences a constant force $\vb{F} = q \vb{E}_o$ where $\vb{E}_o$ is a uniform
+electric field. 
+
+(a) The work done by the force from point 1 to 2
+\begin{align*}
+    W = \int_1^2 \vb{F} \cdot \dd{\vb{r}} = q \vb{E}_o \cdot (\vb{r}_1 - \vb{r}_2)
+\end{align*}
+which is independent of the path hence it is a conservative force. Thus the potential energy is
+\begin{equation*}
+    U(\vb{r}) = - W(0 \to \vb{r}) = - q \vb{E}_o \cdot \vb{r}
+\end{equation*}
+
+(b) Checking that $\vb{F}$ is derivable from potential energy $U$:
+\begin{align*}
+    \vb{F} &= - \grad{U} = - \pdv{U}{x} \vu{x} - \pdv{U}{y} \vu{y} - \pdv{U}{z} \vu{z} \\
+    &= - \pdv{x}(-q \vb{E}_o \cdot \vb{x}) \vu{x} - \pdv{y}(-q \vb{E}_o \cdot \vb{y}) \vu{y} 
+    - \pdv{z}(-q \vb{E}_o \cdot \vb{z}) \vu{z} \\
+    &= q \vb{E}_o (\vu{x} + \vu{y} + \vu{z}) = q \vb{E}_o
+\end{align*}
+
+\paragraph{4.18}
+(a) If the vector $\grad{f}$ is perpendicular to the surface through $r$, then (4.35) becomes
+\begin{equation}
+    \dd{f} = \grad{f} \cdot \dd{\vb{r}} = 0
+\end{equation}
+since the dot product of perpendicular vectors is zero. Thus $f$ is constant on the surface.
+
+(b) Choosing a small displacement $\dd{\vb{r}} = \epsilon \vb{u}$:
+\begin{equation}
+    \dd{f} = \grad{f} \cdot (\epsilon \vb{u}) = \epsilon \grad{f} \cdot \vb{u} 
+        = \epsilon \abs{\grad{f}} \abs{\vb{u}} \cos \theta
+\end{equation}
+the corresponding maximum value of $\dd{f}$ is when $\theta = 0$ where $\vb{u}$ is in the same
+direction as $\grad{f}$.
+
+\paragraph{4.19}
+(a) For a surface of constant $f$, $f = x^2 + 4y^2$ is an ellipse in the $xy$ plane cenetered at the
+origin with semi-major axis $a = \sqrt{f}$ and semi-minor axis $b = \sqrt{f} / 2$. Since $z$ is
+unspecified, the surface is an infinitely long elliptical cylinder.
+
+(b) The gradient of $f$ is
+\begin{align*}
+    \grad{f} = 2x \vu{x} + 8y \vu{y}
+\end{align*}
+For a surface $f=5$ at the point $(1, 1, 1)$, the gradient is $\grad{f} = 2 \vu{x} + 8 \vu{y}$. From
+Problem 4.18, $0 = \grad{f} \cdot \dd{\vb{r}}$ describes that $\grad{f}$ is normal to this surface.
+Thus the unit normal vector is
+\begin{align*}
+    \vu{n} = \frac{\grad{f}}{\abs{\grad{f}}} = \frac{2 \vu{x} + 8 \vu{y}}{\sqrt{68}}
+        = \frac{1 \vu{x} + 4 \vu{y}}{\sqrt{17}}
+\end{align*}
+or $-\vu{n}$ corresponding to the opposite direction. Moving along the direction of $\vb{n}$
+maximizes the rate of change of $f$.
+
+\paragraph{4.20}
+Finding the curl, $\curl{\vb{F}}$, for the forces:
+
+(a) $\vb{F} = k\vb{r}$
+\begin{align*}
+    \curl{k\vb{r}} &= \curl(kx \vu{x} + ky \vu{y} + kz \vu{z}) \\
+    &= 0 \vu{x} + 0 \vu{y} + 0 \vu{z} = 0
+\end{align*}
+
+(b) $\vb{F} = (Ax, By^2, Cz^3)$ where $A,B,C$ are constants:
+\begin{align*}
+    \curl{(Ax, By^2, Cz^3)} = 0
+\end{align*}
+
+(c) $\vb{F} = (Ay^2, Bx, Cz)$:
+\begin{align*}
+    \curl{(Ay^2, Bx, Cz)} &= 
+    \begin{vmatrix}
+        \vu{x} & \vu{y} & \vu{z} \\
+        \pdv{x} & \pdv{y} & \pdv{z} \\
+        Ay^2 & Bx & Cz
+    \end{vmatrix} \\
+    &= (0) \vu{x} - (0) \vu{y} + (B - 2Ay) \vu{z} = (B - 2Ay) \vu{z}
+\end{align*}
+
+\paragraph{4.21}
+Given the gravitational force
+\begin{align*}
+    \vb{F} = - \frac{GmM}{r^2} \vu{r} = - \frac{GmM}{r^3} \vb{r}
+\end{align*}
+The curl of $\vb{F}$ is
+\begin{align*}
+    \curl{\vb{F}} &= \curl{\frac{GmM}{r^3} \vb{r}} \\
+    &= \frac{GmM}{r^3} \curl{\vb{r}} \\
+    &= \frac{GmM}{r^3} \curl{(x \vu{x} + y \vu{y} + z \vu{z})} \\
+    &= \frac{GmM}{r^3}
+    \begin{vmatrix}
+        \vu{x} & \vu{y} & \vu{z} \\
+        \pdv{x} & \pdv{y} & \pdv{z} \\
+        x & y & z
+    \end{vmatrix} \\
+    &= \frac{GmM}{r^3} (0 \vu{x} + 0 \vu{y} + 0 \vu{z}) = 0
+\end{align*}
+Thus the gravitational force is conservative.
 \end{document}
