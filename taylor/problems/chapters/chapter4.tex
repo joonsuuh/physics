@@ -302,5 +302,151 @@ The curl of $\vb{F}$ is
     \end{vmatrix} \\
     &= \frac{GmM}{r^3} (0 \vu{x} + 0 \vu{y} + 0 \vu{z}) = 0
 \end{align*}
-Thus the gravitational force is conservative.
+Thus the gravitational force is conservative. The potential energy is
+\begin{align*}
+    U(\vb{r}) = - \int_0^{\vb{r}} \vb{F} \cdot \dd{\vb{r}} = \frac{GmM}{r}
+\end{align*}
+
+\paragraph{4.23}
+Find which of the following forces are conservative, and for those that are, find the potential and
+verify that $\vb{F} = - \grad{U}$:
+
+(a) $\vb{F} = k(x, 2y, 3z)$ where $k$ is a constant. The force is conservative when the curl is zero
+\begin{align*}
+    \curl{\vb{F}} = k \curl{(x, 2y, 3z)} = 0
+\end{align*}
+Thus the force is conservative and the potential energy is
+\begin{align*}
+    U(\vb{r}) = - \int_0^{\vb{r}} \vb{F} \cdot \dd{\vb{r}} = -\frac{1}{2} k(x^2 + 2y^2 + 3z^2)
+\end{align*}
+Verification of $\vb{F} = - \grad{U}$:
+\begin{align*}
+    -\grad{U} &= -\quantity(\pdv{U}{x}, \pdv{U}{y}, \pdv{U}{z}) \\
+    &= k(x, 2y, 3z) = \vb{F}
+\end{align*}
+
+(b) $\vb{F} = k(y, x, 0)$: The curl of $\vb{F}$ is
+\begin{align*}
+    \curl{\vb{F}} = k \curl{(y, x, 0)} = 0
+\end{align*}
+Thus the force is conservative and the potential energy is
+\begin{align*}
+    U(\vb{r}) = - \int_0^{\vb{r}} \vb{F} \cdot \dd{\vb{r}}
+    = -\int_0^{\vb{r}} F_x(x, 0) \dd{x'} + F_y(x, y) \dd{y'}
+    = -k(xy)
+\end{align*}
+where the first integral is zero since $F_x = 0$. Differentiating the potential gives
+\begin{align*}
+    -\grad{U} = -\quantity(\pdv{x}(-kxy), \pdv{y}(-kxy)) = k(y, x) = \vb{F}
+\end{align*}
+
+(c) $\vb{F} = k(-y, x, 0)$: The curl of $\vb{F}$ is
+\begin{align*}
+    \curl{\vb{F}} = k \curl{(-y, x, 0)} = 2k \vu{z}
+\end{align*}
+Thus the force is not conservative.
+
+\paragraph{4.25}
+(a)
+\begin{align*}
+    \oint_\Gamma \vb{F} \cdot \dd{\vb{r}} &= \int_1^2 \vb{F} \cdot \dd{\vb{r}}
+        + \int_2^1 \vb{F} \cdot \dd{\vb{r}} \\
+    &= \int_1^1 \vb{F} \cdot \dd{\vb{r}} = 0
+\end{align*}
+
+(b)
+If $\curl{\vb{F}} = 0$,
+\begin{align*}
+    \oint_\Gamma \vb{F} \cdot \dd{\vb{r}} &= \int \curl{\vb{F}} \cdot \vu{n} \dd{\vb{A}}
+    = 0
+\end{align*}
+
+(c)
+Integrating $\vb{F}$ around the closed path $\Gamma$:
+\begin{align*}
+    \oint_\Gamma \vb{F} \cdot \dd{\vb{r}} = &\int_B^{B+b} F_x(x, C, z) \dd{x}
+        - \int_B^{B+b} F_x(x, C+c, z) \dd{x} \\
+        &+ \int_C^{C+c} F_y(B+b, y, z) \dd{y} - \int_C^{C+c} F_y(B, y, z) \dd{y}
+\end{align*}
+where the first two terms are the path along the top and bottom of the rectangle and the last two
+terms are the path along the left and right sides of the rectangle. Looking at the first two terms,
+\begin{align*}
+    -\int_B^{B+b} F_x(x, C+c, z) - F_x(x, C, z) \dd{x} 
+    = -\int_B^{B+b} \int_C^{C+c} \pdv{F_x(x,y,z)}{y} \dd{y} \dd{x}
+    = -\int_S \pdv{F_x}{y} \dd{A}
+\end{align*}
+The last two terms are
+\begin{align*}
+    \int_C^{C+c} F_y(B+b, y, z) - F_y(B, y, z) \dd{y} 
+    = \int_C^{C+c} \int_B^{B+b} \pdv{F_y(x,y,z)}{x} \dd{x} \dd{y}
+    = \int_S \pdv{F_y}{x} \dd{A}
+\end{align*}
+Hence the integral is
+\begin{align*}
+    \oint_\Gamma \vb{F} \cdot \dd{\vb{r}} = \int_S \pdv{F_y}{x} - \pdv{F_x}{y} \dd{A}
+\end{align*}
+where $\curl{\vb{F}} = \pdv{F_y}{x} - \pdv{F_x}{y}$. Thus
+\begin{align*}
+    \oint_\Gamma \vb{F} \cdot \dd{\vb{r}} = \int_S \curl{\vb{F}} \cdot \vu{n} \dd{A}
+\end{align*}
+
+\paragraph{4.27}
+From the time-dependent PE for any fixed time $t$
+\begin{equation*} \tag{4.48}
+    U(\vb{r}, t) = -\int_{\vb{r}_o}^{\vb{r}} \vb{F}(\vb{r}', t) \cdot \dd{\vb{r}'}
+\end{equation*}
+and the force as a gradient of PE:
+\begin{align*}
+    -\grad{U}(\vb{r}, t) &= \pdv{U}{r} \int \vb{F}(\vb{r}', t) \cdot \dd{\vb{r}'}
+        + \pdv{U}{t} \int \vb{F}(\vb{r}', t) \cdot \dd{\vb{r}'} \\
+\end{align*}
+Since $t$ is fixed, and by the fundamental theorem of calculus
+\begin{align*}
+    -\grad{U}(\vb{r}, t) = \vb{F}(\vb{r}, t)
+\end{align*}
+For closer inspection, the change in $U$ from a small displacement $\dd{\vb{r}}$  and 
+\begin{align*}
+    \dd{U} = U(\vb{r} + \dd{\vb{r}}, t + \dd{t}) - U(\vb{r}, t)
+\end{align*}
+rewritten as partial derivatives
+\begin{align*}
+    \dd{U} = \grad{U} \cdot \dd{\vb{r}} + \pdv{U}{t} \dd{t}
+\end{align*}
+Given the force is conservative $\vb{F} = -\grad{U}$ and the change in $T$ is defined as
+$\dd{T} = \vb{F} \cdot \dd{\vb{r}}$ the work done by the force in the displacement $\dd{\vb{r}}$:
+\begin{align*}
+    \dd{U} &= -\dd{T} + \pdv{U}{t} \dd{t} \\
+    \dd(U + T) &= \pdv{U}{t} \dd{t}
+\end{align*}
+Hence, the total mechanical energy is conserved only when $\pdv*{U}{t} = 0$ and false otherwise.
+
+\paragraph{4.28}
+(a) From conservation of energy, the total mechanical energy is
+\begin{align*}
+    E = T + U = \frac{1}{2} m \dot{x}^2 + \frac{1}{2} k x^2
+\end{align*}
+Solving for velocity $\dot{x}$:
+\begin{align*}
+    \dot{x} = \pm \sqrt{\frac{2}{m} \quantity(E - \frac{1}{2} k x^2)}
+\end{align*}
+(b) At the spring's max displacement $x_{max} = A$, the kinetic energy is zero hence a total energy
+\begin{align*}
+    E = U = \frac{1}{2} k A^2
+\end{align*}
+subbing into the equation for velocity
+\begin{align*}
+    \dot{x} = \pm \sqrt{\frac{2}{m} \quantity(\frac{1}{2} k A^2 - \frac{1}{2} k x^2)}
+    = \pm \sqrt{\frac{k}{m} \quantity(A^2 - x^2)}
+\end{align*}
+Solving for the time to go from the origin $x=0$ at time $t=0$ to a position $x$:
+\begin{align*}
+    t = \int_0^t \dd{t} = \int_0^x \frac{\dd{x'}}{\dot{x}(x')} 
+    = \sqrt{\frac{m}{k}} \int_0^x \frac{\dd{x'}}{\sqrt{(A^2 - x'^2)}}
+    = \sqrt{\frac{m}{k}} \arcsin(\frac{x}{A})
+\end{align*}
+Solving $x$ as a function of $t$:
+\begin{align*}
+    x = A \sin(\sqrt{\frac{k}{m}} t)
+\end{align*}
+where the function $\sin(\omega t)$ has a period $T = 2\pi / \omega = 2\pi \sqrt{m/k}$.
 \end{document}
