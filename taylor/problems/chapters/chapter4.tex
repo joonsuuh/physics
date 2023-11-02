@@ -438,9 +438,9 @@ subbing into the equation for velocity
     \dot{x} = \pm \sqrt{\frac{2}{m} \quantity(\frac{1}{2} k A^2 - \frac{1}{2} k x^2)}
     = \pm \sqrt{\frac{k}{m} \quantity(A^2 - x^2)}
 \end{align*}
-Solving for the time to go from the origin $x=0$ at time $t=0$ to a position $x$:
+Solving for the time to go from the origin $x=0$ at time $t=0$ to a position $x$ with (4.58):
 \begin{align*}
-    t = \int_0^t \dd{t} = \int_0^x \frac{\dd{x'}}{\dot{x}(x')} 
+    t = \int_0^x \frac{\dd{x'}}{\dot{x}(x')} 
     = \sqrt{\frac{m}{k}} \int_0^x \frac{\dd{x'}}{\sqrt{(A^2 - x'^2)}}
     = \sqrt{\frac{m}{k}} \arcsin(\frac{x}{A})
 \end{align*}
@@ -449,4 +449,279 @@ Solving $x$ as a function of $t$:
     x = A \sin(\sqrt{\frac{k}{m}} t)
 \end{align*}
 where the function $\sin(\omega t)$ has a period $T = 2\pi / \omega = 2\pi \sqrt{m/k}$.
+
+\paragraph{4.29}
+(a) Figure \ref{fig:4_29} shows the mass moves initially at $t=0$ from $x=0$ to the max displacement
+$x=A$ where $E = U = kA^4$. Then it oscillates to and fro from $x=A$ to $x=-A$.
+\begin{figure} [ht] 
+    \centering
+    \includegraphics[scale=0.7]{../images/fig4_29.png}
+    \caption{A linear system of a mass $m$ with potential energy $U = kx^4$
+    force $F_f$.}
+    \label{fig:4_29}
+\end{figure}
+
+(b) Using (4.58) to find the time it takes to go from $x=0$ to $x=A$:
+\begin{align}
+    t = \sqrt{\frac{m}{2}} \int_{x_o}^x \frac{\dd{x'}}{E - U(x')}
+      = \sqrt{\frac{m}{2k}} \int_0^A \frac{\dd{x'}}{\sqrt{A^4 - x'^4}}
+\end{align}
+where the period of oscillation $\tau = 4t$ describes the mass moving from $x=0$ to $x=A$ and back
+to $x=-A$ and finally back to the initial posistion $x=0$. Hence the period of oscillation
+\begin{align*}
+    \tau = 4 \sqrt{\frac{m}{2k}} \int_0^A \frac{\dd{x'}}{\sqrt{A^4 - x'^4}}
+    = \sqrt{\frac{8m}{k}} \int_0^A \frac{\dd{x'}}{\sqrt{A^4 - x'^4}}
+\end{align*}
+
+(c) Changing the variable of integration to $u = x' / A$, $\dd{u} = \dd{x'} / A$: the limits of
+integration are $u = 0 \to 1$ and the integrand is $1/\sqrt{1/A^4(1 - x'^4/A^4)}
+= 1/(A^2\sqrt{1-u^4})$. Substituting into the integral:
+\begin{align*}
+    \tau = \frac{1}{A} \sqrt{\frac{8m}{k}} \int_0^1 \frac{\dd{u}}{\sqrt{1 - u^4}}
+    = \frac{1}{A} \gamma
+\end{align*}
+where $\gamma$ is a constant independent of $A$. This clearly shows that that period $\tau$ is
+inversely proportional to the amplitude $A$, or simply $\tau \propto 1/A$.
+
+(d) For the case $m = k = A = 1$, the period of oscillation is
+\begin{align*}
+    \tau = \sqrt{8} \int_0^1 \frac{\dd{u}}{\sqrt{1-u^4}}
+\end{align*}
+where the integral is numerically evaluated as 1.31 thus $\tau = 3.71$.
+
+\paragraph{4.31}
+(a) The total energy $E$ of the two masses in the Atwood machine is
+\begin{align*}
+    E = T_1 + T_2 + U_1 + U_2
+    = \frac{1}{2} m_1 \dot{x}_1^2 + \frac{1}{2} m_2 \dot{x}_2^2 - m_1 g x_1 - m_2 g x_2
+\end{align*}
+where $x_1 = -x_2 = x$. The total energy is then
+\begin{align*}
+    E = \frac{1}{2} m_1 \dot{x}^2 + \frac{1}{2} m_2 \dot{x}^2 - m_1 g x + m_2 g x
+    = \frac{1}{2} \dot{x}^2 (m_1 + m_2) + (m_2 - m_1) g x
+\end{align*}
+
+(b) Differentiating $E$ with respect to time:
+\begin{align*}
+    \dv{E}{t} = (m_1 + m_2) \dot{x} \ddot{x} + (m_2 - m_1) g \dot{x} = 0
+\end{align*}
+or rewritten as
+\begin{align*}
+    (m_1 + m_2) \ddot{x} = (m_1 - m_2) g
+\end{align*}
+Finding the equation of motion through Newton's second law: the equation of motion for the two
+masses are
+\begin{align*}
+    m_1 \ddot{x}_1 &= m_1 g - T_1 \\
+    m_2 \ddot{x}_2 &= T_2 - m_2 g 
+\end{align*}
+since the tensions $T_1 = T_2 = T$ are equal. Adding the two equations together
+\begin{align*}
+    (m_1 + m_2) \ddot{x} = (m_1 - m_2) g
+\end{align*}
+Hence the equation of motions are the same.
+
+\paragraph{4.33}
+\begin{figure} [ht]
+    \centering
+    \includegraphics[scale=0.2]{../images/fig4_33.png}
+    \captionsetup{width=0.8\textwidth}
+    \caption{A cube, of side $2b$ and center C, placed on a fixed cylinder of radius $r$ and center
+    $O$. The cube is constrained to roll from side to side without slipping on the cylinder.}
+    \label{fig:4_33}
+\end{figure}
+(a) The forces that constrains the cube to roll without slipping is the frictional force and the
+normal force which do no work. With the origin centered at $O$, the potential energy of the cube is
+$U = mgh$ where the heigh $h$ is the vertical components of the lines $OB = (r + b)$ and
+$BC = r\theta$, the distance the cube rolls from the top of the cylinder:
+\begin{align*} \tag{4.59}
+    U(\theta) = mgh = mg[(r + b)\cos{\theta} + r\theta\sin\theta]
+\end{align*}
+(b)
+Choosing $r = m = g = 1$, the plot of $U(\theta)$ is shown in Figure \ref{fig:4_33b}.
+\begin{figure}[ht]
+    \centering
+    \includegraphics[scale=0.7]{../images/fig4_33b.png}
+    \captionsetup{width=0.8\textwidth}
+    \caption{The potential energy $U(\theta)$ of the cube as a function of $\theta$.}
+    \label{fig:4_33b}
+\end{figure}
+
+(c) The equilibrium position $\theta = 0$ is stable for $b = 0.9r$, or when $b < r$, and unstable
+for $b = 1.1r$ when $b > r$. For the case $b = 0.9r$, there are two unstable equilibrium points
+further away at the two maximum points in Figure \ref{fig:4_33b}.
+
+\paragraph{4.35}
+The Atwood machine of Figure \ref{fig:4_33} now has a pulley of radius $R$ and moment of inertia $I$
+
+(a) Given the kinetic energy of the pulley is $T_p = \frac{1}{2} I \omega^2$, the total energy is
+\begin{align*}
+    E = \frac{1}{2} m_1 \dot{x}_1^2 + \frac{1}{2} m_2 \dot{x}_2^2 + \frac{1}{2} I \omega^2 -
+    m_1 g x_1 - m_2 g x_2
+\end{align*}
+subbing $x_1 = -x_2 = x$ and $\omega = \dot{x}/R$:
+\begin{align*}
+    E = \frac{1}{2} \dot{x}^2 (m_1 + m_2 + I/R^2) + (m_2 - m_1) g x
+\end{align*}
+Differentiating $E$ with respect to time:
+\begin{align*}
+    0 = (m_1 + m_2 + I/R^2) \dot{x} \ddot{x} + (m_2 - m_1) g \dot{x}
+\end{align*}
+or rewritten as
+\begin{align*}
+    (m_1 + m_2 + I/R^2) \ddot{x} = (m_1 - m_2) g
+\end{align*}
+Finding the equation of motion through Newton's second law:
+\begin{align*}
+    m_1 \ddot{x}_1 &= m_1 g - T_1 \\
+    m_2 \ddot{x}_2 &= T_2 - m_2 g \\
+    I \dot\omega &= T_1 R - T_2 R
+\end{align*}
+where $\dot{\omega} = \ddot{x} / R$ and thus $I\ddot{x}/R^2 = T_1 - T_2$. Adding the first two
+equations together
+\begin{align*}
+    (m_1 + m_2) \ddot{x} &= (m_1 - m_2) g - (T_1 - T_2) \\
+    (m_1 + m_2) \ddot{x} + (T_1 - T_2) &= (m_1 - m_2) g \\
+    (m_1 + m_2 + I/R^2) \ddot{x} &= (m_1 - m_2) g
+\end{align*}
+Hence the equation of motions are the same.
+
+\paragraph{4.37}
+(a) Letting the potential energy $U=mgh$ be zero when $\phi=0$, the height of mass $M$ is $h =
+R(1 - \cos\phi)$, and the height of mass $m$ is lowered by the arc length $h = -R\phi$. Therefore,
+the total potential energy is
+\begin{align*}
+    U(\phi) = MgR(1 - \cos\phi) - mgR\phi
+\end{align*}
+
+(b) Differentiating $U$ with respect to $\phi$ to find a possible equilibrium position:
+\begin{align*}
+    \dv{U}{\phi} = MgR\sin\phi - mgR = 0
+\end{align*}
+Thus the equilibrium position is when $\sin\phi = m/M$. Since the range of $\sin\phi$ is $[-1, 1]$,
+the equilibrium position is only possible when $m/M \in [-1, 1]$. Therefore, when $m > M$ there is
+no equilibrium position. For the case $m = M$, the equilibrium position is $\phi = \pi/2$. When $m <
+M$, there are two equilibrium positions where mass M deviates symmetrically from $\pi/2$ by an angle
+$\phi_1$ from both directions. To find stability, we differentiate again:
+\begin{align*}
+    \dv[2]{U}{\phi} = MgR\cos\phi
+\end{align*}
+where the second derivative is positive when $\phi < \pi/2$ and is negative when $\phi > \pi/2$
+hence the equilibrium position for the case of $m < M$ the lower equilibrium position is stable and
+the upper equilibrium position is unstable. For $m = M$, the equilibrium position is unstable since
+the second derivative is zero. In terms of torque, the clockwise torque on mass $M$ must be equal
+and opposite to the counterclockwise torque on mass $m$ for equilibrium.
+
+(c) Plotting $U(\phi)$ with $g = R = M = 1$ is shown in Figure \ref{fig:4_37}.
+\begin{figure}[ht]
+    \centering
+    \includegraphics[scale=0.7]{../images/fig4_37.png}
+    \captionsetup{width=0.8\textwidth}
+    \caption{The potential energy $U(\phi)$ of the system as a function of $\phi$ for the cases
+    $m = 0.7M$ and $m = 0.8M$.}
+    \label{fig:4_37}
+\end{figure}
+For the case $m = 0.7M$, when the system is released from rest at $\phi = 0$, the masses will
+oscillate about the lower equilibrium position $\phi = \arcsin(0.7) = 0.78$ rad. When $m = 0.8M$,
+there is no equilibrium position and the masses will keep rotating ccw.
+
+(d) The critical value of $m/M$ is when the potential energy at the second equilibrium position is
+zero, or when the $x$ axis is tangent to the relative maximum of the graph.
+\begin{align*}
+    0 &= MgR(1 - \cos\phi) - mgR\phi \\
+    \cos\phi &= 1 - \frac{m}{M} \phi \\
+\end{align*}
+combining with $\sin\phi = m/M$:
+\begin{align*}
+    \cos\phi &= 1 - \phi \sin\phi \\
+\end{align*}
+The numerical solution is $\phi = 2.33$ rad, so the critical value is $m/M = \sin\phi = 0.72$.
+
+\paragraph{4.39}
+(a) Problem 4.28a: The potential energy of a simple pendulum is given by
+\begin{equation*}
+    U(\phi) = mgl(1 - \cos\phi)
+\end{equation*}
+The total energy is
+\begin{align*}
+    E = T + U = \frac{1}{2} ml^2 \dot{\phi}^2 + mgl(1 - \cos\phi)
+\end{align*}
+where linear velocity $v = l\dot{\phi}$. At the max amplitude $\Phi$, $T = 0$ so the total energy is 
+$E = mgl(1 - \cos\Phi)$. $\dot\phi$ as a function of $\phi$ is
+\begin{align*}
+    \dot{\phi} = \sqrt{\frac{2}{ml^2}} \sqrt{(E - mgl(1 - \cos\phi))}
+    = \sqrt{\frac{2g}{l}} \sqrt{(1-\cos\Phi) - (1-\cos\phi)}
+\end{align*}
+Using the form $t = \int \dd{\phi}/ \dot{\phi}$
+\begin{align*}
+    t = \sqrt{\frac{l}{2g}} \int_0^\Phi \frac{\dd{\phi}}{\sqrt{(1-\cos\Phi) - (1 - \cos\phi)}}
+\end{align*}
+since $\tau = 4t$ the period is
+\begin{align*}
+    \tau = 4 \sqrt{\frac{l}{2g}} \int_0^\Phi \frac{\dd{\phi}}{\sqrt{(1-\cos\Phi) - (1-\cos\phi)}}
+\end{align*}
+subbing the period for small oscillations $\tau_o = 2\pi \sqrt{l/g}$:
+\begin{align*}
+    \tau = \tau_o \frac{\sqrt{2}}{\pi} \int_0^\Phi
+        \frac{\dd{\phi}}{\sqrt{(1-\cos\Phi) - (1-\cos\phi)}}
+\end{align*}
+from the half angle identity $1 - \cos(\phi) = 2 \sin^2(\phi/2)$ the square root in the integrand is
+\begin{align*}
+    \sqrt{(1-\cos\Phi) - (1-\cos\phi)} = \sqrt{2} \sqrt{\sin^2(\Phi/2) - \sin^2(\phi/2)}
+\end{align*}
+therefore,
+\begin{align*}
+    \tau = \tau_o \frac{1}{\pi} \int_0^\Phi \frac{\dd{\phi}}{\sqrt{\sin^2(\Phi/2) - \sin^2(\phi/2)}}
+\end{align*}
+with the substitution $\sin(\phi/2) = Au$ where $A = \sin(\Phi/2)$ and
+$\dd{\phi} = \dd{u} 2A/\cos(\phi/2) = 2A/\sqrt{1-A^2 u^2}$ from the relation
+\begin{align*}
+    \sin^2(\phi/2) = A^2 u^2 = 1 - \cos^2(\phi/2) \to \cos(\phi/2) = \sqrt{1 - A^2 u^2}
+\end{align*}
+The limits of integration are from $u = 0 \to u = 1$. The square root in the integrand simplifies to
+$\sqrt{A^2 - A^2u^2} = A\sqrt{1 - u^2}$, and thus the period is
+\begin{align*}
+    \tau = \tau_o \frac{2}{\pi} \int_0^1 \frac{\dd{u}}{\sqrt{1-u^2} \sqrt{1-A^2 u^2}}
+\end{align*}
+and ignoring the last square root for small amplitudes and using the integral
+$\int \dd{u}/\sqrt{1-u^2} = \arcsin(u)$:
+\begin{align*}
+    \tau = \tau_o \frac{2}{\pi} \int_0^1 \frac{\dd{u}}{\sqrt{1-u^2}}
+    = \tau_o = 2\pi \sqrt{\frac{l}{g}}
+\end{align*}
+(c) For a better approximation, using the binomial expansion $1/\sqrt{1-A^2 u^2} \approx
+1 + \frac{1}{2} A^2 u^2$:
+\begin{align*}
+    \tau = \tau_o \frac{2}{\pi} \int_0^1 \frac{1 + \frac{1}{2} A^2 u^2}{\sqrt{1-u^2}} \dd{u}
+    = \tau_o + \tau_o \frac{A^2}{\pi} \int_0^1 \frac{u^2}{\sqrt{1-u^2}} \dd{u}
+\end{align*}
+the integral is evaluated using the substitution $u = \sin(\theta)$ and $\dd{u} = \cos(\theta)
+\dd{\theta}$:
+\begin{align*}
+    \int \frac{u^2}{\sqrt{1-u^2}} \dd{u} = \int \frac{\sin^2(\theta)}{\sqrt{1-\sin^2(\theta)}}
+        \cos(\theta) \dd{\theta}
+    = \int \sin^2(\theta) \dd{\theta}
+\end{align*}
+using the half angle identity $\sin^2(\theta) = \frac{1}{2}(1 - \cos(2\theta))$:
+\begin{align*}
+    \int \sin^2(\theta) \dd{\theta} = \frac{1}{2} \int (1 - \cos(2\theta)) \dd{\theta}
+    = \frac{1}{2} \theta - \frac{1}{4} \sin(2\theta)
+\end{align*}
+subbing back $u = \sin(\theta)$:
+\begin{align*}
+    \int_0^1 \frac{u^2}{\sqrt{1-u^2}} \dd{u}
+    = \frac{1}{2} \arcsin(u) - \frac{1}{4} u \sqrt{1-u^2} \Big|_0^1 = \frac{\pi}{4}
+\end{align*}
+subbing back to the original equation and using $A = \sin(\Phi/2)$ once more gives
+\begin{align*}
+    \tau = \tau_o + \tau_o \frac{A^2}{\pi} \frac{\pi}{4} 
+    = \tau_o \quantity(1 + \frac{1}{4} \sin^2(\Phi/2))
+\end{align*}
+Q.E.D
+
+For $\Phi = \ang{45}$, the second term approximation gives $\tau = 1.037\tau_o$ or a 3.7\%
+correction compared to the small angle approx $\tau = \tau_o$ and a 0.3\% error compared to the
+exact solution $\tau = 1.040\tau_o$.
+
+\paragraph{4.41}
 \end{document}

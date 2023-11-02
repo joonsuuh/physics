@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.3.27)  30 OCT 2023 23:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.3.27)  2 NOV 2023 01:35
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -460,23 +460,46 @@ File: ../images/fig4_7.png Graphic file (type png)
 <use ../images/fig4_7.png>
 Package pdftex.def Info: ../images/fig4_7.png  used on input line 102.
 (pdftex.def)             Requested size: 128.15132pt x 135.16655pt.
- [2 <chapters/../images/fig4_7.png>] [3] [4] [5] [6] [7] (chapters/chapter4.aux)
+ [2 <chapters/../images/fig4_7.png>] [3] [4] [5] [6]
+<../images/fig4_29.png, id=72, 344.12941pt x 199.23653pt>
+File: ../images/fig4_29.png Graphic file (type png)
+<use ../images/fig4_29.png>
+Package pdftex.def Info: ../images/fig4_29.png  used on input line 458.
+(pdftex.def)             Requested size: 240.88895pt x 139.46461pt.
+ [7] [8 <chapters/../images/fig4_29.png>]
+<../images/fig4_33.png, id=90, 558.085pt x 647.41875pt>
+File: ../images/fig4_33.png Graphic file (type png)
+<use ../images/fig4_33.png>
+Package pdftex.def Info: ../images/fig4_33.png  used on input line 527.
+(pdftex.def)             Requested size: 111.61502pt x 129.48145pt.
+<../images/fig4_33b.png, id=92, 602.57936pt x 258.5911pt>
+File: ../images/fig4_33b.png Graphic file (type png)
+<use ../images/fig4_33b.png>
+Package pdftex.def Info: ../images/fig4_33b.png  used on input line 544.
+(pdftex.def)             Requested size: 421.80267pt x 181.01253pt.
+ [9 <chapters/../images/fig4_33.png> <chapters/../images/fig4_33b.png>]
+<../images/fig4_37.png, id=106, 605.4024pt x 258.5911pt>
+File: ../images/fig4_37.png Graphic file (type png)
+<use ../images/fig4_37.png>
+Package pdftex.def Info: ../images/fig4_37.png  used on input line 618.
+(pdftex.def)             Requested size: 423.7788pt x 181.01253pt.
+ [10] [11 <chapters/../images/fig4_37.png>] [12] (chapters/chapter4.aux)
 Package rerunfilecheck Info: File `chapter4.out' has not changed.
 (rerunfilecheck)             Checksum: E8368F33BC2DF66158267D1ED340D1B1;73.
  ) 
 Here is how much of TeX's memory you used:
- 17482 strings out of 476025
- 330199 string characters out of 5790017
+ 17532 strings out of 476025
+ 331115 string characters out of 5790017
  1875388 words of memory out of 5000000
- 37714 multiletter control sequences out of 15000+600000
+ 37742 multiletter control sequences out of 15000+600000
  516304 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 110i,16n,108p,421b,894s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 110i,16n,108p,421b,898s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/esint-type1/esint10.pfb>
-Output written on chapters/chapter4.pdf (7 pages, 262367 bytes).
+Output written on chapters/chapter4.pdf (12 pages, 1290484 bytes).
 PDF statistics:
- 144 PDF objects out of 1000 (max. 8388607)
- 105 compressed objects within 2 object streams
- 34 named destinations out of 1000 (max. 500000)
- 14 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 195 PDF objects out of 1000 (max. 8388607)
+ 143 compressed objects within 2 object streams
+ 52 named destinations out of 1000 (max. 500000)
+ 34 words of extra memory for PDF output out of 10000 (max. 10000000)
 
