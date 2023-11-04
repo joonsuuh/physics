@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1698906900 "/Users/junseo/physics/taylor/problems/chapters/chapter4.tex" "chapters/chapter4.pdf" "chapter4" 1698906904 0
-  "/Users/junseo/physics/taylor/problems/chapters/chapter4.tex" 1698906897 28901 4196743e3edd5ab986cc77b4259453d8 ""
+["pdflatex"] 1699116025 "/Users/junseo/physics/taylor/problems/chapters/chapter4.tex" "chapters/chapter4.pdf" "chapter4" 1699116029 0
+  "/Users/junseo/physics/taylor/problems/chapters/chapter4.tex" 1699116025 37750 da8ae324133f0680e6d7ff981cc5c6f3 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm" 1246382020 1120 1e8878807317373affa7f7bba4cf2f6a ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy7.tfm" 1246382020 1120 7f9f170e8aa57527ad6c49feafd45d54 ""
@@ -23,6 +23,7 @@
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1248133631 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb" 1248133631 37912 77d683123f92148345f3fc36a38d9ab1 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb" 1248133631 36281 c355509802a035cadc5f15869451dcee ""
+  "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb" 1248133631 36912 b448ef9ad9d7228ec3c6e71005136d55 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1248133631 35752 024fb6c41858982481f6968b5fc26508 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb" 1248133631 32762 224316ccc9ad3ca0423a14971cfa7fc1 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
@@ -110,9 +111,9 @@
   "chapters/../images/fig4_37.png" 1698888889 395668 6c1cc44450a31cd964f5249e7c3461dd ""
   "chapters/../images/fig4_7.png" 1698427700 103253 d124102aebb48f8d73f5f993e062eb54 ""
   "chapters/../problems.tex" 1698262932 376 4c45bd58a5aa890d759f0794ebe08acb ""
-  "chapters/chapter4.aux" 1698906904 5004 6f4f14ba3514f3fec6155d0c2e0dc557 "pdflatex"
-  "chapters/chapter4.out" 1698906904 73 e8368f33bc2df66158267d1ed340d1b1 "pdflatex"
-  "chapters/chapter4.tex" 1698906897 28901 4196743e3edd5ab986cc77b4259453d8 ""
+  "chapters/chapter4.aux" 1699116029 5550 72155fddd480194013b53beeb6e4bfef "pdflatex"
+  "chapters/chapter4.out" 1699116029 73 e8368f33bc2df66158267d1ed340d1b1 "pdflatex"
+  "chapters/chapter4.tex" 1699116025 37750 da8ae324133f0680e6d7ff981cc5c6f3 ""
   "custom.sty" 1697762435 2356 708a1e5b6d39ecc80aa07489a7f660e7 ""
   (generated)
   "chapters/chapter4.aux"
