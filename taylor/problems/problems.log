@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.3.27)  25 OCT 2023 14:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.3.27)  4 NOV 2023 11:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/Users/junseo/note/taylor/problems/problems.tex
-(/Users/junseo/note/taylor/problems/problems.tex
+**/Users/junseo/physics/taylor/problems/problems.tex
+(/Users/junseo/physics/taylor/problems/problems.tex
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-02-22> (/usr/local/texlive/2023/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2022/07/02 v1.4n Standard LaTeX document class
@@ -789,23 +789,52 @@ File: chapters//../images/fig3_37.png Graphic file (type png)
 <use chapters//../images/fig3_37.png>
 Package pdftex.def Info: chapters//../images/fig3_37.png  used on input line 455.
 (pdftex.def)             Requested size: 135.89174pt x 141.89264pt.
- [45 <./chapters//../images/fig3_35.png> <./chapters//../images/fig3_37.png>]) [46] (./chapters/chapter4.tex) [47] (./problems.aux)
+ [45 <./chapters//../images/fig3_35.png> <./chapters//../images/fig3_37.png>]) [46] (./chapters/chapter4.tex [47]
+<chapters//../images/fig4_7.png, id=660, 183.07458pt x 193.0964pt>
+File: chapters//../images/fig4_7.png Graphic file (type png)
+<use chapters//../images/fig4_7.png>
+Package pdftex.def Info: chapters//../images/fig4_7.png  used on input line 102.
+(pdftex.def)             Requested size: 128.15132pt x 135.16655pt.
+ [48 <./chapters//../images/fig4_7.png>] [49] [50] [51] [52]
+<chapters//../images/fig4_29.png, id=704, 344.12941pt x 199.23653pt>
+File: chapters//../images/fig4_29.png Graphic file (type png)
+<use chapters//../images/fig4_29.png>
+Package pdftex.def Info: chapters//../images/fig4_29.png  used on input line 458.
+(pdftex.def)             Requested size: 240.88895pt x 139.46461pt.
+ [53] [54 <./chapters//../images/fig4_29.png>]
+<chapters//../images/fig4_33.png, id=721, 558.085pt x 647.41875pt>
+File: chapters//../images/fig4_33.png Graphic file (type png)
+<use chapters//../images/fig4_33.png>
+Package pdftex.def Info: chapters//../images/fig4_33.png  used on input line 527.
+(pdftex.def)             Requested size: 111.61502pt x 129.48145pt.
+<chapters//../images/fig4_33b.png, id=723, 602.57936pt x 258.5911pt>
+File: chapters//../images/fig4_33b.png Graphic file (type png)
+<use chapters//../images/fig4_33b.png>
+Package pdftex.def Info: chapters//../images/fig4_33b.png  used on input line 544.
+(pdftex.def)             Requested size: 421.80267pt x 181.01253pt.
+ [55 <./chapters//../images/fig4_33.png> <./chapters//../images/fig4_33b.png>]
+<chapters//../images/fig4_37.png, id=738, 605.4024pt x 258.5911pt>
+File: chapters//../images/fig4_37.png Graphic file (type png)
+<use chapters//../images/fig4_37.png>
+Package pdftex.def Info: chapters//../images/fig4_37.png  used on input line 618.
+(pdftex.def)             Requested size: 423.7788pt x 181.01253pt.
+ [56] [57 <./chapters//../images/fig4_37.png>] [58] [59] [60] [61]) [62] (./problems.aux)
 Package rerunfilecheck Info: File `problems.out' has not changed.
 (rerunfilecheck)             Checksum: F7A10EF30DAC3ECB8E319A49651C1E62;654.
  ) 
 Here is how much of TeX's memory you used:
- 18709 strings out of 476025
- 346618 string characters out of 5790017
+ 18818 strings out of 476025
+ 348735 string characters out of 5790017
  2204388 words of memory out of 5000000
- 38508 multiletter control sequences out of 15000+600000
+ 38553 multiletter control sequences out of 15000+600000
  523017 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 90i,16n,91p,526b,2781s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 90i,19n,91p,529b,2781s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/esint-type1/esint10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sftt0800.pfb>
-Output written on problems.pdf (47 pages, 1499588 bytes).
+Output written on problems.pdf (62 pages, 2656714 bytes).
 PDF statistics:
- 842 PDF objects out of 1000 (max. 8388607)
- 693 compressed objects within 7 object streams
- 388 named destinations out of 1000 (max. 500000)
- 153 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 979 PDF objects out of 1000 (max. 8388607)
+ 803 compressed objects within 9 object streams
+ 447 named destinations out of 1000 (max. 500000)
+ 178 words of extra memory for PDF output out of 10000 (max. 10000000)
 
