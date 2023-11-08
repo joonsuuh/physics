@@ -3,8 +3,6 @@
 This is a collection of solutions to exercises and problems from various physics textbooks typeset
 in LaTeX. The solutions are written by me, and are not guaranteed to be correct.
 
----
-
 ## Textbooks
 
 - John R. Taylor [*Classical Mechanics*](/taylor)
@@ -13,8 +11,6 @@ in LaTeX. The solutions are written by me, and are not guaranteed to be correct.
 Each Textbook has its own directory which contains the LaTeX source files and compiled pdfs of the
 solutions. The source files are written in a modular fashion using the `subfiles` package, with each
 chapter having its own file.
-
----
 
 ### Directory Structure
 
@@ -41,4 +37,3 @@ textbook/
 - `chapters/` is a directory containing the chapter files.
 - `code/` is a directory containing the code files.
 - `images/` is a directory containing the image files.
-
