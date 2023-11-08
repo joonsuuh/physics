@@ -2,12 +2,12 @@
 *.DS_Store
 
 # Ignore latex build files everywhere
-**/*.aux
-**/*.fdb_latexmk
+*.aux
+*.fdb_latexmk
 *.fls
-**/*.log
-**/*.out
-**/*.synctex.gz
-**/*.toc
+*.log
+*.out
+*.synctex.gz
+*.toc
 
 # Ignore build files for the main document
