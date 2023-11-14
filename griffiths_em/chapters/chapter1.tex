@@ -345,7 +345,7 @@ differentiating with respect to $\bar{y}$ and $\bar{z}$ respectively gives
 this can only be true if
 \begin{align*}
     \pdv{y}{\bar{y}} = \cos\phi     ,\quad      \pdv{z}{\bar{y}} = \sin\phi
-    \qand \pdv{y}{\bar{z}} = -\sin\phi      ,       \pdv{z}{\bar{y}} = \cos\phi
+    \qand \pdv{y}{\bar{z}} = -\sin\phi      ,       \pdv{z}{\bar{z}} = \cos\phi
 \end{align*}
 which satisfies the trig identity $\sin^2\phi + \cos^2\phi = 1$. Differentiating $f$ with respect to
 the rotated coordinates $\bar{y}$ and $\bar{z}$ is given by
@@ -372,5 +372,527 @@ where the gradient is a column vector
     \end{pmatrix}
 \end{align*}
 
+\paragraph{1.15}
+(a) Calculating divergence of $v_a = x^2\vu{x} + 3xz^2\vu{y} - 2xz\vu{z}$:
+\begin{align*}
+    \div{v_a} &= \pdv{v_{ax}}{x} + \pdv{v_{ay}}{y} + \pdv{v_{az}}{z} \\
+    &= 2x + 0 - 2x = 0
+\end{align*}
+
+(b) $v_b = xy\vu{x} + 2yz\vu{y} + 3zx\vu{z}$:
+\begin{align*}
+    \div{v_b} &= y + 2z + 3x
+\end{align*}
+
+(c) $v_c = y^2\vu{x} + (2xy + z^2)\vu{y} + 2yz\vu{z}$:
+\begin{align*}
+    \div{v_c} &= 0 + 2x + 2y = 2(x + y)
+\end{align*}
+
+\paragraph{1.16}
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.4\linewidth]{images/fig1_16.png}
+    \caption{Sketch of the vector field $\vb{v} = \vu{r} / r^2$}
+    \label{fig:1.16}
+\end{figure}
+Given
+\begin{align*}
+    r = \sqrt{x^2 + y^2 + z^2} \qand
+    \vu{r} = \frac{\vb{r}}{r} = \frac{x\vu{x} + y\vu{y} + z\vu{z}}{\sqrt{x^2 + y^2 + z^2}}
+\end{align*}
+where $\vb{r} = x\vu{x} + y\vu{y} + z\vu{z}$ is the position vector. The vector functions is
+\begin{align*}
+    v = \frac{\vu{r}}{r^2} = \frac{\vb{r}}{r^3}
+\end{align*}
+where the components are
+\begin{align*}
+    v_x = \frac{x}{r^3} \qand v_y = \frac{y}{r^3} \qand v_z = \frac{z}{r^3}
+\end{align*}
+Looking at the $x$ component of the divergence,
+\begin{align*}
+    [\div{\vb{v}}]_x &= \pdv{v_x}{x} \\
+    &= \pdv{x}(\frac{x}{r^3}) \\
+    &= \pdv{x}(\frac{x}{(x^2 + y^2 + z^2)^{3/2}}) \qq{using chain rule...}\\
+    &= \frac{1}{(x^2 + y^2 + z^2)^{3/2}} - \frac{3x^2}{(x^2 + y^2 + z^2)^{5/2}} \\
+    &= \frac{1}{r^3} - \frac{3x^2}{r^5}
+\end{align*}
+therefore, the divergence of $\vb{v}$ is
+\begin{align*}
+    \div{\vb{v}} &= \quantity(\frac{1}{r^3} - \frac{3x^2}{r^5})
+        + \quantity(\frac{1}{r^3} - \frac{3y^2}{r^5})
+        + \quantity(\frac{1}{r^3} - \frac{3z^2}{r^5}) \\
+    &= \frac{3}{r^3} - 3\frac{x^2 + y^2 + z^2}{r^5} \\
+    &= \frac{3}{r^3} - 3\frac{r^2}{r^5} = 0
+\end{align*}
+This is consistent with the sketch in Figure \ref{fig:1.16} because the vector field is not `sourcing' or
+`sinking'.
+
+\paragraph{1.17}
+Given
+\begin{align*}
+    \bar{v}_y = v_y \cos\phi + v_z \sin\phi \qand \bar{v}_z = -v_y \sin\phi + v_z \cos\phi
+\end{align*}
+Calculating the derivatives
+\begin{align*}
+    \pdv{\bar{v}_y}{\bar{y}} &= \pdv{v_y}{\bar{y}} \cos\phi + \pdv{v_z}{\bar{y}} \sin\phi \\
+    \pdv{\bar{v}_z}{\bar{z}} &= -\pdv{v_y}{\bar{z}} \sin\phi + \pdv{v_z}{\bar{z}} \cos\phi
+\end{align*}
+from Problem 1.14,
+\begin{align*}
+    \pdv{f}{\bar{y}} &= \pdv{f}{y} \cos\phi + \pdv{f}{z} \sin\phi \\
+    \pdv{f}{\bar{z}} &= -\pdv{f}{y} \sin\phi + \pdv{f}{z} \cos\phi
+\end{align*}
+therefore, the derivatives are rewritten as
+\begin{align*}
+    \pdv{\bar{v}_y}{\bar{y}} &=
+        \quantity(\pdv{v_y}{y} \pdv{y}{\bar{y}} + \pdv{v_y}{z} \pdv{z}{\bar{y}}) \cos\phi 
+        + \quantity(\pdv{v_z}{y} \pdv{y}{\bar{z}} + \pdv{v_z}{y} \pdv{z}{\bar{z}}) \sin\phi \\
+    &= \quantity(\pdv{v_y}{y} \cos\phi + \pdv{v_y}{z} \sin\phi) \cos\phi 
+        + \quantity(\pdv{v_z}{y} \cos\phi + \pdv{v_z}{z} \sin\phi) \sin\phi
+\end{align*}
+and likewise,
+\begin{align*}
+    \pdv{\bar{v}_z}{\bar{z}} &=
+        - \quantity(-\pdv{v_y}{y} \sin\phi +\pdv{v_y}{z} \cos\phi) \sin\phi 
+        + \quantity(-\pdv{v_z}{y} \sin\phi + \pdv{v_z}{z} \cos\phi) \cos\phi \\
+\end{align*}
+Finally adding the two equations together gives
+\begin{align*}
+    \div{\bar{\vb{v}}} &= \pdv{\bar{v}_y}{\bar{y}} + \pdv{\bar{v}_z}{\bar{z}} \\
+    &= \pdv{v_y}{y} \cos^2\phi + \pdv{v_y}{z} \sin\phi\cos\phi 
+        + \pdv{v_z}{y} \sin\phi\cos\phi + \pdv{v_z}{z} \sin\phi^2 \\
+    &+ \pdv{v_y}{y} \sin^2\phi - \pdv{v_y}{z} \sin\phi\cos\phi
+        - \pdv{v_z}{y} \sin\phi\cos\phi + \pdv{v_z}{z} \cos^2\phi \\
+    &= (\sin\phi^2 + \cos\phi^2)\quantity[\pdv{v_y}{y} + \pdv{v_z}{z}] \\
+    &= \pdv{v_y}{y} + \pdv{v_z}{z}
+\end{align*}
+which shows that the divergence transforms as a scalar under rotations.
+
+\paragraph{1.18}
+Curl of vector functions from Problem 1.15:
+(a) $\vb{v}_a = x^2\vu{x} + 3xz^2\vu{y} - 2xz\vu{z}$:
+\begin{align*}
+    \curl{\vb{v}_a} &= \mqty|
+        \vu{x} & \vu{y} & \vu{z} \\
+        \pdv{x} & \pdv{y} & \pdv{z} \\
+        x^2 & 3xz^2 & -2xz
+    | \\
+    &= \vu{x} (0 - 6xz) - \vu{y} (-2z - 0) + \vu{z} (3z^2 - 0) \\
+    &= -6xz\vu{x} + 2z\vu{y} + 3z^2\vu{z}
+\end{align*}
+
+(b) $\vb{v}_b = xy\vu{x} + 2yz\vu{y} + 3zx\vu{z}$:
+\begin{align*}
+    \curl{\vb{v}_b} &= \begin{vmatrix}
+        \vu{x} & \vu{y} & \vu{z} \\
+        \pdv{x} & \pdv{y} & \pdv{z} \\
+        xy & 2yz & 3zx
+    \end{vmatrix} \\
+    &= \vu{x} (0 - 2y) - \vu{y} (3z - 0) + \vu{z} (0 - x) \\
+    &= -2y\vu{x} - 3z\vu{y} - x\vu{z}
+\end{align*}
+
+(c) $\vb{v}_c = y^2\vu{x} + (2xy + z^2)\vu{y} + 2yz\vu{z}$:
+\begin{align*}
+    \curl{\vb{v}_c} &= \begin{vmatrix}
+        \vu{x} & \vu{y} & \vu{z} \\
+        \pdv{x} & \pdv{y} & \pdv{z} \\
+        y^2 & 2xy + z^2 & 2yz
+    \end{vmatrix} \\
+    &= \vu{x} (2z - 2z) - \vu{y} (0 - 0) + \vu{z} (2y - 2y) \\
+    &= 0
+\end{align*}
+
+\paragraph{1.19}
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.4\linewidth]{images/fig1_19.png}
+    \caption{Sketch of the vector field pointing clockwise around a circle of radius $R$}
+    \label{fig:1.19}
+\end{figure}
+From Figure \ref{fig:1.19}, the sign of $\pdv*{v_x}{y}$ is positive, and the sign of $\pdv*{v_y}{x}$
+is negative. Therefore, the curl
+\begin{align*}
+    \curl{\vb{v}} = \vu{z} \quantity(\pdv{v_x}{y} - \pdv{v_y}{z}) 
+\end{align*}
+is in the negative $z$ direction, or into the page. This is consistent with the right-hand rule as
+the thumb points into the page.
+
+\paragraph{1.20}
+Proof that the vector function
+\begin{align*}
+    \vb{g} = \frac{\vu{r}}{r^2} = \frac{\vb{r}}{r^3} = \frac{x\vu{x} + y\vu{y} + z\vu{z}}{r^3}
+\end{align*}
+has zero divergence and curl given
+\begin{align*}
+    \pdv{r}{x_i} = \frac{x_i}{r} \qand \pdv{x}{y} = \frac{y}{x} = 0
+\end{align*}
+From Problem 1.16, the divergence of $\vb{g}$ is
+\begin{align*}
+    \div{\vb{g}} &= \pdv{g_x}{x} + \pdv{g_y}{y} + \pdv{g_z}{z} \\
+    &= \pdv{x}(\frac{x}{r^3}) + \pdv{y}(\frac{y}{r^3}) + \pdv{z}(\frac{z}{r^3}) \\
+    &= \frac{1}{r^3} - \frac{3x^2}{r^5} + \frac{1}{r^3} - \frac{3y^2}{r^5}
+        + \frac{1}{r^3} - \frac{3z^2}{r^5} \\
+    &= \frac{3}{r^3} - \frac{3}{r^3} = 0
+\end{align*}
+and the curl is
+\begin{align*}
+    \curl{\vb{g}} &= \begin{vmatrix}
+        \vu{x} & \vu{y} & \vu{z} \\
+        \pdv{x} & \pdv{y} & \pdv{z} \\
+        \frac{x}{r^3} & \frac{y}{r^3} & \frac{z}{r^3}
+    \end{vmatrix} \\
+    &= \vu{x} (0 - 0) - \vu{y} (0 - 0) + \vu{z} (0 - 0) = 0
+\end{align*}
+
+\paragraph{1.21}
+Proving product rule for (i)
+\begin{align*}
+    \grad(fg) &= \pdv{(fg)}{x} \vu{x} + \pdv{(fg)}{y} \vu{y} + \pdv{(fg)}{z} \vu{z} \\
+    &= \quantity(\pdv{f}{x} g + f \pdv{g}{x}) \vu{x} + \quantity(\pdv{f}{y} g + f \pdv{g}{y}) \vu{y}
+        + \quantity(\pdv{f}{z} g + f \pdv{g}{z})  \vu{z}\\
+    &= f\quantity(\pdv{g}{x} + \pdv{g}{y} + \pdv{g}{z})
+        + g\quantity(\pdv{f}{x} + \pdv{f}{y} + \pdv{f}{z}) \\
+    &= f\grad{g} + g\grad{f}
+\end{align*}
+(iv)
+\begin{align*}
+    \div(\vb{A} \cp \vb{B}) &= \div \begin{vmatrix}
+        \vu{x} & \vu{y} & \vu{z} \\
+        A_x & A_y & A_z \\
+        B_x & B_y & B_z
+    \end{vmatrix} \\
+    &= \div [(A_y B_z - A_z B_y) \vu{x} + (A_z B_x - A_x B_z) \vu{y}
+        + (A_x B_y - A_y B_x) \vu{z}] \\
+    &= \pdv{x}(A_y B_z - A_z B_y) + \pdv{y}(A_z B_x - A_x B_z) + \pdv{z}(A_x B_y - A_y B_x) \\
+    &= \qt(\pdv{A_y}{x} B_z + A_y \pdv{B_z}{x} - \pdv{A_z}{x} B_y - A_z \pdv{B_y}{x}) 
+    + \qt(\pdv{A_z}{y} B_x + A_z \pdv{B_x}{y} - \pdv{A_x}{y} B_z - A_x \pdv{B_z}{y}) \\
+    &+ \qt(\pdv{A_x}{z} B_y + A_x \pdv{B_y}{z} - \pdv{A_y}{z} B_x - A_y \pdv{B_x}{z}) \\
+    &= B_x \qt(\pdv{A_z}{y} - \pdv{A_y}{z}) + B_y \qt(\pdv{A_x}{z} - \pdv{A_z}{x})
+        + B_z \qt(\pdv{A_y}{x} - \pdv{A_x}{y}) \\
+    &+ A_x \qt(\pdv{B_y}{z} - \pdv{B_z}{y}) + A_y \qt(\pdv{B_z}{x} - \pdv{B_x}{z})
+        + A_z \qt(\pdv{B_x}{y} - \pdv{B_y}{x}) \\
+    &= \vb{B} \vdot (\curl{\vb{A}}) + \vb{A} \vdot (\curl{\vb{B}})
+\end{align*}
+(v)
+\begin{align*}
+    \curl(f\vb{A}) &= \begin{vmatrix}
+        \vu{x} & \vu{y} & \vu{z} \\
+        \pdv{x} & \pdv{y} & \pdv{z} \\
+        fA_x & fA_y & fA_z
+    \end{vmatrix} \\
+    &= \vu{x} \qt(\pdv{y}(fA_z) - \pdv{z}(fA_y))
+    - \vu{y} \qt(\pdv{x}(fA_z) - \pdv{z}(fA_x)) + \vu{z} \qt(\pdv{x}(fA_y) - \pdv{y}(fA_x)) \\
+    &= \vu{x} \qt(f\pdv{A_z}{y} + A_z \pdv{f}{y} - f\pdv{A_y}{z} - A_y \pdv{f}{z})
+    - \vu{y} \qt(f\pdv{A_z}{x} + A_z \pdv{f}{x} - f\pdv{A_x}{z} - A_x \pdv{f}{z}) \\
+    &+ \vu{z} \qt(f\pdv{A_y}{x} + A_y \pdv{f}{x} - f\pdv{A_x}{y} - A_x \pdv{f}{y}) \\
+    &= f \qt[\vu{x} \qt(\pdv{A_z}{y} - \pdv{A_y}{z}) + \vu{y} \qt(\pdv{A_x}{z} + \pdv{A_z}{x})
+        + \vu{z} \qt(\pdv{A_y}{x} - \pdv{A_x}{y})] \\
+    &- \vu{x} \qt(A_y \pdv{f}{z} - A_z \pdv{f}{y}) + \vu{y} \qt(A_z \pdv{f}{x} - A_x \pdv{f}{z})
+        - \vu{z} \qt(A_y \pdv{f}{x} - A_x \pdv{f}{y}) \\
+    &= f(\curl{\vb{A}}) - \vb{A} \cp (\grad{f})
+\end{align*}
+
+\paragraph{1.22}
+(a) If $\vb{A}$ and $\vb{B}$ are two vector functions, then
+\begin{align*}
+    (\vb{A} \vdot \grad) \vb{B} &= \qt(A_x \pdv{x} + A_y \pdv{y} + A_z \pdv{z})
+        (B_x \vu{x} + B_y \vu{y} + B_z \vu{z}) \\
+    &= \vu{x} \qt(A_x \pdv{B_x}{x} + A_y \pdv{B_x}{y} + A_z \pdv{B_x}{z})
+    + \vu{y} \qt(A_x \pdv{B_y}{x} + A_y \pdv{B_y}{y} + A_z \pdv{B_y}{z}) \\
+    &+ \vu{z} \qt(A_x \pdv{B_z}{x} + A_y \pdv{B_z}{y} + A_z \pdv{B_z}{z})
+\end{align*}
+This means that the direction of $\vb{A}$ points in the direction of where $\vb{B}$ moves fastest.
+
+(b) 
+\begin{align*}
+    (\vu{r} \vdot \grad) \vu{r} &= \frac{1}{r} \qt(x\pdv{x} + y\pdv{y} + z\pdv{z})
+        \frac{(x\vu{x} + y\vu{y} + z\vu{z})}{r} \\
+\end{align*}
+looking at the $x$ component,
+\begin{align*}
+    \pdv{x}(\frac{\vb{r}}{r}) &= \frac{1}{r} \pdv{x}(x\vu{x} + y\vu{y} + z\vu{z})
+    + \vb{r} \pdv{x}(\frac{1}{r}) \\
+    &= \frac{\vu{x}}{r} - \vb{r} \frac{x^2}{r^3}
+\end{align*}
+therefore,
+\begin{align*}
+    (\vu{r} \vdot \grad) \vu{r} &= \frac{1}{r} \qt[
+        x\qt(\frac{\vu{x}}{r} - \vb{r} \frac{x}{r^3})
+        + y\qt(\frac{\vu{y}}{r} - \vb{r} \frac{y}{r^3})
+        + z\qt(\frac{\vu{z}}{r} - \vb{r} \frac{z}{r^3})] \\
+    &= \frac{1}{r} \qt[
+        \frac{x\vu{x} + y\vu{y} + z\vu{z}}{r} - \vb{r} \frac{x^2 + y^2 + z^2}{r^3}] \\
+    &= \frac{1}{r} \qt[\frac{\vb{r}}{r} - \frac{\vb{r}}{r}] = 0
+\end{align*}
+
+(c)
+\begin{align*}
+    (v_a \vdot \grad) v_b &= \qt(x^2\pdv{x} + 3xz^2\pdv{y} - 2xz\pdv{z}) 
+        (xy\vu{x} + 2yz\vu{y} + 3zx\vu{z}) \\
+    &= x^2(y\vu{x} + 0 + 3z\vu{z}) + 3xz^2(x\vu{x} + 2z\vu{y} + 0) - 2xz(0 + 2y\vu{y} + 3x\vu{z})\\
+    &= (x^2y + 3x^2z^2)\vu{x} + (6xz^3 - 4xyz)\vu{y} + (3x^2z - 6x^2z)\vu{z} \\
+    &= x^2(y + 3z^2) \vu{x} + 2xz(3z^2 - 2y) \vu{y} - 3x^2z \vu{z}
+\end{align*}
+
+\paragraph{1.23}
+Proving the product rule for (ii) given the $x$ component of the left hand side is
+\begin{align*}
+    [\grad(\vb{A} \vdot \vb{B})]_x &= \pdv{(\vb{A} \vdot \vb{B})}{x} \vu{x} \\
+    &= \pdv{x}(A_x B_x + A_y B_y + A_z B_z) \vu{x} \\
+    &= A_x \pdv{B_x}{x} + B_x \pdv{A_x}{x} + A_y \pdv{B_y}{x} + B_y \pdv{A_y}{x}
+        + A_z \pdv{B_z}{x} + B_z \pdv{A_z}{x} \\
+\end{align*}
+Finding the $x$ component of the right hand side of (ii)
+\begin{align*}
+    [\vb{A} \cp (\curl{\vb{B}})]_x &= \qt[\vb{A} \cp \begin{vmatrix}
+        \vu{x} & \vu{y} & \vu{z} \\
+        \pdv{x} & \pdv{y} & \pdv{z} \\
+        B_x & B_y & B_z
+    \end{vmatrix}]_x \\
+    &= \qt[\begin{vmatrix}
+        \vu{x} & \vu{y} & \vu{z} \\
+        A_x & A_y & A_z \\
+        () & -\qt(\pdv{B_z}{x} - \pdv{B_x}{z}) & \pdv{B_y}{x} - \pdv{B_x}{y}
+    \end{vmatrix}]_x \\
+    &= A_y \qt( \pdv{B_y}{x} - \pdv{B_x}{y})
+        - A_z \qt(\pdv{B_x}{z} - \pdv{B_z}{x})
+\end{align*}
+and
+\begin{align*}
+    [\vb{B} \cp (\curl{\vb{A}})]_x &= B_y \qt(\pdv{A_y}{x} - \pdv{A_x}{y})
+    - B_z \qt(\pdv{A_x}{z} - \pdv{A_z}{x})
+\end{align*}
+From Problem 1.22:
+\begin{align*}
+    [(\vb{A} \vdot \grad) \vb{B}] &= A_x \pdv{B_x}{x} + A_y \pdv{B_x}{y} + A_z \pdv{B_x}{z}
+\end{align*}
+and likewise,
+\begin{align*}
+    [(\vb{B} \vdot \grad) \vb{A}] &= B_x \pdv{A_x}{x} + B_y \pdv{A_x}{y} + B_z \pdv{A_x}{z}
+\end{align*}
+Adding all four equations gives
+\begin{align*}
+    [\vb{A} \cp (\curl{\vb{B}}) + \vb{B} \cp (\curl{\vb{A}}) &+ (\vb{A} \vdot \grad) \vb{B}
+        + (\vb{B} \vdot \grad) \vb{A}]_x = \\
+        A_y \qt(\pdv{B_y}{x} - \pdv{B_x}{y})
+    &- A_z \qt(\pdv{B_x}{z} - \pdv{B_z}{x}) 
+        + B_y \qt(\pdv{A_y}{x} - \pdv{A_x}{y})
+        - B_z \qt(\pdv{A_x}{z} - \pdv{A_z}{x}) \\
+        + A_x \pdv{B_x}{x}
+    &+ A_y \pdv{B_x}{y} + A_z \pdv{B_x}{z}
+        + B_x \pdv{A_x}{x} + B_y \pdv{A_x}{y} + B_z \pdv{A_x}{z} \\
+    &= A_x \pdv{B_x}{x} + A_y \qt(\pdv{B_y}{x} -
+            \cancel{\pdv{B_x}{y}} + \cancel{\pdv{B_x}{y}})
+        + A_z \qt(\pdv{B_z}{x} - 
+            \cancel{\pdv{B_x}{z}} + \cancel{\pdv{B_x}{z}} ) \\
+    &+ B_x \pdv{A_x}{x} + B_y \qt(\pdv{A_y}{x} - 
+            \cancel{\pdv{A_x}{y}} + \cancel{\pdv{A_x}{y}})
+        + B_z \qt(\pdv{A_z}{x} - 
+            \cancel{\pdv{A_x}{z}} + \cancel{\pdv{A_x}{z}}) \\
+    &= A_x \pdv{B_x}{x} + B_x \pdv{A_x}{x} + A_y \pdv{B_x}{y} + B_y \pdv{A_x}{y}
+        + A_z \pdv{B_x}{z} + B_z \pdv{A_x}{z} \\
+    &= [\grad(\vb{A} \vdot \vb{B})]_x
+\end{align*}
+and likewise for the $y$ and $z$ components. 
+
+For (vi), the $x$ on the left hand side is
+\begin{align*}
+    [\curl(\vb{A} \cp \vb{B})]_x &= \qt[\curl \begin{vmatrix}
+        \vu{x} & \vu{y} & \vu{z} \\
+        A_x & A_y & A_z \\
+        B_x & B_y & B_z
+    \end{vmatrix}]_x \\
+    &= \qt[\begin{vmatrix}
+        \vu{x} & \vu{y} & \vu{z} \\
+        \pdv{x} & \pdv{y} & \pdv{z} \\
+        () & -(A_xB_z - A_zB_x) & A_xB_y - A_yB_x
+    \end{vmatrix}]_x \\
+    &= \pdv{y}(A_xB_y - A_yB_x) - \pdv{z}(A_zB_x - A_xB_z) \\
+    &= A_x \pdv{B_y}{y} + B_y \pdv{A_x}{y} - A_y \pdv{B_x}{y} - B_x \pdv{A_y}{y} \\
+        &- A_z \pdv{B_x}{z} - B_x \pdv{A_z}{z} + A_x \pdv{B_z}{z} + B_z \pdv{A_x}{z} +  \\
+    &= A_x \qt(\pdv{B_y}{y} + \pdv{B_z}{z}) - A_y \pdv{B_x}{y} - A_z \pdv{B_x}{z} 
+        - B_x \qt(\pdv{A_y}{y} + \pdv{A_z}{z}) + B_y \pdv{A_x}{y} + B_z \pdv{A_x}{z}
+\end{align*}
+On the right hand side, first we find the $x$ component of the two new operations:
+\begin{align*}
+    [A (\grad \vdot \vb{B})]_x &= \qt[A \qt(\pdv{B_x}{x} + \pdv{B_y}{y} + \pdv{B_z}{z})]_x \\
+    &= A_x \qt(\pdv{B_x}{x} + \pdv{B_y}{y} + \pdv{B_z}{z})
+\end{align*}
+and likewise,
+\begin{align*}
+    [B (\grad \vdot \vb{A})]_x &= B_x \qt(\pdv{A_x}{x} + \pdv{A_y}{y} + \pdv{A_z}{z})
+\end{align*}
+Therefore, $[(\vb{B} \vdot \grad) \vb{A} - (\vb{A} \vdot \grad) \vb{B} + A (\grad \vdot \vb{B})
+- B (\grad \vdot \vb{A})]_x =$
+\begin{align*}
+    &B_x \pdv{A_x}{x} + B_y \pdv{A_x}{y} + B_z \pdv{A_x}{z} -  
+        \qt(A_x \pdv{B_x}{x} + A_y \pdv{B_x}{y} + A_z \pdv{B_x}{z}) \\
+        &+ A_x \qt(\pdv{B_x}{x} + \pdv{B_y}{y} + \pdv{B_z}{z}) -
+        \qt(B_x \qt(\pdv{A_x}{x} + \pdv{A_y}{y} + \pdv{A_z}{z})) \\
+    &= A_x \qt(
+        \cancel{\pdv{B_x}{x}} + \pdv{B_y}{y} + \pdv{B_z}{z} -
+        \cancel{\pdv{B_x}{x}}) 
+            - A_y \pdv{B_x}{y} - A_z \pdv{B_x}{z} \\
+        &- B_x \qt(
+            \cancel{\pdv{A_x}{x}} + \pdv{A_y}{y} + \pdv{A_z}{z} - 
+            \cancel{\pdv{A_x}{x}})
+            + B_y \pdv{A_x}{y} + B_z \pdv{A_x}{z} \\
+    &= A_x \qt(\pdv{B_y}{y} + \pdv{B_z}{z}) - A_y \pdv{B_x}{y} - A_z \pdv{B_x}{z} 
+    - B_x \qt(\pdv{A_y}{y} + \pdv{A_z}{z}) + B_y \pdv{A_x}{y} + B_z \pdv{A_x}{z} \\
+    &= [\curl(\vb{A} \cp \vb{B})]_x 
+\end{align*} 
+and likewise for the $y$ and $z$ components.
+
+\paragraph{1.24}
+Deriving the three quotient rules from the product rule: The gradient is
+\begin{align*}
+    \grad(\frac{f}{g}) &= \grad(f g^{-1}) = f \grad(g^{-1}) + g^{-1} \grad(f) \\
+    &= f (-g^{-2} \grad(g)) + g^{-1} \grad(f) \\
+    &= -\frac{f}{g^2} \grad(g) + \frac{g}{g} \frac{1}{g} \grad(f)  \\
+    &= \frac{g\grad{f} - f\grad{g}}{g^2}
+\end{align*}
+the divergence
+\begin{align*}
+    \div(\frac{A}{g}) &= \div(A g^{-1}) = A (\div g^{-1}) + g^{-1} (\div{A}) \\
+    &= A (-g^{-2} (\div{g})) + \frac{g}{g} g^{-1} (\div{A}) \\
+    &= \frac{g(\div{A}) - A\div{g}}{g^2}
+\end{align*}
+and the curl
+\begin{align*}
+    \qt[\curl(\frac{\vb{A}}{g})]_x &= \pdv{y} \qt(\frac{A_z}{g}) - \pdv{z} \qt(\frac{A_y}{g}) \\
+    &= \frac{g\pdv{A_z}{y} - A_z \pdv{g}{y}}{g^2} - \frac{g\pdv{A_y}{z} - A_y \pdv{g}{z}}{g^2} \\
+    &= \frac{1}{g^2} \qt[g \qt(\pdv{A_z}{y} - \pdv{A_y}{z})
+        + \qt(A_y \pdv{g}{z} - A_z \pdv{g}{y})] \\
+    &= \frac{g[\curl{\vb{A}}]_x - \vb{A} \cp [\grad{g}]_x}{g^2}
+\end{align*}
+and likewise for the $y$ and $z$ components. Therefore,
+\begin{align*}
+    \curl(\frac{\vb{A}}{g}) = \frac{g(\curl{\vb{A}})- \vb{A} \cp (\grad{g})}{g^2}
+\end{align*}
+
+\paragraph{1.25}
+(a) Calculating (iv) for the functions
+\begin{align*}
+    \vb{A} = x\vu{x} + 2y\vu{y} + 3z\vu{z}; \qquad \vb{B} = 3y\vu{x} - 2x\vu{y}
+\end{align*}
+LHS:
+\begin{align*}
+    \div(\vb{A} \cp \vb{B}) &= \div \begin{vmatrix}
+        \vu{x} & \vu{y} & \vu{z} \\
+        x & 2y & 3z \\
+        3y & -2x & 0
+    \end{vmatrix} \\
+    &= \div [(0 + 6xz)\vu{x} - (0 - 9yz)\vu{y} + (-2x^2 - 6y^2)\vu{z}] \\
+    &= \pdv{x}(6xz) + \pdv{y}(9yz) + \pdv{z}(-2x^2 - 6y^2) \\
+    &= 6z + 9z + 0 = 15z
+\end{align*}
+RHS:
+\begin{align*}
+    \vb{B} \vdot (\curl{\vb{A}}) &= \vb{B} \vdot \begin{vmatrix}
+        \vu{x} & \vu{y} & \vu{z} \\
+        \pdv{x} & \pdv{y} & \pdv{z} \\
+        x & 2y & 3z
+    \end{vmatrix} \\
+    &= \vb{B} \vdot [(0)\vu{x} - (0)\vu{y} + (0)\vu{z}] = 0
+\end{align*}
+and
+\begin{align*}
+    \vb{A} \vdot (\curl{\vb{B}}) &= \vb{A} \vdot \begin{vmatrix}
+        \vu{x} & \vu{y} & \vu{z} \\
+        \pdv{x} & \pdv{y} & \pdv{z} \\
+        3y & -2x & 0
+    \end{vmatrix} \\
+    &= \vb{A} \vdot [(0)\vu{x} - (0)\vu{y} + (-2 - 3)\vu{z}] \\
+    &= 3z (-5) = -15z
+\end{align*}
+therefore,
+\begin{align*}
+    \vb{B} \vdot (\curl{\vb{A}}) - \vb{A} \vdot (\curl{\vb{B}}) &= 0 - (-15z) = 15z \\
+\end{align*}
+
+(b) Checking (ii): LHS
+\begin{align*}
+    \grad(\vb{A} \vdot \vb{B}) &= \grad(x(3y) + 2y(-2x) + 3z(0)) \\
+    &= \grad(3xy - 4xy) = \grad(-xy) \\
+    &= -y\vu{x} - x\vu{y}
+\end{align*}
+RHS:
+\begin{align*}
+    \vb{A} \cp (\curl{\vb{B}}) &= \vb{A} \cp \begin{vmatrix}
+        \vu{x} & \vu{y} & \vu{z} \\
+        \pdv{x} & \pdv{y} & \pdv{z} \\
+        3y & -2x & 0
+    \end{vmatrix} \\
+    &= \vb{A} \cp [(0)\vu{x} - (0)\vu{y} + (-5)\vu{z}] \\
+    &= \begin{vmatrix}
+        \vu{x} & \vu{y} & \vu{z} \\
+        x & 2y & 3z \\
+        0 & 0 & -5
+    \end{vmatrix}
+    = -10y\vu{x} + 5x\vu{y}
+\end{align*}
+and
+\begin{align*}
+    \vb{B} \cp (\curl{\vb{A}}) = \vb{B} \cp \begin{vmatrix}
+        \vu{x} & \vu{y} & \vu{z} \\
+        \pdv{x} & \pdv{y} & \pdv{z} \\
+        x & 2y & 3z
+    \end{vmatrix}
+    = \vb{B} \cp [(0)\vu{x} - (0)\vu{y} + (0)\vu{z}] = 0
+\end{align*}
+and
+\begin{align*}
+    (\vb{A} \vdot \grad) \vb{B} &= \qt(x \pdv{x} + 2y \pdv{y} + 3z \pdv{z})(3y\vu{x} - 2x\vu{y}) \\
+    &= 6y \vu{x} - 2x \vu{y}
+\end{align*}
+and
+\begin{align*}
+    (\vb{B} \vdot \grad) \vb{A} &= \qt(3y \pdv{x} - 2x \pdv{y})(x\vu{x} + 2y\vu{y} + 3z\vu{z}) \\
+    &= 3y \vu{x} - 4x \vu{y}
+\end{align*}
+therefore,
+\begin{align*}
+    \vb{A} \cp (\curl{\vb{B}}) + \vb{B} \cp (\curl{\vb{A}})
+    + (\vb{A} \vdot \grad) \vb{B} + (\vb{B} \vdot \grad) \vb{A} &= 
+    (-10y\vu{x} + 5x\vu{y}) + (6y \vu{x} - 2x \vu{y}) + (3y \vu{x} - 4x \vu{y}) \\
+    &= -y\vu{x} - x\vu{y} 
+\end{align*}
+
+(c) For rule (vi), the left hand side is
+\begin{align*}
+    \curl(\vb{A} \cp \vb{B}) &= \curl \begin{vmatrix}
+        \vu{x} & \vu{y} & \vu{z} \\
+        x & 2y & 3z \\
+        3y & -2x & 0
+    \end{vmatrix} \\
+    &= \curl [6xz\vu{x} + 9yz\vu{y} + (-2x^2 - 6y^2)\vu{z}] \\
+    &= \begin{vmatrix}
+        \vu{x} & \vu{y} & \vu{z} \\
+        \pdv{x} & \pdv{y} & \pdv{z} \\
+        6xz & 9yz & -2x^2 - 6y^2
+    \end{vmatrix} \\
+    &= \vu{x} (-12y - 9y) - \vu{y} (-4x - 6x) + \vu{z} (0) \\
+    &= -21y\vu{x} + 10x\vu{y}
+\end{align*}
+and on the right hand side, the new terms are
+\begin{align*}
+    \vb{A} (\div{\vb{B}}) &= \vb{A} [0 + 0] = 0 
+\end{align*}
+and
+\begin{align*}
+    \vb{B} (\div{\vb{A}}) &= \vb{B} [1 + 2 + 3] = 6\vb{B} \\
+    &= 6(3y\vu{x} - 2x\vu{y}) = 18y\vu{x} - 12x\vu{y}
+\end{align*}
+combining these with the terms from (iv) gives
+\begin{align*}
+    (\vb{B} \vdot \grad) \vb{A} - (\vb{A} \vdot \grad) \vb{B}
+    + (\vb{A} \vdot \grad) \vb{B} - (\vb{B} \vdot \grad) \vb{A} &= 
+    (3y\vu{x} - 4x\vu{y}) - (6y\vu{x} - 2x\vu{y}) + 0 - (18y\vu{x} - 12x\vu{y}) \\
+    &= -21y\vu{x} + 10x\vu{y}
+\end{align*}
+
+\paragraph{1.26}
 \end{document}
 
