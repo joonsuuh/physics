@@ -894,5 +894,302 @@ combining these with the terms from (iv) gives
 \end{align*}
 
 \paragraph{1.26}
+Given the Laplacian of a scalar function $T$ is
+\begin{align*}
+    \laplacian{T} = \div(\grad{T}) = \pdv[2]{T}{x} + \pdv[2]{T}{y} + \pdv[2]{T}{z}
+\end{align*}
+(a) $T_a = x^2 + 2xy + 3z + 4$:
+\begin{align*}
+    \laplacian{T_a} = 2 + 0 + 0 = 2
+\end{align*}
+(b) $T_b = \sin{x} \sin{y} \sin{z}$:
+\begin{align*}
+    \pdv[2]{T_b}{x} = \pdv[2]{T_b}{y} = \pdv[2]{T_b}{z} = -\sin{x} \sin{y} \sin{z} = -T_b
+\end{align*}
+\begin{align*}
+    \laplacian{T_b} = -3T_b
+\end{align*}
+(c) $T_c = e^{-5x} \sin{4y} \cos{3z}$: The components are
+\begin{align*}
+    \pdv[2]{T_c}{x} &= 25e^{-5x} \sin{4y} \cos{3z} = 25T_c \\
+    \pdv[2]{T_c}{y} &= -16e^{-5x} \sin{4y} \cos{3z} = -16T_c \\
+    \pdv[2]{T_c}{z} &= -9e^{-5x} \sin{4y} \cos{3z} = -9T_c
+\end{align*}
+therefore
+\begin{align*}
+    \laplacian{T_c} = T_c(25 - 16 - 9) = 0
+\end{align*}
+(d) $\vb{v} = x^2 \vu{x} + 3xz^2 \vu{y} - 2xz \vu{z}$: The laplacian of a vector function is
+\begin{align*}
+    \laplacian{\vb{v}} = (\laplacian{v}_x) \vu{x} + (\laplacian{v_y}) \vu{y}
+        + (\laplacian{v_z}) \vu{z}
+\end{align*}
+and the components are
+\begin{align*}
+    \laplacian{v}_x &= \pdv[2]{v_x}{x} + \pdv[2]{v_x}{y} + \pdv[2]{v_x}{z} = 2 + 0 + 0 = 2 \\
+    \laplacian{v}_y &= 0 + 0 + 6x = 6x \\
+    \laplacian{v}_z &= 0
+\end{align*}
+therefore
+\begin{align*}
+    \laplacian{\vb{v}} = 2\vu{x} + 6x\vu{y}
+\end{align*}
+
+\paragraph{1.27}
+The divergence of curl is always zero:
+\begin{align*}
+    \div(\curl{\vb{v}}) &= \div \begin{vmatrix}
+        \vu{x} & \vu{y} & \vu{z} \\
+        \pdv{x} & \pdv{y} & \pdv{z} \\
+        v_x & v_y & v_z
+    \end{vmatrix} \\
+    &= \div \qt(\vu{x} \qt(\pdv{v_z}{y} - \pdv{v_y}{z}) 
+        - \vu{y} \qt(\pdv{v_z}{x} - \pdv{v_x}{z})
+        + \vu{z} \qt(\pdv{v_y}{x} - \pdv{v_x}{y})) \\
+    &= \pdv{x} \qt(\pdv{v_z}{y} - \pdv{v_y}{z})
+        + \pdv{y} \qt(\pdv{v_x}{z} - \pdv{v_z}{x})
+        + \pdv{z} \qt(\pdv{v_y}{x} - \pdv{v_x}{y}) \\
+    &= \qt[\pdv{x}(\pdv{v_z}{y}) - \pdv{y}(\pdv{v_z}{x})]
+        + \qt[\pdv{y}(\pdv{v_x}{z}) - \pdv{z}(\pdv{v_x}{y})]
+        + \qt[\pdv{z}(\pdv{v_y}{x}) - \pdv{x}(\pdv{v_y}{z})] \\
+    \div(\curl{\vb{v}}) &= 0
+\end{align*}
+where the last step hinges on the equality of cross derivatives:
+\begin{align*}
+    \pdv{x_i}(\pdv{v}{x_j}) &= \pdv{x_j}(\pdv{v}{x_i}) \\
+\end{align*}
+Checking for $v_a = x^2\vu{x} + 2xz^2 \vu{y} - 2xz \vu{z}$:
+\begin{align*}
+    \div(\curl{v_a}) &= \div \begin{vmatrix}
+        \vu{x} & \vu{y} & \vu{z} \\
+        \pdv{x} & \pdv{y} & \pdv{z} \\
+        x^2 & 2xz^2 & -2xz
+    \end{vmatrix} \\
+    &= \div \qt[\vu{x} \qt(0 - 4xz) - \vu{y} \qt(-2z - 0) + \vu{z} \qt(2z^2 - 0)] \\
+    &= \div \qt[\pdv{x}(-4xz) + \pdv{y}(2z) + \pdv{z}(2z^2)]\\
+    &= -4z + 0 + 4z = 0
+\end{align*}
+
+\paragraph{1.28}
+The curl of gradient is always zero:
+\begin{align*}
+    \curl(\grad{T}) &= \curl \qt(\pdv{T}{x} \vu{x} + \pdv{T}{y} \vu{y} + \pdv{T}{z} \vu{z}) \\
+    &= \begin{vmatrix}
+        \vu{x} & \vu{y} & \vu{z} \\
+        \pdv{x} & \pdv{y} & \pdv{z} \\
+        \pdv{T}{x} & \pdv{T}{y} & \pdv{T}{z}
+    \end{vmatrix} \\
+    &= \vu{x} \qt[\pdv{y}(\pdv{T}{z}) - \pdv{z}(\pdv{T}{y})]
+        - \vu{y} \qt[\pdv{x}(\pdv{T}{z}) - \pdv{z}(\pdv{T}{x})]
+        + \vu{z} \qt[\pdv{x}(\pdv{T}{y}) - \pdv{y}(\pdv{T}{x})] \\
+    \curl(\grad{T}) &= 0
+\end{align*}
+where the last step uses the equality of cross derivatives again. Checking for $T = x^2y^3z^4$:
+\begin{align*}
+    \pdv{T}{x} &= 2xy^3z^4 ,\quad \pdv{T}{y} = 3x^2y^2z^4 ,\qand \pdv{T}{z} = 4x^2y^3z^3 \\
+\end{align*}
+and
+\begin{align*}
+    \curl(\grad{T}) &= \curl \qt(2xy^3z^4 \vu{x} + 3x^2y^2z^4 \vu{y} + 4x^2y^3z^3 \vu{z}) \\
+    &= \begin{vmatrix}
+        \vu{x} & \vu{y} & \vu{z} \\
+        \pdv{x} & \pdv{y} & \pdv{z} \\
+        2xy^3z^4 & 3x^2y^2z^4 & 4x^2y^3z^3
+    \end{vmatrix} \\
+    &= \vu{x} \qt(12x^2y^2z^4 - 12x^2y^2z^4) - \vu{y} \qt(8x^2y^3z^3 - 8x^2y^3z^3)
+        + \vu{z} \qt(6x^2y^3z^3 - 6x^2y^3z^3) \\
+    &= 0
+\end{align*}
+
+\paragraph{1.29}
+Calculating the line integral of the function $\vb{v} = x^2 \vu{x} + 2yz \vu{y} + y^2 \vu{z}$:
+from the origin to point $(1,1,1)$ along three different paths:
+
+(a) $a = (0,0,0) \to b = (1,0,0) \to c = (1,1,0) \to d = (1,1,1)$ split to three paths:
+
+(i)   From $a \to b$: $\dd{l} = \dd{x} \vu{x}$ and $\vb{v} = x^2 \vu{x}$. \\
+(ii)  From $b \to c$: $\dd{l} = \dd{y} \vu{y}$ and $\vb{v} = 2yz \vu{y} = 0$ since $z=0$. \\
+(iii) From $c \to d$: $\dd{l} = \dd{z} \vu{z}$ and $\vb{v} = y^2 \vu{z} = 1\vu{z}$ since $y=1$.
+\begin{align*}
+    \int_a^b \vb{v} \vdot \dd{\vb{l}} &= \int_0^1 x^2 \dd{x} = \frac{1}{3} \\
+    \int_b^c \vb{v} \vdot \dd{\vb{l}} &= \int_0^1 0 \dd{y} = 0 \\
+    \int_c^d \vb{v} \vdot \dd{\vb{l}} &= \int_0^1 1 \dd{z} = 1 \\
+    \int_a^d \vb{v} \vdot \dd{\vb{l}} &= \frac{1}{3} + 0 + 1 = \frac{4}{3}
+\end{align*}
+
+(b) $a= (0,0,0) \to b = (0,0,1) \to c = (0,1,1) \to d = (1,1,1)$ split to three paths:
+
+(i)   From $a \to b$: $\dd{l} = \dd{z} \vu{z}$ and $\vb{v} = y^2 \vu{z} = 0$ since $y=0$. \\
+(ii)  From $b \to c$: $\dd{l} = \dd{y} \vu{y}$ and $\vb{v} = 2yz \vu{y} = 2y \vu{z}$ since $y=1$. \\
+(iii) From $c \to d$: $\dd{l} = \dd{x} \vu{x}$ and $\vb{v} = x^2 \vu{x}$.
+\begin{align*}
+    \int_a^b \vb{v} \vdot \dd{\vb{l}} &= \int_0^1 0 \dd{z} = 0 \\
+    \int_b^c \vb{v} \vdot \dd{\vb{l}} &= \int_0^1 2y \dd{y} = 1 \\
+    \int_c^d \vb{v} \vdot \dd{\vb{l}} &= \int_0^1 x^2 \dd{x} = \frac{1}{3} \\
+    \int_a^d \vb{v} \vdot \dd{\vb{l}} &= 0 + 1 + \frac{1}{3} = \frac{4}{3}
+\end{align*}
+
+(c) A straight line: Since $x = y = z$ and $\dd{x} = \dd{y} = \dd{z}$,
+
+$\dd{l} = \dd{x} (\vu{x} + \vu{y} + \vu{z})$
+and $\vb{v} = x^2 \vu{x} + 2yz \vu{y} + y^2 \vu{z} = 4x^2 \vu{x}$.
+\begin{align*}
+    \int_a^d \vb{v} \vdot \dd{\vb{l}} &= \int_0^1 4x^2 \dd{x} = \frac{4}{3}
+\end{align*}
+
+(d) The line integral around the closed loop:
+\begin{align*}
+    \oint \vb{v} \vdot \dd{\vb{l}} &= \int_{(a)} \vb{v} \vdot \dd{\vb{l}}
+        - \int_{(b)} \vb{v} \vdot \dd{\vb{l}}  = \frac{4}{3} - \frac{4}{3} = 0
+\end{align*}
+
+\paragraph{1.30}
+Surface integral of $\vb{v} = 2xz\vu{x} + (x+2)\vu{y} + y(z^2-3)\vu{z}$ over the bottom of the box:
+
+$z = 0$, $\dd{\vb{A}} = \dd{x}\dd{y} \vu{z}$
+$\vb{v} \vdot \dd{\vb{A}} = y(z^2-3) \dd{x}\dd{y} = -3y \dd{x}\dd{y}$, so
+\begin{align*}
+    \int \vb{v} \vdot \dd{\vb{A}} &= \int_0^2 \dd{x} \int_0^2 -3y \dd{y} = -12
+\end{align*}
+From Example 1.7 (v) has the same boundary line but a different surface integral, so the surface
+integral does not depend on just the boundary line. The surface over the closed surface of the box 
+is 
+\begin{align*}
+    \oint \vb{v} \vdot \dd{\vb{A}} &= 20 + 12 = 32
+\end{align*}
+since the direction of $\dd{\vb{A}}$ on the bottom side is in the negative $z$ direction for it to
+point `outward'.
+
+\paragraph{1.31}
+Calculating the volume integral of $T = z^2$ over the tetrahedron with vertices $(0,0,0)$,
+$(1,0,0)$, $(0,1,0)$, and $(0,0,1)$:
+
+The equation of the plane containing the three vertices $A=(1,0,0)$, $B=(0,1,0)$, and $C(0,0,1)$:
+The vector normal to this plane $\vb{n} = (a, b, c)$ is the cross product of two vectors in the
+plane given by $\vb{AB} = (-1, 1, 0)$ and $\vb{AC} = (-1, 0, 1)$:
+\begin{align*}
+    \vb{n} = \begin{vmatrix}
+        x & y & z \\
+        -1 & 1 & 0 \\
+        -1 & 0 & 1
+    \end{vmatrix} &= (1, 1, 1)
+\end{align*}
+the equation of the plane is therefore
+\begin{align*}
+    \vb{n} \vdot (\vb{r} - \vb{r}_o) &= 0 \\
+    (1, 1, 1) \vdot [(x, y, z) - A] &= 0 \\
+    x + y + z &= 1
+\end{align*}
+therefore, the boundary for $x$ is $x = 0$ and $x = 1 - y - z$; for $y$ is $y = 0$ and $y = 1 - z$;
+and for $z$ is $z = 0$ and $z = 1$. The volume integral is therefore
+\begin{align*}
+    \int T\dd{V} &= \int_0^1 z^2 \dd{z} \int_0^{1-z} \dd{y} \int_0^{1-y-z} \dd{x} \\
+    &= \int_0^1 z^2 \dd{z} \int_0^{1-z} (1-y-z) \dd{y} \\
+    &= \int_0^1 z^2 \dd{z} \qt(\eval{y - y^2/2 -yz}_0^{1-z}) \\
+    &= \int_0^1 z^2 [(1-z) - (1-z)^2/2 - z(1-z)] \dd{z} \\
+    &= \int_0^1 z^2 (1-z-1/2-z^2/2+z-z+z^2) \dd{z} \\
+    &= \int_0^1 z^2 (1/2 - z + z^2/2) \dd{z} \\
+    &= \int_0^1 (z^2/2 - z^3 + z^4/2) \dd{z} \\
+    &= \eval{z^3/6 - z^4/4 + z^5/10}_0^1 \\
+    &= 1/6 - 1/4 + 1/10 = 1/60
+\end{align*}
+
+\paragraph{1.32}
+Given $T = x^2 + 4xy + 2yz^3$,
+\begin{align*}
+    \pdv{T}{x} = 2x + 4y  ,\quad     \pdv{T}{y} = 4x + 2z^3  ,\qand   \pdv{T}{z} = 6yz^2
+\end{align*}
+therefore,
+\begin{align*}
+    \grad{T} = \vu{x}(2x + 4y) + \vu{y}(4x + 2z^3) + \vu{z}(6yz^2)
+\end{align*}
+Checking the fundamental theorem for gradients using the points $a = (0,0,0) \to b = (1,1,1)$:
+\begin{align*}
+    \int_a^b \grad{T} \vdot \dd{\vb{l}} = T(b) - T(a) = 1^2 + 4(1)(1) + 2(1)(1)^3 - 0 = 7
+\end{align*}
+For the three paths:
+(a) $a \to  c = (1,0,0) \to d = (1,1,0) \to d$; \\
+(i) $a \to c$:
+\begin{align*}
+    y = z = \dd{y} = \dd{z} = 0; \quad \dd{\vb{l}} = \dd{x} \vu{x};
+        \quad \grad{T} \vdot \dd{\vb{l}} = 2x \dd{x}
+\end{align*}
+and
+\begin{align*}
+    \int_a^c \grad{T} \vdot \dd{\vb{l}} = \int_0^1 2x \dd{x} = 1
+\end{align*}
+(ii) $c \to d$:
+\begin{align*}
+    x = 1, \quad z = \dd{x} = \dd{z} = 0; \quad \dd{\vb{l}} = \dd{y} \vu{y};
+        \quad \grad{T} \vdot \dd{\vb{l}} = 4 \dd{y}
+\end{align*}
+and
+\begin{align*}
+    \int_c^d \grad{T} \vdot \dd{\vb{l}} = \int_0^1 4 \dd{y} = 4
+\end{align*}
+(iii) $d \to b$:
+\begin{align*}
+    x = y = 1, \quad \dd{x} = \dd{y} = 0; \quad \dd{\vb{l}} = \dd{z} \vu{z};
+        \quad \grad{T} \vdot \dd{\vb{l}} = 6z^2 \dd{z}
+\end{align*}
+and
+\begin{align*}
+    \int_d^b \grad{T} \vdot \dd{\vb{l}} = \int_0^1 6z^2 \dd{z} = 2
+\end{align*}
+therefore,
+\begin{align*}
+    \int_a^b \grad{T} \vdot \dd{\vb{l}} = 1 + 4 + 2 = 7
+\end{align*}
+(b) $a \to  c = (0,0,1) \to d = (0,1,1) \to b$; \\
+(i) $a \to c$:
+\begin{align*}
+    x = y = \dd{x} = \dd{y} = 0; \quad \dd{\vb{l}} = \dd{z} \vu{z};
+        \quad \grad{T} \vdot \dd{\vb{l}} = 0
+\end{align*}
+and
+\begin{align*}
+    \int_a^c \grad{T} \vdot \dd{\vb{l}} = \int_0^1 0 = 0
+\end{align*}
+(ii) $c \to d$:
+\begin{align*}
+    z = 1, \quad x = \dd{x} = \dd{z} = 0; \quad \dd{\vb{l}} = \dd{y} \vu{y};
+        \quad \grad{T} \vdot \dd{\vb{l}} = 2 \dd{y}
+\end{align*}
+and
+\begin{align*}
+    \int_c^d \grad{T} \vdot \dd{\vb{l}} = \int_0^1 2 \dd{y} = 2
+\end{align*}
+(iii) $d \to b$:
+\begin{align*}
+    y = z = 1, \quad \dd{y} = \dd{z} = 0; \quad \dd{\vb{l}} = \dd{x} \vu{x};
+        \quad \grad{T} \vdot \dd{\vb{l}} = (2x+4) \dd{x}
+\end{align*}
+and
+\begin{align*}
+    \int_d^b \grad{T} \vdot \dd{\vb{l}} = \int_0^1 (2x+4) \dd{x} = 5
+\end{align*}
+therefore,
+\begin{align*}
+    \int_a^b \grad{T} \vdot \dd{\vb{l}} = 0 + 2 + 5 = 7
+\end{align*}
+(c) the parabolic path $z = x^2$; $y = x$:
+\begin{align*}
+    \dd{x} = \dd{y}, \qand \dd{z} = 2x \dd{x}; \quad
+    \dd{\vb{l}} = \dd{x} \vu{x} + \dd{x} \vu{y} + 2x\dd{x} \vu{z}
+\end{align*}
+and
+\begin{align*}
+    \grad{T} \vdot \dd{\vb{l}} &= (2x+4y) \dd{x} + (4x+2z^3) \dd{x} + (6yz^2) 2x\dd{x} \\
+    &= 6x \dd{x} + (4x + 2x^6) \dd{x} + (12x^6) \dd{x} \\
+    &= 10x \dd{x} + 14x^6 \dd{x}
+\end{align*}
+therefore,
+\begin{align*}
+    \int_a^b \grad{T} \vdot \dd{\vb{l}} &= \int_0^1 (10x + 14x^6) \dd{x} \\
+    &= \eval{5x^2 + 2x^7}_0^1 = 7
+\end{align*}
+
+\paragraph{1.33}
+
 \end{document}
 
