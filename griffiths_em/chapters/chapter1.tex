@@ -1190,6 +1190,1104 @@ therefore,
 \end{align*}
 
 \paragraph{1.33}
+Checking the divergence theorem for the function:
+\begin{align*}
+    \vb{v} = (xy) \vu{x} + (2yz) \vu{y} + (3zx)\vu{z}
+\end{align*}
+and the volume as the cube of sides of lenght 2 with a corner at the origin:
+\begin{align*}
+    \div{\vb{v}} = y + 2z + 3x
+\end{align*}
+Thus the volume integral
+\begin{align*}
+    \int_V \div{\vb{v}} \dd{V} &= \int_0^2 \int_0^2 \int_0^2(y + 2z + 3x) \dd{x}\dd{y}\dd{z} \\
+    &= \int_0^2 \int_0^2 (2y + 4z + 6) \dd{y}\dd{z} \\
+    &= \int_0^2 (4 + 8z + 12) \dd{z} \\
+    &= 8 + 16 + 24 = 48
+\end{align*}
+The surface integral is evaluated over the six faces of the cube noted by Figure 1.29: \\
+(i) $x = 2$, $\dd{\vb{A}} = \dd{y}\dd{z} \vu{x}$, $\vb{v} \vdot \dd{\vb{A}} = 2y \dd{y}\dd{z}$;
+\begin{align*}
+    \int \vb{v} \vdot \dd{\vb{A}} &= \int_0^2 \int_0^2 2y \dd{y}\dd{z} = 8
+\end{align*}
+(ii) $x = 0$, $\dd{\vb{A}} = -\dd{y}\dd{z} \vu{x}$, $\vb{v} \vdot \dd{\vb{A}} = 0$;
+\begin{align*}
+    \int \vb{v} \vdot \dd{\vb{A}} &= \int_0^2 \int_0^2 0 \dd{y}\dd{z} = 0
+\end{align*}
+(iii) $y = 2$, $\dd{\vb{A}} = \dd{x}\dd{z} \vu{y}$, $\vb{v} \vdot \dd{\vb{A}} = 4z \dd{x}\dd{z}$;
+\begin{align*}
+    \int \vb{v} \vdot \dd{\vb{A}} &= \int_0^2 \int_0^2 4z \dd{x}\dd{z} = 16
+\end{align*}
+(iv) $y = 0$;
+\begin{align*}
+    \int \vb{v} \vdot \dd{\vb{A}} &= 0
+\end{align*}
+(v) $z = 2$, $\dd{\vb{A}} = \dd{x}\dd{y} \vu{z}$, $\vb{v} \vdot \dd{\vb{A}} = 6x \dd{x}\dd{y}$;
+\begin{align*}
+    \int \vb{v} \vdot \dd{\vb{A}} &= \int_0^2 \int_0^2 6x \dd{x}\dd{y} = 24
+\end{align*}
+(vi) $z = 0$;
+\begin{align*}
+    \int \vb{v} \vdot \dd{\vb{A}} &= 0
+\end{align*}
+So, the total flux is
+\begin{align*}
+    \oint_S \vb{v} \vdot \dd{\vb{A}} &= 8 + 0 + 16 + 0 + 24 + 0 = 48
+\end{align*}
+therefore, the divergence theorem is verified.
+\begin{align*}
+    \int_V (\div{\vb{v}}) \dd{V} &= \oint_S \vb{v} \vdot \dd{\vb{A}}
+\end{align*}
+\newpage
+\paragraph{1.34}
+Testing Stokes' theorem for the function
+\begin{align*}
+    \vb{v} = (xy) \vu{x} + (2yz) \vu{y} + (3zx)\vu{z}
+\end{align*}
+using the triangular shaded area bounded by the vertices
+$O = (0,0,0)$, $A = (0,2,0)$, and $B = (0,0,2)$:
+\begin{align*}
+    \curl{\vb{v}} &= (0 - 2y) \vu{x} - (3z - 0) \vu{y} + (0 - x) \vu{z}
+                                                        \qand \dd{\vb{A}} = \dd{y}\dd{z} \vu{x} \\
+                  &= -2y \vu{x} - 3z \vu{y} - x \vu{z}
+\end{align*}
+$x=0$ on this surface, and the limits of integration are $z = 0$ and $z = 2 - y$:
+\begin{align*}
+    (\curl{\vb{v}}) \vdot \dd{\vb{A}} &= -2y \dd{y}\dd{z}
+\end{align*}
+Thus, the flux of the curl through the surface is
+\begin{align*}
+    \int_S (\curl{\vb{v}}) \vdot \dd{\vb{A}} &= \int_0^2 \dd{y}\int_0^{2-y} -2y \dd{z} \\
+    &= \int_0^2 -2y(2-y) \dd{y} = -8/3
+\end{align*}
+The line integral is evaluated over the three sides of the triangle: \\
+(i) On the path $OA$:
+$x = z = 0$; $\dd{\vb{l}} = \dd{y} \vu{y}$; $\vb{v} \vdot \dd{\vb{l}} = 2yz \dd{y} = 0$;
+\begin{align*}
+    \int_{OA} \vb{v} \vdot \dd{\vb{l}} &= 0
+\end{align*}
+(ii) On the path $AB$: \\
+$x = 0$, $y = 2 - z$; $\dd{y} = -\dd{z}$; $\dd{\vb{l}} = -\dd{z}(\vu{y} - \vu{z})$;
+$\vb{v} \vdot \dd{\vb{l}} = -2yz \dd{z} = -2(2 - z)z \dd{z} = (2z^2 - 4z) \dd{z}$;
+\begin{align*}
+    \int_{AB} \vb{v} \vdot \dd{\vb{l}} &= \int_0^2 (2z^2 - 4z) \dd{z} = -8/3
+\end{align*}
+(iii) On the path $BO$: \\
+$x = y = 0$; $\dd{\vb{l}} = \dd{z} \vu{z}$; $\vb{v} \vdot \dd{\vb{l}} = 0$;
+\begin{align*}
+    \int_{BO} \vb{v} \vdot \dd{\vb{l}} &= 0
+\end{align*}
+So, the circulation of $\vb{v}$ around the triangle is
+\begin{align*}
+    \oint \vb{v} \vdot \dd{\vb{l}} &= 0 + -8/3 + 0 = -8/3
+\end{align*}
+thus,
+\begin{align*}
+    \int_S (\curl{\vb{v}}) \vdot \dd{\vb{A}} &= \oint \vb{v} \vdot \dd{\vb{l}}
+\end{align*}
 
+\paragraph{1.35}
+By Corollary 1, the function
+\begin{align*}
+    \vb{v} = (2xz + 3y^2) \vu{y} + (4yz^2) \vu{z}
+\end{align*}
+with curl
+\begin{align*}
+    \curl{\vb{v}} = (4z^2 - 2x) \vu{x} + 2z \vu{z}
+\end{align*}
+the flux of the curl through the flat surface from Ex. 1.11
+\begin{align*}
+    \int_S (\curl{\vb{v}}) \vdot \dd{\vb{A}} &= \frac{4}{3}
+\end{align*}
+is the same as a different surface shown by Figure 1.35 which has the same boundary. Integrating
+over the five faces: \\
+(i) $x=1, \quad \dd{\vb{A}} = \dd{y}\dd{z} \vu{x};
+\quad (\curl{\vb{v}}) \vdot \dd{\vb{A}} = (4z^2 - 2) \dd{y}\dd{z};$
+\begin{align*}
+    \int (\curl{\vb{v}}) \vdot \dd{\vb{A}}
+        = \int_0^1 \int_0^1 (4z^2 - 2) \dd{y}\dd{z} = -\frac{2}{3}
+\end{align*}
+(ii) $z = 0, \quad \dd{\vb{A}} = -\dd{x}\dd{y} \vu{z};
+\quad (\curl{\vb{v}}) \vdot \dd{\vb{A}} = 0;$
+\begin{align*}
+    \int (\curl{\vb{v}}) \vdot \dd{\vb{A}} = 0
+\end{align*}
+(iii) $y = 1, \quad \dd{\vb{A}} = \dd{x}\dd{z} \vu{y};
+\quad (\curl{\vb{v}}) \vdot \dd{\vb{A}} = 0;$
+\begin{align*}
+    \int (\curl{\vb{v}}) \vdot \dd{\vb{A}} = 0
+\end{align*}
+(iv) Similar to (iii), $(\curl{\vb{v}}) \vdot \dd{\vb{A}} = 0;$
+\begin{align*}
+    \int (\curl{\vb{v}}) \vdot \dd{\vb{A}} = 0
+\end{align*}
+(v) $z = 1, \quad \dd{\vb{A}} = \dd{x}\dd{y} \vu{z};
+\quad (\curl{\vb{v}}) \vdot \dd{\vb{A}} = 2 \dd{x}\dd{y};$
+\begin{align*}
+    \int (\curl{\vb{v}}) \vdot \dd{\vb{A}} = \int_0^1 \int_0^1 2 \dd{x}\dd{y} = 2
+\end{align*}
+So,
+\begin{align*}
+    \int_S (\curl{\vb{v}}) \vdot \dd{\vb{A}} = -\frac{2}{3} + 0 + 0 + 0 + 2 = \frac{4}{3}
+\end{align*}
+Thus the flux of the curl through a surface depends only on the boundary line.
+
+\paragraph{1.36}
+(a) From the product rule
+\begin{align*}
+    \curl(f\vb{A}) = f(\curl{\vb{A}}) - A \cp (\grad{f})
+\end{align*}
+and integrating over a surface
+\begin{align*}
+    \int_S \curl(f\vb{A}) \vdot \dd{\vb{a}} &= \int_S f(\curl{\vb{A}}) \vdot \dd{\vb{a}}
+        - \int_S [\vb{A} \cp (\grad{f})] \vdot \dd{\vb{a}}
+\end{align*}
+or rewritten as
+\begin{align*}
+    \int_S f(\curl{\vb{A}}) \vdot \dd{\vb{a}} = \int_S \curl(f\vb{A}) \vdot \dd{\vb{a}}
+        + \int_S [\vb{A} \cp (\grad{f})] \vdot \dd{\vb{a}}
+\end{align*}
+invoking Stokes' theorem 
+$\int_S (\curl{\vb{v}}) \vdot \dd{\vb{a}} = \oint_P \vb{v} \vdot \dd{\vb{l}}$:
+\begin{align*}
+    \int_S f(\curl{\vb{A}}) \vdot \dd{\vb{a}} &= \oint_P f(\vb{A}) \vdot \dd{\vb{l}}
+        + \int_S [\vb{A} \cp (\grad{f})] \vdot \dd{\vb{a}}
+\end{align*}
+
+(b) From the product rule for divergence:
+\begin{align*}
+    \div{(\vb{A} \cp \vb{B})} = \vb{B} \vdot (\curl{\vb{A}}) - \vb{A} \vdot (\curl{\vb{B}})
+\end{align*}
+or rewritten as
+\begin{align*}
+    \vb{B} \vdot (\curl{\vb{A}}) = \div{(\vb{A} \cp \vb{B})} + \vb{A} \vdot (\curl{\vb{B}})
+\end{align*}
+integrating both sides over a volume:
+\begin{align*}
+    \int_V \vb{B} \vdot (\curl{\vb{A}}) \dd{V} &= \int_V \div{(\vb{A} \cp \vb{B})} \dd{V}
+        + \int_V \vb{A} \vdot (\curl{\vb{B}}) \dd{V}
+\end{align*}
+Using the divergence theorem $\int_V (\div{\vb{v}}) \dd{V} = \oint_S \vb{v} \vdot \dd{\vb{a}}$:
+\begin{align*}
+    \int_V \vb{B} \vdot (\curl{\vb{A}}) \dd{V} &= \oint_S (\vb{A} \cp \vb{B}) \vdot \dd{\vb{a}}
+        + \int_V \vb{A} \vdot (\curl{\vb{B}}) \dd{V}
+\end{align*}
+
+\paragraph{1.37}
+Given the relation of Cartesian to spherical coordinates:
+\begin{align*}
+    x = r\sin\theta \cos\phi, \quad y = r\sin\theta \sin\phi, \qand z = r\cos\theta
+\end{align*}
+To find the formula for $r$, take the sum of the squares of the three equations; Solve for $\theta$
+using the third equation; and solve for $\phi$ by dividing the second equation by the first:
+\begin{align*}
+    r = \sqrt{x^2 + y^2 + z^2}, \quad \theta = \arccos{\frac{z}{r}}, \qand
+    \phi = \arctan{\frac{y}{x}}
+\end{align*}
+
+\paragraph{1.38}
+From the position vector
+\begin{align*}
+    \vb{r} &= x\vu{x} + y\vu{y} + z\vu{z} \\
+    \vb{r} &= r\sin\theta \cos\phi\vu{x} + r\sin\theta \sin\phi\vu{y} + r\cos\theta \vu{z} \\
+    \vb{r} &= r \vu{r}(\theta, \phi)
+\end{align*}
+where the unit vector $\vu{r}(\theta, \phi)$ is dependent on $\theta$ and $\phi$.
+The new basis vectors are in the same direction as the partial derivatives with respect to $r$,
+$\theta$, and $\phi$, so
+\begin{align*}
+    \vu{r} = \frac{e_r}{\abs{e_r}}, \quad
+    \vu*{\theta} = \frac{e_{\theta}}{\abs{e_{\theta}}}, \qand
+    \vu*{\phi} = \frac{e_{\phi}}{\abs{e_{\phi}}}
+\end{align*}
+The partial derivatives are
+\begin{align*}
+    e_r = \pdv{\vb{r}}{r} &= \sin\theta \cos\phi\vu{x} + \sin\theta \sin\phi\vu{y}
+        + \cos\theta \vu{z} \\
+    e_{\theta} = \pdv{\vb{r}}{\theta} &= r\cos\theta \cos\phi\vu{x} + r\cos\theta \sin\phi\vu{y}
+        - r\sin\theta \vu{z} \\
+    e_{\phi} = \pdv{\vb{r}}{\phi} &= -r\sin\theta \sin\phi\vu{x} + r\sin\theta \cos\phi\vu{y}
+\end{align*}
+and the magnitude
+\begin{align*}
+    \abs{e_r}
+        &= \sqrt{\sin^2\theta \cos^2\phi + \sin^2\theta \sin^2\phi + \cos^2\theta} \\
+        &= \sqrt{\sin^2\theta (\cos^2\phi + \sin^2\phi) + \cos^2\theta} \\
+        &= \sqrt{\sin^2\theta + \cos^2\theta} = 1 \\
+    \abs{e_{\theta}}
+        &= \sqrt{r^2 (\cos^2\theta \cos^2\phi + \cos^2\theta \sin^2\phi + \sin^2\theta)} \\
+        &= \sqrt{r^2 (\cos^2\theta (\cos^2\phi + \sin^2\phi) + \sin^2\theta)} \\
+        &= \sqrt{r^2 (\cos^2\theta + \sin^2\theta)} = r \\
+    \abs{e_{\phi}}
+        &= \sqrt{r^2 (\sin^2\theta \sin^2\phi + \sin^2\theta \cos^2\phi)} \\
+        &= \sqrt{r^2 \sin^2\theta (\sin^2\phi + \cos^2\phi)} \\
+        &= \sqrt{r^2 \sin^2\theta} = r\sin\theta
+\end{align*}
+thus, the unit vectors are:
+\begin{align*}
+    \vu{r} &= \sin\theta \cos\phi\vu{x} + \sin\theta \sin\phi\vu{y} + \cos\theta \vu{z} \\
+    \vu*{\theta} &= \cos\theta \cos\phi\vu{x} + \cos\theta \sin\phi\vu{y} - \sin\theta \vu{z} \\
+    \vu*{\phi} &= -\sin\phi\vu{x} + \cos\phi\vu{y}
+\end{align*}
+or in matrix form:
+\begin{align*}
+    \mqty(
+        \vu{r} \\
+        \vu*{\theta} \\
+        \vu*{\phi}
+    ) &=
+    \begin{pmatrix}
+        \sin\theta \cos\phi & \sin\theta \sin\phi & \cos\theta \\
+        \cos\theta \cos\phi & \cos\theta \sin\phi & -\sin\theta \\
+        -\sin\phi           & \cos\phi            & 0 
+    \end{pmatrix}
+    \mqty(
+        \vu{x} \\
+        \vu{y} \\
+        \vu{z}
+    )
+\end{align*}
+where $a = Qx$ is an orthogonal matrix, so $Q^T = Q^{-1}$ and $Q^T Q = I$. Multiplying both
+sides by $Q^T$:
+\begin{align*}
+    Q^T a = Q^T Q x \to x = Q^T a
+\end{align*}
+thus, the inverse formula is
+\begin{align*}
+    \mqty(
+        \vu{x} \\
+        \vu{y} \\
+        \vu{z}
+    ) &=
+    \begin{pmatrix}
+        \sin\theta \cos\phi & \cos\theta \cos\phi & -\sin\phi \\
+        \sin\theta \sin\phi & \cos\theta \sin\phi & \cos\phi \\
+        \cos\theta          & -\sin\theta         & 0 
+    \end{pmatrix}
+    \mqty(
+        \vu{r} \\
+        \vu*{\theta} \\
+        \vu*{\phi}
+    )
+\end{align*}
+or in vector form:
+\begin{align*}
+    \vu{x} &= \sin\theta \cos\phi \vu{r} + \cos\theta \cos\phi \vu*{\theta} - \sin\phi \vu*{\phi} \\
+    \vu{y} &= \sin\theta \sin\phi \vu{r} + \cos\theta \sin\phi \vu*{\theta} + \cos\phi \vu*{\phi} \\
+    \vu{z} &= \cos\theta \vu{r} - \sin\theta \vu*{\theta}
+\end{align*}
+
+\paragraph{1.39}
+(a) Divergence theorem for $\vb{v}_1 = r^2 \vu{r}$ using a volume of a sphere of radius $R$ centered
+at the origin: The divergence is
+\begin{align*}
+    \div{\vb{v}_1} = \frac{1}{r^2} \pdv{r}(r^2 (r^2)) = 4r
+\end{align*}
+and the volume and surface elements are
+\begin{align*}
+    \dd{V} = r^2 \sin\theta \dd{r}\dd{\theta}\dd{\phi}, \qand
+    \dd{\vb{a}_1} = (r^2 \sin\theta) \dd{\theta}\dd{\phi} \vu{r}
+\end{align*}
+So
+\begin{align*}
+    \int_V (\div{\vb{v}_1}) \vdot \dd{V} &= \int_{r=0}^R \int_{\theta=0}^\pi \int_{\phi=0}^{2\pi}
+        4r (r^2 \sin\theta) \dd{\theta}\dd{\phi} \dd{r} \\
+    &= \int_0^R  4r^3 \dd{r} \int_0^\pi \sin\theta \dd{\theta} \int_0^{2\pi} \dd{\phi} \\
+    &= (R^4) (2) (2\pi) = 4\pi R^4
+\end{align*}
+and 
+\begin{align*}
+    \oint_S \vb{v}_1 \vdot \dd{\vb{a}_1} &= \int_{\theta = 0}^\pi \int_{\phi = 0}^{2\pi}
+        r^2(r^2 \sin\theta) \dd{\theta}\dd{\phi} \\
+    &= r^4 \int_0^\pi \sin\theta \dd{\theta} \int_0^{2\pi} \dd{\phi} \\
+    &= (r^4) (2) (2\pi) = 4\pi r^4
+\end{align*}
+where $r = R$ on the surface of the sphere. Therefore, 
+\begin{align*}
+    \int_V (\div{\vb{v}_1}) \vdot \dd{V} &= \oint_S \vb{v}_1 \vdot \dd{\vb{a}_1}
+\end{align*}
+(b) For $\vb{v}_2 = (1/r^2)\vu{r}$:
+\begin{align*}
+    \div{\vb{v}_2} = \frac{1}{r^2} \pdv{r}(r^2 (1/r^2)) = 0
+\end{align*}
+So
+\begin{align*}
+    \int_V (\div{\vb{v}_2}) \vdot \dd{V} = 0
+\end{align*}
+and
+\begin{align*}
+    \oint_S \vb{v}_2 \vdot \dd{\vb{a}_1} &= \int_{\theta = 0}^\pi \int_{\phi = 0}^{2\pi}
+        \frac{1}{r^2} (r^2 \sin\theta) \dd{\theta}\dd{\phi} \\
+    &= \int_0^\pi \sin\theta \dd{\theta} \int_0^{2\pi} \dd{\phi} = 4\pi
+\end{align*}
+
+\paragraph{1.40}
+Given the function
+\begin{align*}
+    \vb{v} = (r \cos\theta) \vu{r} + (r \sin\theta) \vu*{\theta} + (r\sin\theta \cos\phi) \vu*{\phi}
+\end{align*}
+the divergence in spherical coordinates is
+\begin{align*}
+    \div{\vb{v}} &= \frac{1}{r^2} \pdv{r} (r^2 v_r)
+        + \frac{1}{r \sin\theta} \pdv{\theta} (\sin\theta v_\theta)
+        + \frac{1}{r \sin\theta} \pdv{\phi} (v_\phi) \\
+    &= \frac{1}{r^2} \pdv{r} (r^3 \cos\theta)
+        + \frac{1}{r \sin\theta} \pdv{\theta} (r \sin^2\theta)
+        + \frac{1}{r \sin\theta} \pdv{\phi} (r\sin\theta \cos\phi) \\
+    &= 3 \cos\theta + 2 \cos\theta - \sin\phi \\
+    &= 5 \cos\theta - \sin\phi
+\end{align*}
+Checking the divergence theorem using a volume of a inverted hemispherical bowl of radius $R$,
+resting on the $xy$ plane and centered at the origin: \\
+The volume and surface elements are
+\begin{align*}
+    \dd{V} = r^2 \sin\theta \dd{r}\dd{\theta}\dd{\phi}, \qand
+    \dd{\vb{a}_1} = r^2 \sin\theta \dd{\theta}\dd{\phi} \vu{r}
+\end{align*}
+The volume integral for the hemisphere is
+\begin{align*}
+    \int_V (\div{\vb{v}}) \vdot \dd{V} &= \int_{r=0}^R \int_{\theta=0}^{\pi/2} \int_{\phi=0}^{2\pi}
+        (5 \cos\theta - \sin\phi) (r^2 \sin\theta) \dd{\theta}\dd{\phi} \dd{r} \\
+    &= \int_0^R r^2 \dd{r} \int_0^{\pi/2} \sin\theta
+    \int_0^{2\pi} (5 \cos\theta - \sin\phi) \dd{\phi} \dd{\theta} \\
+    &= \frac{R^3}{3} \int_0^{\pi/2}
+    \eval{5\phi \cos\theta + \cos\phi}_0^{2\pi} \dd{\theta} \\
+    &= \frac{R^3}{3} (10\pi) \int_0^{\pi/2} \sin\theta \cos\theta \dd{\theta} \\
+    \qusing u &= \sin\theta, \quad \dd{u} = \cos\theta \dd{\theta};
+    \quad \int u \dd{u} = \frac{u^2}{2} \\
+    &= \frac{5\pi R^3}{3} \eval{\sin^2\theta}_0^{\pi/2} = \frac{5\pi R^3}{3}
+\end{align*}
+The surface integral is split into two parts: the top surface of the hemisphere and the
+circular base. \\
+(i) The top surface of the hemisphere where $r = R$:
+\begin{align*}
+    \oint_S \vb{v} \vdot \dd{\vb{a}_1} &= \int_{\theta=0}^{\pi/2} \int_{\phi=0}^{2\pi}
+        (r \cos\theta) (r^2 \sin\theta) \dd{\theta}\dd{\phi} \\
+    &= r^3 \int_0^{\pi/2} \sin\theta \cos\theta \dd{\theta} \int_0^{2\pi} \dd{\phi} \\
+    &= \pi r^3 = \pi R^3
+\end{align*}
+(ii) The circular base of the hemisphere where $\theta = \pi/2$ and
+$\vb{a}_2 = r \dd{r} \dd{\phi} \vu*{\theta}$:
+\begin{align*}
+    \oint_S \vb{v} \vdot \dd{\vb{a}_2} &= \int_{r=0}^R \int_{\phi=0}^{2\pi}
+        (r \sin\theta) r \dd{r} \dd{\phi} \\
+    &= \sin(\pi/2) \int_0^R r^2 \dd{r} \int_0^{2\pi} \dd{\phi} \\
+    &= (1)\frac{R^3}{3} (2\pi) = \frac{2\pi R^3}{3}
+\end{align*}
+So, the total surface integral is
+\begin{align*}
+    \oint_S \vb{v} \vdot \dd{\vb{a}_1} + \oint_S \vb{v} \vdot \dd{\vb{a}_2}
+        = \pi R^3 + \frac{2\pi R^3}{3} = \frac{5\pi R^3}{3}
+\end{align*}
+
+\paragraph{1.41}
+\begin{align*}
+    T = r (\cos\theta + \sin\theta \cos\phi)
+\end{align*}
+The partial derivatives are:
+\begin{align*}
+    \pdv{T}{r}      &= \cos\theta + \sin\theta \cos\phi \\
+    \pdv{T}{\theta} &= r (-\sin\theta + \cos\theta \cos\phi) \\
+    \pdv{T}{\phi}   &= -r \sin\theta \sin\phi
+\end{align*}
+thus, the gradient of $T$ in spherical is
+\begin{align*}
+    \grad{T} &= \pdv{T}{r} \vu{r} + \frac{1}{r} \pdv{T}{\theta} \vu*{\theta}
+        + \frac{1}{r \sin\theta} \pdv{T}{\phi} \vu*{\phi} \\
+    &= (\cos\theta + \sin\theta \cos\phi) \vu{r}
+        +  (-\sin\theta + \cos\theta \cos\phi) \vu*{\theta}
+        - (\sin\phi) \vu*{\phi}
+\end{align*}
+and partial derivative in the laplacian are:
+\begin{align*}
+    \pdv{r}(r^2\pdv{T}{r}) &= \pdv{r}(r^2 (\cos\theta + \sin\theta \cos\phi))
+        = 2r (\cos\theta + \sin\theta \cos\phi) \\
+    \pdv{\theta}(\sin\theta \pdv{T}{\theta}) &=
+        r \pdv{\theta}(\sin\theta (-\sin\theta + \cos\theta \cos\phi))
+        = r \pdv{\theta} (-\sin^2\theta + \sin\theta \cos\theta \cos\phi) \\
+    &= -2r\sin\theta \cos\theta + r\cos^2\theta \cos\phi - r\sin^2\theta \cos\phi \\
+    \pdv[2]{T}{\phi} &= -r\sin\theta \cos\phi
+\end{align*}
+The laplacian of $T$ in spherical is
+\begin{align*}
+    \laplacian{T} &= \frac{1}{r^2} \pdv{r} (r^2 \pdv{T}{r}) +
+        \frac{1}{r^2 \sin\theta} \pdv{\theta} (\sin\theta \pdv{T}{\theta}) +
+        \frac{1}{r^2 \sin^2\theta} \pdv[2]{T}{\phi}
+\end{align*}
+Simplifying each term:
+(i) The first term:
+\begin{align*}
+    \frac{2}{r} (\cos\theta + \sin\theta \cos\phi)
+\end{align*}
+(ii) The second term:
+\begin{align*}
+    -\frac{2}{r} \cos\theta + \frac{\cos^2\theta \cos\phi }{r \sin\theta} -
+        \frac{1}{r} \sin\theta \cos\phi
+\end{align*}
+(iii) The third term:
+\begin{align*}
+    -\frac{\cos\phi}{r \sin\theta} 
+\end{align*}
+adding all three terms:
+\begin{align*}
+    \laplacian{T} &= \frac{2}{r} (\cos\theta + \sin\theta \cos\phi)
+        - \frac{2}{r} \cos\theta + \frac{\cos^2\theta \cos\phi }{r \sin\theta}
+        - \frac{1}{r} \sin\theta \cos\phi -\frac{\cos\phi}{r \sin\theta} \\
+    &= \frac{2}{r} (\sin\theta \cos\phi)
+        + \frac{\cos^2\theta \cos\phi - \cos\phi}{r \sin\theta}
+        - \frac{1}{r} \sin\theta \cos\phi \\
+    &= \frac{2}{r \sin\theta} (\sin^2\theta \cos\phi)
+        + \frac{\cos^2\theta \cos\phi - \cos\phi}{r \sin\theta}
+        - \frac{1}{r \sin\theta} \sin^2\theta \cos\phi \\
+    &= \frac{1}{r \sin\theta} (\sin^2\theta \cos\phi + \cos^2\theta \cos\phi - \cos\phi) \\
+    &= \frac{1}{r \sin\theta} (\cos\phi)(\sin^2\theta + \cos^2\theta - 1) = 0
+\end{align*}
+Converting $T$ to Cartesian coordinates:
+\begin{align*}
+    x = r \sin\theta \cos\phi, \quad y = r \sin\theta \sin\phi, \qand z = r \cos\theta
+\end{align*}
+So
+\begin{align*}
+    T = z + x
+\end{align*}
+The laplacian of $T$ in Cartesian coordinates is
+\begin{align*}
+    \laplacian{T} &= \pdv[2]{T}{x} + \pdv[2]{T}{y} + \pdv[2]{T}{z} = 0
+\end{align*}
+Testing the gradient theorem using the path $O \to A = (2,0,0) \to B = (0,2,0) \to C = (0,0,2)$:
+Given the general infinitesimal displacement
+\begin{align*}
+    \dd{\vb{l}} = \dd{r} \vu{r} + r \dd{\theta} \vu*{\theta} + r \sin\theta \dd{\phi} \vu*{\phi}
+\end{align*}
+and the gradient of $T$ in spherical coordinates
+\begin{align*}
+    \grad{T} &= (\cos\theta + \sin\theta \cos\phi) \vu{r}
+        +  (-\sin\theta + \cos\theta \cos\phi) \vu*{\theta}
+        + (-\sin\phi) \vu*{\phi}
+\end{align*}
+(i) On the path $OA$:
+\begin{align*}
+    \theta = \pi/2, \quad \phi = 0, \quad \dd{\vb{l}} = \dd{r} \vu{r}; \quad
+    (\grad{T}) \vdot \dd{\vb{l}} = 1 \dd{r}
+\end{align*}
+So
+\begin{align*}
+    \int_{OA} (\grad{T}) \vdot \dd{\vb{l}} = \int_0^2 1 \dd{r} = 2
+\end{align*}
+(ii) On the path $AB$:
+\begin{align*}
+    r = 2, \quad \theta = \pi/2, \quad \dd{\vb{l}} = 2 \dd{\phi}\vu*{\phi};
+    \quad (\grad{T}) \vdot \dd{\vb{l}} = -2 \sin\phi \dd{\phi}
+\end{align*}
+So
+\begin{align*}
+    \int_{AB} (\grad{T}) \vdot \dd{\vb{l}} = \int_0^{\pi/2} -2 \sin\phi \dd{\phi} = -2
+\end{align*}
+(iii) On the path $BC$:
+\begin{align*}
+    r = 2, \quad \phi = \pi/2, \quad \dd{\vb{l}} = 2 \dd{\theta}\vu*{\theta};
+    \quad (\grad{T}) \vdot \dd{\vb{l}} = -2 \sin\theta \dd{\theta}
+\end{align*}
+So
+\begin{align*}
+    \int_{BC} (\grad{T}) \vdot \dd{\vb{l}} = \int_{\pi/2}^0 -2 \sin\theta \dd{\theta} = 2
+\end{align*}
+therefore the total line integral is
+\begin{align*}
+    \int_{OC} (\grad{T}) \vdot \dd{\vb{l}} = 2 + -2 + 2 = 2
+\end{align*}
+For the left hand side of the gradient theorem: \\
+At $C$:
+\begin{align*}
+    r = 2, \quad \theta = 0, \quad \phi = 0; \quad T = 2(\cos{0} + \sin{0} \cos{0}) = 2
+\end{align*}
+At $O$:
+\begin{align*}
+    r = 0; \quad T = 0
+\end{align*}
+So
+\begin{align*}
+    T(C) - T(O) = 2 + 0 = 2
+\end{align*}
+which is the same as the total line integral, so the gradient theorem holds.
+
+\paragraph{1.42}
+Cylindrical coordinates are related to Cartesian coordinates by
+\begin{align*}
+    x = s \cos\phi, \quad y = s \sin\phi, \qand z = z
+\end{align*}
+and the position vector is
+\begin{align*}
+    \vb{r} &= x \vu{x} + y \vu{y} + z \vu{z} \\
+    \vb{r} &= s \cos\phi \vu{x} + s \sin\phi \vu{y} + z \vu{z}
+\end{align*}
+The unit vectors are in the same direction as the partial derivatives with respect to $s$, $\phi$,
+and $z$, so
+\begin{align*}
+    \vu{s} = \frac{e_s}{\abs{e_s}}, \quad
+    \vu*{\phi} = \frac{e_{\phi}}{\abs{e_{\phi}}}, \qand
+    \vu{z} = \frac{e_{z}}{\abs{e_{z}}}
+\end{align*}
+where $e_u$ is the new basis vector given by
+\begin{align*}
+    e_u = \pdv{\vb{r}}{u}
+\end{align*}
+The partial derivatives are
+\begin{align*}
+    e_s = \pdv{\vb{r}}{s} &= \cos\phi \vu{x} + \sin\phi \vu{y} \\
+    e_{\phi} = \pdv{\vb{r}}{\phi} &= -s \sin\phi \vu{x} + s \cos\phi \vu{y} \\
+    e_{z} = \pdv{\vb{r}}{z} &= \vu{z}
+\end{align*}
+and the magnitude
+\begin{align*}
+    \abs{e_s} &= \sqrt{\cos^2\phi + \sin^2\phi} = 1 \\
+    \abs{e_{\phi}} &= \sqrt{s^2 \sin^2\phi + s^2 \cos^2\phi} = s \\
+    \abs{e_{z}} &= 1
+\end{align*}
+thus, the unit vectors are:
+\begin{align*}
+    \vu{s} &= \cos\phi \vu{x} + \sin\phi \vu{y} \\
+    \vu*{\phi} &= -\sin\phi \vu{x} + \cos\phi \vu{y} \\
+    \vu{z} &= \vu{z}
+\end{align*}
+The cylindrical unit vectors in terms of $\vu{x}$, $\vu{y}$, and $\vu{z}$ in matrix form:
+\begin{align*}
+    \mqty(
+        \vu{s} \\
+        \vu*{\phi} \\
+        \vu{z}
+    ) &=
+    \begin{pmatrix}
+        \cos\phi & \sin\phi & 0 \\
+        -\sin\phi& \cos\phi & 0 \\
+        0           & 0          & 1
+    \end{pmatrix}
+    \mqty(
+        \vu{x} \\
+        \vu{y} \\
+        \vu{z}
+    )
+\end{align*}
+Which is an orthogonal matrix $a = Qx$, so the Cartesian unit vectors is found by multiplying $a$ by
+the transpose of $Q$:
+\begin{align*}
+    \mqty(
+        \vu{x} \\
+        \vu{y} \\
+        \vu{z}
+    ) &=
+    \begin{pmatrix}
+        \cos\phi & -\sin\phi & 0 \\
+        \sin\phi & \cos\phi  & 0 \\
+        0           & 0          & 1
+    \end{pmatrix}
+    \mqty(
+        \vu{s} \\
+        \vu*{\phi} \\
+        \vu{z}
+    )
+\end{align*}
+or in vector form:
+\begin{align*}
+    \vu{x} &= \cos\phi \vu{s} - \sin\phi \vu*{\phi} \\
+    \vu{y} &= \sin\phi \vu{s} + \cos\phi \vu*{\phi} \\
+    \vu{z} &= \vu{z}
+\end{align*}
+
+\paragraph{1.43}
+(a) Finding the divergence of the function
+\begin{align*}
+    \vb{v} = s(2 + \sin^2\phi) \vu{s} + s \sin\phi \cos\phi \vu*{\phi} + 3z \vu{z}
+\end{align*}
+\begin{align*}
+    \div{\vb{v}} &= \frac{1}{s} \pdv{s} (s v_s) + \frac{1}{s} \pdv{v_{\phi}}{\phi} + \pdv{v_z}{z} \\
+    &= \frac{1}{s} \pdv{s} (s (s(2 + \sin^2\phi)))
+        + \frac{1}{s} \pdv{\phi} (s \sin\phi \cos\phi) + \pdv{z} (3z) \\
+    &= 2(2 + \sin^2\phi) + \cos^2\phi - \sin^2\phi + 3 \\
+    &= 7 + \sin^2\phi + \cos^2\phi = 8
+\end{align*}
+(b) Testing divergence theorem using a quarter cylinder of radius 2 and height 5 in quadrant I: \\
+LHS: The volume elements is
+\begin{align*}
+    \dd{V} = s \dd{s}\dd{\phi}\dd{z},
+\end{align*}
+so the volume integral is
+\begin{align*}
+    \int_V (\div{\vb{v}}) \vdot \dd{V} &= \int_{s=0}^2 \int_{\phi=0}^{\pi/2} \int_{z=0}^5
+        8 (s \dd{s}\dd{\phi}\dd{z}) \\
+    &= 8 \int_0^2 s \dd{s} \int_0^{\pi/2} \dd{\phi} \int_0^5 \dd{z} \\
+    &= 8 (2) (\pi/2) (5) = 40\pi
+\end{align*}
+RHS: There are 5 surfaces: the top, bottom, and 3 sides. \\
+(i) The top surface:
+\begin{align*}
+    z = 5, \quad \dd{a} = s \dd{s}\dd{\phi} \vu{z}; \quad 
+    \vb{v} \vdot \dd{\vb{a}} = 15 s \dd{s}\dd{\phi}
+\end{align*}
+So
+\begin{align*}
+    \oint_S \vb{v} \vdot \dd{\vb{a}} = \int_{\phi=0}^{\pi/2} \int_{s=0}^2 15 s \dd{s}\dd{\phi}
+    = 15 \int_0^{\pi/2} \dd{\phi} \int_0^2 s \dd{s} = 15 \pi
+\end{align*}
+(ii) The bottom surface:
+\begin{align*}
+    z = 0, \quad \dd{a} = s \dd{s}\dd{\phi} \vu{z}; \quad \vb{v} \vdot \dd{\vb{a}} = 0
+    \qq{thus} \oint_S \vb{v} \vdot \dd{\vb{a}} = 0
+\end{align*}
+(iii) The surface on the $xy$ plane:
+\begin{align*}
+    \phi = \pi/2 \quad \dd{a} = \dd{s}\dd{z} \vu*{\phi}; \quad
+    \vb{v} \vdot \dd{\vb{a}} = 0
+    \qq{thus} \oint_S \vb{v} \vdot \dd{\vb{a}} = 0
+\end{align*}
+(iv) The surface on the $xz$ plane:
+\begin{align*}
+    \phi = 0, \quad \dd{a} = - \dd{s}\dd{z} \vu*{\phi}; \quad \vb{v} \vdot \dd{\vb{a}} = 0
+    \qq{thus} \oint_S \vb{v} \vdot \dd{\vb{a}} = 0
+\end{align*}
+(v) The curved surface:
+\begin{align*}
+    s = 2, \quad \dd{a} = 2 \dd{\phi}\dd{z} \vu{s}; \quad
+    \vb{v} \vdot \dd{\vb{a}} = 4(2 + \sin^2\phi) \dd{\phi}\dd{z}
+\end{align*}
+So
+\begin{align*}
+    \oint_S \vb{v} \vdot \dd{\vb{a}} &= \int_{z=0}^5 \int_{\phi=0}^{\pi/2} 
+        4(2 + \sin^2\phi) \dd{\phi}\dd{z} \\
+    &= 4 \int_0^5 \dd{z} \int_0^{\pi/2} (4(1/2) + \sin^2\phi) \dd{\phi} \\
+    \qusing \sin^2\phi &= \frac{1 - \cos(2\phi)}{2} \\
+    &= 4 \int_0^5 \dd{z} \int_0^{\pi/2} (2 + (1 - \cos(2\phi))/2) \dd{\phi} \\
+    &= 10 \int_0^{\pi/2} (5 - \cos(2\phi)) \dd{\phi} \\
+    &= 10 \qt(\eval{5\phi - \frac{\sin(2\phi)}{2}}_0^{\pi/2}) = 25\pi
+\end{align*}
+So the total surface integral is
+\begin{align*}
+    \oint_S \vb{v} \vdot \dd{\vb{a}} = 15\pi + 0 + 0 + 0 + 25\pi = 40\pi
+\end{align*}
+which is the same as the volume integral, so the divergence theorem holds. \\
+(c) The curl of $\vb{v}$ in cylindrical coordinates is
+\begin{align*}
+    \curl{\vb{v}} &= \frac{1}{s} \begin{vmatrix}
+        \vu{s}  & s \vu*{\phi} & \vu{z}  \\
+        \pdv{s} & \pdv{\phi}   & \pdv{z} \\
+        v_s     & (s)v_\phi    & v_z
+    \end{vmatrix} \\
+    &= \frac{1}{s} \mqty|
+        \vu{s}            & s \vu*{\phi}           & \vu{z} \\
+        \pdv{s}           & \pdv{\phi}             & \pdv{z} \\
+        s(2 + \sin^2\phi) & (s)s \sin\phi \cos\phi & 3z| \\
+    &= 0 \vu{s} - \frac{1}{s} (0 - 0) + \frac{1}{s} (2s\sin\phi \cos\phi - 2s \sin\phi \cos\phi) \\
+    &= 0
+\end{align*}
+
+\paragraph{1.44}
+(a)
+\begin{align*}
+    \int_{2}^6 (3x^2 - 2x - 1) \delta(x - 3) \dd{x} = (3(3)^2 - 2(3) - 1) =  20 \\
+\end{align*}
+(b)
+\begin{align*}
+    \int_0^5 \cos{x} \delta(x - \pi) \dd{x} = \cos{\pi} = -1
+\end{align*}
+(c)
+\begin{align*}
+    \int_0^3 x^3 \delta(x + 1) \dd{x} = 0
+\end{align*}
+since $\delta(x + 1) = 0$ when $x = -1$ from the bounds of the integral $x = 0 \to 3$. \\
+(d) 
+\begin{align*}
+    \int_{\infty}^{-\infty} \ln(x + 3) \delta(x + 2) \dd{x} = \ln(-2 + 3) = 0
+\end{align*}
+
+\paragraph{1.45}
+(a)
+\begin{align*}
+    \int_{-2}^2 (2x + 3) \delta(3x) \dd{x} = \int_{-2}^2 (2x + 3) \frac{1}{3} \delta(x) \dd{x}
+    = \frac{1}{3} (2(0) + 3) = 1
+\end{align*}
+(b) Since $\delta(1 - x) = \delta(-(x - 1)) = \delta(x - 1)$:
+\begin{align*}
+    \int_0^2 (x^3 + 3x + 2) \delta(1 - x) \dd{x} = \int_0^2 (x^3 + 3x + 2) \delta(x - 1) \dd{x}
+    = (1)^3 + 3(1) + 2 = 6
+\end{align*}
+(c) Using $\delta(3x - 1) = \frac{1}{3} \delta(x - 1/3)$:
+\begin{align*}
+    \int_{-1}^1 9x^2 \delta(3x - 1) \dd{x} = \int_{-1}^1 3x^2 \delta(x - 1/3) \dd{x}
+    = 3(1/3)^2 = 1/3
+\end{align*}
+(d)
+\begin{align*}
+    \int_{-\infty}^a \delta(x - b) \dd{x} = 
+    \begin{cases}
+        1 & \quad \text{if } a > b \\
+        0 & \quad \text{if } a < b
+    \end{cases}
+\end{align*}
+
+\paragraph{1.46}
+(a) Using integration by parts:
+\begin{align*}
+    \int_{-a}^{a} x \dv{x} (\delta(x)) \dd{x} &= \eval{x \delta(x)}_a^a
+        - \int_a^a x \delta(x) \dd{x} \\
+    &= \eval{x \delta(x)}_a^a  - (0) = 0 \\
+    \dv{x} (x\delta(x)) &= x \dv{x} (\delta(x)) + \delta(x) = 0 \\
+    \qq{thus} x \dv{x} (\delta(x)) &= -\delta(x)
+\end{align*}
+where $\delta(a) = \delta(-a) = 0$ \\
+(b) Using integration by parts again:
+\begin{align*}
+    \int_{-a}^a f(x) \dv{\theta}{x} \dd{x} &= f(x)\theta(x) \eval_{-a}^a
+        - \int_{-a}^a \dv{f}{x} \theta(x) \dd{x} \\
+    &= f(a) - \int_0^a \dv{f}{x} \dd{x} \\
+    &= f(a) - (f(a) - f(0)) = f(0) \\
+    \int_{-a}^a f(x) \dv{\theta}{x} \dd{x} &= f(0)
+\end{align*}
+which is the same as the definition of the delta function, so
+\begin{align*}
+    \dv{\theta}{x} = \delta(x)
+\end{align*}
+
+\paragraph{1.47}
+(a) The expression for volume charge density of a point charge $q$ at $\vb{r}'$ where
+\begin{align*}
+    \int_V \rho(\vb{r}) \dd{V} = q \qq{at} \vb{r} = \vb{r}'
+\end{align*}
+is 
+\begin{align*}
+    \rho(\vb{r}) = q \delta^3(\vb{r} - \vb{r}')
+\end{align*}
+(b) The volume charge density of an electric dipole:
+\begin{align*}
+    \rho(\vb{r}_d) &= \eval{\rho(\vb{r})}_{\vb{r}' = \vb{r}} - \eval{\rho(\vb{r})}_{\vb{r}' = 0} \\
+    &= q \delta^3(\vb{r} - \vb{a}) - q \delta^3(\vb{r})
+\end{align*}
+where $\vb{r}_d$ is the position vector of the dipole.
+(c) The volume charge density of a spherical shell of radius $R$ and total charge $Q$:
+\begin{align*}
+    \int_V f \delta^3(r - R) \dd{V} &= f(R) = Q \\
+\end{align*}
+where $V$ is all space, so
+\begin{align*}
+    Q = \int_0^{\infty}  \int_0^{\pi} f \delta(r - R) 
+        (r^2 \sin\theta)\dd{r} \dd{\theta} \dd{\phi} % jacobian
+\end{align*}
+and since the charge density is uniform in $\theta$ and $\phi$, $f$ only depends on $r$; $f = f(r)$.
+\begin{align*}
+    Q &=  \int_0^{\infty} f(r) r^2 \delta(r - R) \dd{r} \int_0^{\pi} \sin\theta \dd{\theta}
+        \int_0^{2\pi} \dd{\phi} \\
+    &= R^2 [f(R)] (2) (2\pi) = 4\pi R^2 f(R)
+\end{align*}
+and since $f$ is constant,
+\begin{align*}
+    f = \frac{Q}{4\pi R^2}
+\end{align*}
+thus, the volume charge density is
+\begin{align*}
+    \rho(r) = \frac{Q}{4\pi R^2} \delta^3(r - R)
+\end{align*}
+
+\paragraph{1.48}
+(a) 
+\begin{align*}
+    \int (r^2 + \vb{r} \vdot \vb{a} + a^2) \delta^3(\vb{r} - \vb{a}) \dd{V}
+    = a^2 + \vb{a} \vdot \vb{a} + a^2 = 3a^2
+\end{align*}
+(b) Given $V$ is a cube of side 2 centered at the origin and $\vb{b} = 4\vu{y} + 3 \vu{z}$:
+\begin{align*}
+    \int_V \abs{\vb{r} - \vb{b}}^2 \delta^3(5\vb{r}) \dd{V} 
+    &= \int_0^1 \int_0^1 \int_0^1 \abs{\vb{r} - \vb{b}}^2
+    \delta(5x) \delta(5y) \delta(5z) \dd{x} \dd{y} \dd{z} \\
+    &= \frac{1}{5^3} \abs{-\vb{b}}^2 = \frac{1}{5^3} (4^2 + 3^2) = \frac{1}{5}
+\end{align*}
+(c) Given $V$ is a sphere of radius 6 centered at the origin and
+$\vb{c} = 5 \vu{x} + 3 \vu{y} + 2 \vu{z}$: \\
+The magnitude $c = \sqrt{5^2 + 3^2 + 2^2} = \sqrt{38}$, is outside the sphere
+(magnitude $r = \sqrt{36}$). Therefore,
+\begin{align*}
+    \int_V [r^4 + r^2(\vb{r} \vdot \vb{c}) + c^4] \delta^3(\vb{r} - \vb{c}) \dd{V} &= 0
+\end{align*}
+(d) Given $V$ is a sphere of radius 1.5 centered at $(2,2,2)$ and 
+\begin{align*}
+    \vb{d} = (1,2,3), \quad \vb{e} = (3,2,1) 
+\end{align*}
+Checking if the delta function is inside the sphere:
+\begin{align*}
+    \abs{\vb{e} - (2,2,2)} = \sqrt{1 + 0 + 1} = \sqrt{2} < 1.5
+\end{align*}
+so the delta function is inside the sphere and the integral is
+\begin{align*}
+    \int_V \vb{r} \vdot (\vb{d} - \vb{r}) \delta^3(\vb{e} - \vb{r}) \dd{V} 
+    &= \int_V \vb{r} \vdot (\vb{d} - \vb{r}) \delta^3(\vb{r} - \vb{e}) \dd{V} \\
+    &= \vb{e} \vdot (\vb{d} - \vb{e}) \\
+    &= (3,2,1) \vdot (-2,0,2) = -4
+\end{align*}
+
+\paragraph{1.49}
+Evaluating the integral
+\begin{align*}
+    J = \int_V e^{-r} \qt(\div{\frac{\vu{r}}{r^2}}) \dd{V}
+\end{align*}
+where $V$ is a sphere of radius $R$ centered at the origin. \\
+(i)
+\begin{align*}
+    J = \int_V e^{-r} 4\pi \delta^3(\vb{r}) \dd{V} = 4\pi e^{0} = 4\pi
+\end{align*}
+(ii) Using the product rule of divergence:
+\begin{align*}
+    \div(f\vb{A}) = f (\div \vb{A}) + \vb{A} \vdot (\grad{f})
+\end{align*}
+integrating over a volume and using the divergence theorem:
+\begin{align*}
+    \int \div(f\vb{A}) \dd{V} = \int f (\div \vb{A}) \dd{V}+ \int \vb{A} \vdot (\grad{f}) \dd{V}
+    = \oint f\vb{A} \vdot \dd{\vb{a}}
+\end{align*}
+or 
+\begin{align*}
+    \int_V f (\div \vb{A}) \dd{V} = - \int_V \vb{A} \vdot (\grad f) \dd{V}
+        + \oint f \vb{A} \vdot \dd{\vb{a}}
+\end{align*}
+where
+\begin{align*}
+    f = e^{-r} &\qand \vb{A} = \frac{\vu{r}}{r^2}
+\end{align*}
+(a) Computing the first term:
+\begin{align*}
+    \grad{f} = -e^{-r} \vu{r} ;\quad \vb{A} \vdot (\grad f) = -\frac{e^{-r}}{r^2}
+\end{align*}
+So
+\begin{align*}
+    \int_V \frac{e^{-r}}{r^2} \dd{V} &= \int_0^R \int_0^{\pi} \int_0^{2\pi} \frac{e^{-r}}{r^2}
+        r^2 \sin\theta \dd{r} \dd{\theta} \dd{\phi} \\
+    &= \int_0^R \int_0^{\pi} \int_0^{2\pi} e^{-r}
+    \sin\theta \dd{r} \dd{\theta} \dd{\phi} \\
+    &= 4\pi (1 - e^{-R})
+\end{align*}
+(b) For the second term: the surface element is on the boundary of the sphere $r = R$. 
+\begin{align*}
+    \dd{\vb{a}} = R^2 \sin\theta \dd{\theta} \dd{\phi} \vu{r}; \quad
+    f \vb{A} \vdot \dd{\vb{a}} = e^{-R} \sin\theta \dd{\theta} \dd{\phi}
+\end{align*}
+So
+\begin{align*}
+    e^{-R} \int_0^{\pi} \sin\theta \dd{\theta} \int_0^{2\pi} \dd{\phi} = 4\pi e^{-R}
+\end{align*}
+adding (a) and (b) gives the total volume integral:
+\begin{align*}
+    J = 4\pi (1 - e^{-R}) + 4\pi e^{-R} = 4\pi
+\end{align*}
+
+\paragraph{1.50}
+(a)
+\begin{align*}
+    \vb{F}_1 = x^2 \vu{z} \qand \vb{F}_2 = x \vu{x} + y \vu{y} + z \vu{z}
+\end{align*}
+The divergence of the two vector fields:
+\begin{align*}
+    \div \vb{F}_1 = 0 \qand \div \vb{F}_2 = 3
+\end{align*}
+and curl:
+\begin{align*}
+    \curl \vb{F}_1 = -2x \vu{y} \qand \curl \vb{F}_2 = 0
+\end{align*}
+Thus $\vb{F}_2$ can be written as a gradient of some scalar potential
+\begin{align*}
+    \vb{F}_2 = -\grad V \qq{where} V = -\frac{1}{2} (x^2 + y^2 + z^2)
+\end{align*}
+and $\vb{F}_1$ can be written as a curl of some vector potential
+\begin{align*}
+    \vb{F}_1 = \curl \vb{A}
+\end{align*}
+where
+\begin{align*}
+    \pdv{A_z}{y} - \pdv{A_y}{z} = 0 ,\quad
+    \pdv{A_z}{x} - \pdv{A_x}{z} = 0 ,\quad
+    \pdv{A_y}{x} - \pdv{A_x}{y} = x^2 
+\end{align*}
+so one solution can be found setting 
+\begin{align*}
+    A_y = x^3/3 , \quad A_y = 0 , \quad A_z = 0
+\end{align*}
+thus $A = x^3/3 \vu{x}$.
+
+(b) Finding the vector and scalar potentials of the vector field
+\begin{align*}
+    \vb{F}_3 = yz \vu{x} + zx \vu{y} + xy \vu{z}
+\end{align*}
+The gradient of a scalar:
+\begin{align*}
+    \vb{F}_3 = -\grad V_3
+\end{align*}
+so 
+\begin{align*}
+    \pdv{V_3}{x} = -yz ,\quad
+    \pdv{V_3}{y} = -zx ,\quad
+    \pdv{V_3}{z} = -xy
+\end{align*}
+A particular solution is
+\begin{align*}
+    V_3 = -xyz
+\end{align*}
+The curl of a vector (a little harder):
+\begin{align*}
+    \vb{F}_3 = \curl \vb{V}_3
+\end{align*}
+so
+\begin{align*}
+    \pdv{A_z}{y} - \pdv{A_y}{z} = yz ,\quad
+    \pdv{A_x}{z} - \pdv{A_z}{x} = zx ,\quad
+    \pdv{A_y}{x} - \pdv{A_x}{y} = xy
+\end{align*} 
+integrating the first equation with respect to $y$:
+\begin{align*}
+    \pdv{A_z}{y} &= yz + \pdv{A_y}{z} \\
+    \int \pdv{A_z}{y} \dd{y} &= \int yz \dd{y} + \int \pdv{A_y}{z} \dd{y} \\
+    A_z &= \frac{1}{2} y^2 z + f
+\end{align*}
+where the function $f$ is an arbritrary function. Integrating the first equation again but with
+respect to $z$ gives:
+\begin{align*}
+    A_y = -\frac{1}{2} yz^2 + g
+\end{align*}
+Repeating for all three equations:
+\begin{align*}
+    A_z &= \frac{1}{2} y^2 z + f \qand A_y = -\frac{1}{2} yz^2 + g \\
+    A_x &= \frac{1}{2} z^2 x + h \qand A_z = -\frac{1}{2} zx^2 + i \\
+    A_y &= \frac{1}{2} x^2 y + j \qand A_x = -\frac{1}{2} xy^2 + k
+\end{align*}
+a particular solution can be found by setting $f = g = h = i = j = k = 0$, and each component is 
+a linear combination of the two possible solutions:
+\begin{align*}
+    2 A_x &= \frac{1}{2} z^2 x + f - \frac{1}{2} xy^2 + k \\
+    2 A_x &= \frac{1}{2} z^2 x - \frac{1}{2} xy^2 \\
+    A_x &= \frac{1}{4} (z^2 x - xy^2)
+\end{align*}
+and similarly for $A_y$ and $A_z$ gives the vector potential:
+\begin{align*}
+    \vb{A} = \frac{1}{4} [x(z^2 - y^2) \vu{x} + y(x^2 - z^2) \vu{y} + z(y^2 - x^2)\vu{z}]
+\end{align*}
+
+\paragraph{1.51}
+$(d) \to (a)$: Given $\vb{F} = -\grad{V}$, the curl of the gradient is always zero;
+\begin{align*}
+    \curl \vb{F} = \curl (-\grad{V}) = 0
+\end{align*}
+$(a) \to (c)$: From Stokes' theorem;
+\begin{align*}
+    \int_S (\curl F) \dd{\vb{a}} = \oint F \vdot \dd{\vb{l}} = 0
+\end{align*}
+$(c) \to (b)$: 
+\begin{align*}
+    \oint F \vdot \dd{\vb{l}} = \int_a^b F \vdot \dd{\vb{l}} - \int_a^b F \vdot \dd{\vb{l}} = 0
+\end{align*}
+where the integrals are two different paths but equal, and thus independent of path.
+$(b) \to (c)$ and $(c) \to (a)$ are just the same steps in reverse.
+
+\paragraph{1.52}
+$(d) \to (a)$: Given $\vb{F} = \curl A$, the divergence of curl is always zero;
+\begin{align*}
+    \div (\curl A) = 0
+\end{align*}
+$(a) \to (c)$: From the divergence theorem;
+\begin{align*}
+    \int_V (\div F) \dd{V} = \oint F \vdot \dd{\vb{a}} = 0
+\end{align*}
+$(c) \to (b)$:
+\begin{align*}
+    \oint F \vdot \dd{\vb{a}} = \int F \vdot \dd{\vb{a}_1} + \int F \vdot \dd{\vb{a}_2} = 0
+\end{align*}
+where $\vb{a}_2 = -\vb{a}_1$ and the integrals are two different surfaces but equal, and thus depend
+only on the boundary.
+$(b) \to (c)$ and $(c) \to (a)$ are just the same steps in reverse.
+
+\paragraph{1.53}
+(a) From Problem 1.15,
+\begin{align*}
+    \vb{v}_a &= x^2\vu{x} + 3xz^2\vu{y} - 2xz\vu{z} \\
+    \vb{v}_b &= xy\vu{x} + 2yz\vu{y} + 3zx\vu{z} \\
+    \vb{v}_c &= y^2\vu{x} + (2xy + z^2)\vu{y} + 2yz\vu{z} \\
+\end{align*}
+and the curl of each vector field:
+\begin{align*}
+    \curl \vb{v}_a &\neq 0 \\
+    \curl \vb{v}_b &\neq 0 \\
+    \curl \vb{v}_c &= 0
+\end{align*}
+Thus $\vb{v}_c$ can be written as a gradient of some scalar potential $\vb{v}_c = -\grad V$:
+\begin{align*}
+    \pdv{V}{x} &= -y^2 ;\quad V = -y^2 x + f \\
+    \pdv{V}{y} &= -(2xy + z^2) ;\quad V = -y^2 x - yz^2 + g \\
+    \pdv{V}{z} &= -2yz ;\quad V = -yz^2 + h 
+\end{align*}
+where $f$, $g$, and $h$ are arbitrary functions, thus one solution can be found setting $g = 0$ and
+solving for $f$ or $h$; 
+\begin{align*}
+    V = -y^2 x - yz^2
+\end{align*}
+(b) Given $\div \vb{v}_a = 0$ thus $\vb{v}_a$ can be written as a curl of some vector potential
+$\vb{v}_a = \curl \vb{A}$:
+\begin{alignat*}{4}
+    \pdv{A_z}{y} - \pdv{A_y}{z} &= x^2 ;\quad &&A_z = x^2y + f ,\quad &&&A_y = -x^2z + g \\
+    \pdv{A_x}{z} - \pdv{A_z}{x} &= 3xz^2 ;\quad &&A_x = xz^3+ h ,\quad &&&A_z = -\frac{3}{2} x^2z^2 + i \\
+    \pdv{A_y}{x} - \pdv{A_x}{y} &= -2xz ;\quad &&A_y = -x^2z + j ,\quad &&&A_x = 2xyz + k 
+\end{alignat*}
+where $f$, $g$, $h$, $i$, $j$, and $k$ are arbitrary functions where a solution can be found by 
+setting one function to zero and solving for the others: e.g., $h = 0$;
+\begin{align*}
+    A_x = xz^3 ;\quad A_z = 0 ;\quad A_y = -x^2z
+\end{align*}
+or
+\begin{align*}
+    \vb{A} = xz^3 \vu{x} - x^2z \vu{y}
+\end{align*}
+Checking the solution
+\begin{align*}
+    \curl \vb{A} &= \begin{vmatrix}
+        \vu{x} & \vu{y} & \vu{z} \\
+        \pdv{x} & \pdv{y} & \pdv{z} \\
+        xz^3 & -x^2z & 0
+    \end{vmatrix} \\
+    &= x^2 \vu{x} + 3xz^2 \vu{y} - 2xz \vu{z} \\
+\end{align*}
+Another solution can be found by setting $f = 0$:
+\begin{align*}
+    A_z = x^2y ;\quad A_y = 0 ;\quad A_x = xz^3+2xyz
+\end{align*}
+or
+\begin{align*}
+    \vb{A} = 2xyz \vu{x} + \frac{1}{3}x^3y \vu{z}
+\end{align*}
+Checking the solution
+\begin{align*}
+    \curl \vb{A} &= \begin{vmatrix}
+        \vu{x} & \vu{y} & \vu{z} \\
+        \pdv{x} & \pdv{y} & \pdv{z} \\
+        xz^3+2xyz & 0 & x^2y
+    \end{vmatrix} \\
+    &= x^2 \vu{x} + 3xz^2 \vu{y} - 2xz \vu{z}
+\end{align*}
+Another solution can be found by setting all arbitrary functions to zero and taking the linear
+combination of the two solutions:
+\begin{align*}
+    2A_x = xz^3 + 2xyz
+    A_x = \frac{1}{2} (xz^3 + 2xyz)
+\end{align*}
+and thus
+\begin{align*}
+    A_y = \frac{1}{2}-x^2z ;\quad A_z = \frac{1}{2} x^2y - \frac{3}{4} x^2z^2
+\end{align*}
+or
+\begin{align*}
+    \vb{A} = \frac{1}{2} (xz^3 + 2xyz)                      \vu{x} 
+        - \frac{1}{2} x^2z                                  \vu{y}
+        + \frac{1}{2} x^2y - \frac{3}{4} x^2z^2             \vu{z}
+\end{align*}
+Checking the solution
+\begin{align*}
+    \curl \vb{A} &= \begin{vmatrix}
+        \vu{x} & \vu{y} & \vu{z} \\
+        \pdv{x} & \pdv{y} & \pdv{z} \\
+        \frac{1}{2} (xz^3 + 2xyz) & -\frac{1}{2} x^2z & \frac{1}{2} x^2y - \frac{3}{4} x^2z^2
+    \end{vmatrix} \\
+    &= x^2 \vu{x} + 3xz^2 \vu{y} - 2xz \vu{z}
+\end{align*}
 \end{document}
-
