@@ -425,8 +425,8 @@ therefore, the divergence of $\vb{v}$ is
     &= \frac{3}{r^3} - 3\frac{x^2 + y^2 + z^2}{r^5} \\
     &= \frac{3}{r^3} - 3\frac{r^2}{r^5} = 0
 \end{align*}
-This is consistent with the sketch in Figure \ref{fig:1.16} because the vector field is not `sourcing' or
-`sinking'.
+This is consistent with the sketch in Figure \ref{fig:1.16} because the vector field is not 
+`sourcing' or `sinking'.
 
 \paragraph{1.17}
 Given
@@ -2226,9 +2226,12 @@ solving for $f$ or $h$;
 (b) Given $\div \vb{v}_a = 0$ thus $\vb{v}_a$ can be written as a curl of some vector potential
 $\vb{v}_a = \curl \vb{A}$:
 \begin{alignat*}{4}
-    \pdv{A_z}{y} - \pdv{A_y}{z} &= x^2 ;\quad &&A_z = x^2y + f ,\quad &&&A_y = -x^2z + g \\
-    \pdv{A_x}{z} - \pdv{A_z}{x} &= 3xz^2 ;\quad &&A_x = xz^3+ h ,\quad &&&A_z = -\frac{3}{2} x^2z^2 + i \\
-    \pdv{A_y}{x} - \pdv{A_x}{y} &= -2xz ;\quad &&A_y = -x^2z + j ,\quad &&&A_x = 2xyz + k 
+    \pdv{A_z}{y} - \pdv{A_y}{z} &= x^2 
+        ;\quad &&A_z = x^2y + f ,\quad &&&A_y = -x^2z + g \\
+    \pdv{A_x}{z} - \pdv{A_z}{x} &= 3xz^2 
+        ;\quad &&A_x = xz^3+ h ,\quad &&&A_z = -\frac{3}{2} x^2z^2 + i \\
+    \pdv{A_y}{x} - \pdv{A_x}{y} &= -2xz 
+        ;\quad &&A_y = -x^2z + j ,\quad &&&A_x = 2xyz + k 
 \end{alignat*}
 where $f$, $g$, $h$, $i$, $j$, and $k$ are arbitrary functions where a solution can be found by 
 setting one function to zero and solving for the others: e.g., $h = 0$;
@@ -2290,4 +2293,270 @@ Checking the solution
     \end{vmatrix} \\
     &= x^2 \vu{x} + 3xz^2 \vu{y} - 2xz \vu{z}
 \end{align*}
-\end{document}
+
+\paragraph{1.61}
+(a) Show that
+\begin{align*}
+    \int_V (\grad T) \dd{V} = \oint_S T \dd{\vb{a}} 
+\end{align*}
+Letting $\vb{v} = \vb{c} T$ where $\vb{c}$ is a constant: using the product rule of divergence:
+\begin{align*}
+    \div(f\vb{A}) &= f (\div \vb{A}) + \vb{A} \vdot (\grad{f}) \\
+    \div(T \vb{c}) &= T (\div \vb{c}) + \vb{c} \vdot (\grad{T}) \\
+    \div(T \vb{c}) &= \vb{c} \vdot (\grad{T})
+\end{align*}
+where $\div \vb{c} = 0$ since $\vb{c}$ is a constant. Integrating over a volume and using the 
+divergence theorem:
+\begin{align*}
+    \int_V \div(T \vb{c}) \dd{V} = \int_V \vb{c} \vdot (\grad{T}) \dd{V}
+        = \oint_S T \vb{c} \vdot \dd{\vb{a}}
+\end{align*}
+or moving the constant $\vb{c}$ outside the integral:
+\begin{align*}
+    \vb{c} \int_V \grad{T} \dd{V} &= \vb{c} \oint_S T  \vdot \dd{\vb{a}} \\
+    \int_V \grad{T} \dd{V} &= \oint_S T  \vdot \dd{\vb{a}}
+\end{align*}
+(b) Show that
+\begin{align*}
+    \int_V (\curl \vb{v}) \dd{V} = - \oint_S \vb{v} \cp \dd{\vb{a}}
+\end{align*}
+replacing $\vb{v}$ with $\vb{v} \cp \vb{c}$ in the divergence theorem:
+\begin{align}
+    \int_V \div(\vb{v} \cp \vb{c}) \dd{V} = \oint_S (\vb{v} \cp \vb{c}) \vdot \dd{\vb{a}}
+\end{align}
+and using the product rule of divergence:
+\begin{align*}
+    \div(\vb{v} \cp \vb{c}) &= \vb{c} \vdot (\curl \vb{v}) - \vb{v} \vdot (\curl \vb{c}) \\
+    \div(\vb{v} \cp \vb{c}) &= \vb{c} \vdot (\curl \vb{v})
+\end{align*}
+where $\curl \vb{c} = 0$ since $\vb{c}$ is a constant. So subbing into the divergence theorem and
+moving the constant $\vb{c}$ outside the integral:
+\begin{align*}
+    \vb{c} \int_V (\curl \vb{v}) \dd{V} &= \oint_S (\vb{v} \cp \vb{c}) \vdot \dd{\vb{a}} \\
+\end{align*}
+and using the scalar triple product identity:
+\begin{align*}
+    (\vb{v} \cp \vb{c}) \vdot \dd{\vb{a}} = \vb{v} \vdot (\vb{c} \cp \dd{\vb{a}}) 
+    = \vb{c} \vdot (\dd{\vb{a}} \cp \vb{v}) = -\vb{c} \vdot (\vb{v} \cp \dd{\vb{a}})
+\end{align*}
+so
+\begin{align*}
+    \vb{c} \int_V (\curl \vb{v}) \dd{V} &= -\vb{c} \oint_S (\vb{v} \cp \dd{\vb{a}}) \\
+    \int_V (\curl \vb{v}) \dd{V} &= -\oint_S (\vb{v} \cp \dd{\vb{a}})
+\end{align*}
+(c) [Green's identity] Show that
+\begin{align*}
+    \int_V [T\laplacian U \dd{V} + (\grad T) \vdot (\grad U)] \dd{V}
+    = \oint_S (T \grad U) \vdot \dd{a}
+\end{align*}
+letting $\vb{v} = T \grad U$ in the divergence theorem:
+\begin{align*}
+    \int_V \div(T \grad U) \dd{V} = \oint_S (T \grad U) \vdot \dd{\vb{a}}
+\end{align*}
+using the product rule of divergence:
+\begin{align*}
+    \div(T \grad U) &= T (\div \grad U) + (\grad U) \vdot (\grad T) \\
+    \div(T \grad U) &= T (\laplacian U) + (\grad T) \vdot (\grad U)
+\end{align*}
+where $\div \grad U = \laplacian U$ and the dot product is commutative. Subbing into the divergence
+theorem:
+\begin{align*}
+    \int_V [T\laplacian U \dd{V} + (\grad T) \vdot (\grad U)] \dd{V}
+    = \oint_S (T \grad U) \vdot \dd{a}
+\end{align*}
+(d) [Green's second identity] Show that
+\begin{align*}
+    \int_V (T \laplacian U - U \laplacian T) \dd{V} = \oint_S (T \grad U - U \grad T) \vdot \dd{a}
+\end{align*}
+using the product rule of divergence:
+\begin{align*}
+    \div(U \grad T) &= U \laplacian T + (\grad T) \vdot (\grad U) 
+\end{align*}
+and letting $\vb{v} = U \grad T$ in the divergence theorem:
+\begin{align*}
+    \int_V \div(U \grad T) \dd{V} &= \oint_S (U \grad T) \vdot \dd{\vb{a}} \\
+    \int_V [U\laplacian T  + (\grad T) \vdot (\grad U)] \dd{V}
+        &= \oint_S (U \grad T) \vdot \dd{\vb{a}}
+\end{align*}
+and taking the difference with the result from (c):
+\begin{align*}
+    \oint_S (T \grad U) \vdot \dd{\vb{a}} - \oint_S (U \grad T) \vdot \dd{\vb{a}} &=
+        \oint_S (T \grad U - U \grad T) \vdot \dd{\vb{a}} \\
+    \int_V [T\laplacian U \dd{V} - U \laplacian T] \dd{V} &=
+        \oint_S (T \grad U - U \grad T) \vdot \dd{\vb{a}}
+\end{align*}
+where $(\grad T) \vdot (\grad U)$ cancels out on the left hand side. \\
+(e) Show that
+\begin{align*}
+    \int_S \grad T \cp \dd{\vb{a}} = - \oint_P T \dd{\vb{l}}
+\end{align*}
+letting $\vb{v} = \vb{c} T$ in Stokes' theorem:
+\begin{align*}
+    \int_S \curl(\vb{c} T) \vdot \dd{\vb{a}} = \oint_P (\vb{c} T) \vdot \dd{\vb{l}}
+\end{align*}
+using the product rule of curl:
+\begin{align*}
+    \curl(\vb{c} T) &= T (\curl \vb{c}) - \vb{c} \cp (\grad T) \\
+    \curl(\vb{c} T) &= -\vb{c} \cp (\grad T)
+\end{align*}
+where $\curl \vb{c} = 0$ since $\vb{c}$ is a constant. And subbing into Stokes' theorem:
+\begin{align*}
+    \int_S (-\vb{c} \cp (\grad T)) \vdot \dd{\vb{a}} &= \oint_P (\vb{c} T) \vdot \dd{\vb{l}} \\
+\end{align*}
+and using the scalar triple product identity
+\begin{align*}
+    (-\vb{c} \cp (\grad T)) \vdot \dd{\vb{a}} = -\vb{c} \vdot (\grad T \cp \dd{\vb{a}})
+\end{align*}
+thus the constant $\vb{c}$ can move out of the integral and cancel out giving the result
+\begin{align*}
+    \int_S \grad T \cp \dd{\vb{a}} = - \oint_P T \dd{\vb{l}}
+\end{align*}
+
+\paragraph{1.62}
+The vector area of the surface $S$ is 
+\begin{align*}
+    \vb{a} \equiv \int_S \dd{\vb{a}}
+\end{align*}
+(a) The vector area of a hemispherical bowl of radius $R$:
+\begin{align*}
+    \vb{a} = \int_0^{2\pi} \int_0^{\pi/2} R^2 \sin\theta \dd{\theta} \dd{\phi} \vu{r}
+\end{align*}
+where unit vector
+\begin{align*}
+    \vu{r} = \sin\theta \cos\phi \vu{x} + \sin\theta \sin\phi \vu{y} + \cos\theta \vu{z}
+\end{align*}
+changes with $\theta$ and $\phi$, so the vector area is computes for each component
+\begin{align*}
+    \vb{a} &= \int_0^{2\pi} \int_0^{\pi/2} R^2 \sin\theta \dd{\theta} \dd{\phi} 
+        (\sin\theta \cos\phi \vu{x} + \sin\theta \sin\phi \vu{y} + \cos\theta \vu{z}) \\
+    &= \int_0^{2\pi} \int_0^{\pi/2} () \cos\phi \dd{\theta} \dd{\phi} \vu{x}
+        + \int_0^{2\pi} \int_0^{\pi/2} () \sin\phi \dd{\theta} \dd{\phi} \vu{y} \\
+        &+ \int_0^{2\pi} \int_0^{\pi/2} R^2 \sin\theta \cos\theta \dd{\theta} \dd{\phi} \vu{z}
+\end{align*}
+for the first two components
+\begin{align*}
+    \int_0^{2\pi} \cos\phi \dd{\phi} = \int_0^{2\pi} \sin\phi \dd{\phi} = 0
+\end{align*}
+and for the third component
+\begin{align*}
+    \int_0^{2\pi} \int_0^{\pi/2} R^2 \sin\theta \cos\theta \dd{\theta} \dd{\phi} \vu{z}
+    &= R^2 \vu{z} (2\pi) \int_0^{\pi/2} \sin\theta \cos\theta \dd{\theta}
+\end{align*}
+using the trig identity $\sin(2\theta) = 2\sin\theta \cos\theta$:
+\begin{align*}
+    \int_0^{\pi/2} \sin\theta \cos\theta \dd{\theta}
+    = \frac{1}{2} \int_0^{\pi/2} \sin(2\theta) \dd{\theta}
+    = \frac{1}{2} \qt(\eval{-\frac{1}{2} \cos(2\theta)}_0^{\pi/2}) = \frac{1}{2} 
+\end{align*}
+thus the vector area is
+\begin{align*}
+    \vb{a} = \pi R^2 \vu{z}
+\end{align*}
+
+(b) Using 1.61(a) with $T = 1$:
+\begin{align*}
+    \int_V (\grad T) \dd{V} &= \oint_S T \dd{\vb{a}} \\
+    \int_V (\grad 1) \dd{V} &= \oint_S \dd{\vb{a}} \\
+    0 &= \oint_S \dd{\vb{a}} = \vb{a}
+\end{align*}
+since the gradient of a constant is always zero. \\
+(c) The vector area of a closed surface can be split into two surfaces with the same boundary but
+opposite normals:
+\begin{align*}
+    \oint_S \dd{\vb{a}} = \int_{S_1} \dd{\vb{a}} - \int_{S_2} \dd{\vb{a}} = 0
+\end{align*}
+Thus the vector area of the two surfaces are equal as long as the boundary is the same. \\
+(d) Show that the integral around the boundary line
+\begin{align*}
+    \vb{a} = \frac{1}{2} \oint_S \vb{r} \cp \dd{\vb{l}}
+\end{align*}
+A cone subtended by the loop at the origin (vertex at the origin) can be split into infinitesimal
+triangular wedges with base $\dd{\vb{l}}$ and height $\vb{r}$, and the area of each wedge is
+\begin{align*}
+    \dd{A} = \frac{1}{2} \vb{r} \cp \dd{\vb{l}}
+\end{align*}
+since the cross product is the area of the parallelogram formed by the two vectors or in this case
+the area of the triangle. Summing over all the wedges along the closed loop gives the total area
+\begin{align*}
+    \frac{1}{2} \oint_S \vb{r} \cp \dd{\vb{l}} = \vb{a} = \oint_S \dd{A} 
+\end{align*}
+(e) Show that
+\begin{align*}
+    \oint (\vb{c} \vdot \vb{r}) \dd{\vb{l}} = \vb{a} \vdot \vb{c}
+\end{align*}
+for any constant vector $\vb{c}$. Letting $T = \vb{c} \vdot \vb{r}$ from the result in 1.61(e):
+\begin{align*}
+    \int \grad T \cp \dd{\vb{a}} &= - \oint T \dd{\vb{l}} \\
+    \int \grad (\vb{c} \vdot \vb{r}) \cp \dd{\vb{a}} &= - \oint (\vb{c} \vdot \vb{r}) \dd{\vb{l}}
+\end{align*}
+using the product rule of gradients:
+\begin{align*}
+    \grad(\vb{c} \vdot \vb{r}) = \vb{c} \cp (\curl \vb{r}) + \vb{r} \cp (\curl \vb{c})
+        + (\vb{c} \vdot \grad) \vb{r} + (\vb{r} \vdot \grad) \vb{c}
+\end{align*}
+where $\vb{r} = (x,y,z)$; $\curl \vb{r} = 0$, $\curl c = 0$, $\grad \vb{c} = 0$, and
+\begin{align*}
+    (\vb{c} \vdot \grad)\vb{r} = \vb{c} 
+\end{align*}
+So
+\begin{align*}
+    \grad(\vb{c} \vdot \vb{r}) = \vb{c}
+\end{align*}
+therefore
+\begin{align*}
+    - \oint (\vb{c} \vdot \vb{r}) \dd{\vb{l}} &= \int \vb{c} \cp \dd{\vb{a}}   \\
+    &= \vb{c} \cp \int \dd{\vb{a}} \\
+    &= \vb{c} \cp \vb{a} \\
+    &= - \vb{a} \cp \vb{c} \\
+    \oint (\vb{c} \vdot \vb{r}) \dd{\vb{l}} &= \vb{a} \cp \vb{c}
+\end{align*}
+
+\paragraph{1.63}
+(a) Finding the divergence of
+\begin{align*}
+    \vb{v} = \frac{\vu{r}}{r}
+\end{align*}
+\begin{align*}
+    \div \vb{v} &= \frac{1}{r^2} \pdv{r} (r^2 \frac{1}{r}) = \frac{1}{r^2}
+\end{align*}
+Using divergence theorem: the surface integral is
+\begin{align*}
+    \oint \vb{v} \vdot \dd{\vb{a}} &= \int \qt(\frac{\vu{r}}{R}) \vdot 
+        (R^2 \sin\theta \dd{\theta} \dd{\phi} \vu{r}) \\
+    &= R \int_0^{\pi} \sin\theta \dd{\theta} \int_0^{2\pi} \dd{\phi} = 4\pi R
+\end{align*}
+and the volume integral
+\begin{align*}
+    \int (\div \vb{v}) \dd{V} &= \int \frac{1}{r^2} (r^2 \sin\theta \dd{r} \dd{\theta} \dd{\phi}) \\
+    &= \int_0^R \dd{r} \int_0^{\pi} \sin\theta \dd{\theta} \int_0^{2\pi} \dd{\phi} = 4\pi R
+\end{align*}
+There is no delta function because the divergence theorem holds true on both sides. The general 
+formula for divergence is 
+\begin{align*}
+    \div (r^{n} \vu{r}) = \frac{n}{r} r^{n} = \frac{1}{r^2} \pdv{r} (r^2 r^{n}) 
+        = \frac{1}{r^2} \pdv{r} (r^{n+2}) = \frac{n+2}{r^2} r^{n+1} = (n+2) r^{n-1}
+\end{align*}
+except for $n = -2$ the divergence is $4\pi \delta^3(\vb{r})$.
+
+(b) Finding the curl of $\vb{v} = r^n \vu{r}$:
+\begin{align*}
+    \curl (r^n \vu{r}) &= 0
+\end{align*}
+since we have no $\theta$ or $\phi$ components. From 1.61(b):
+\begin{align*}
+    \int (\curl \vb{v}) \dd{V} = 0 
+\end{align*}
+and since the cross product
+\begin{align*}
+    \vb{v} \cp \dd{\vb{a}} = \begin{vmatrix}
+        \vu{x} & \vu{y} & \vu{z} \\
+        r^n & 0 & 0 \\
+        R^2 \sin\theta \dd{\theta} \dd{\phi} & 0 & 0
+    \end{vmatrix} = 0
+\end{align*}
+the surface integral is also zero:
+\begin{align*}
+    - \oint \vb{v} \cp \dd{\vb{a}} = 0
+\end{align*}
+
+\end{document}  
