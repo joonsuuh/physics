@@ -315,12 +315,241 @@ the limits of integration are $x = [0,1]$ and $z = [0,1]$:
     &= \ke q \arctan(\frac{z}{\sqrt{z^2 + 2}}) \eval_0^1 \\
     &= \ke q \qt(\frac{\pi}{6}) = \frac{q}{24\epsilon_o}
 \end{align*}
-where the first integral is solved using the trig identity $x = \tan(u) \sqrt{z^2 + 1}$, and 
+Where the first integral is solved using the trig identity $x = \tan(u) \sqrt{z^2 + 1}$, and 
 similarly, the second integral uses $z = \tan(u) \sqrt{2}$.
 
-\subparagraph*{}
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.5\linewidth]{images/fig2_10.png}
+    \captionsetup{width=0.8\linewidth}
+    \caption{8 cubes with a charge $q$ at the center.}
+    \label{fig:2_10}
+\end{figure}
 The simpler solution is though the superposition of 8 cubes with the charge in the center of the
 larger cube, and the surface that encloses the larger cube is made of 24 squares equivalent to the
-shaded region. Therefore, the flux through the shaded region is $\dfrac{1}{24}$ of the total flux 
-$\dfrac{q}{\epsilon_o}$.
+shaded region as shown in Figure \ref{fig:2_10}. Therefore, the flux through the shaded region is
+$\frac{1}{24}$ of the total flux $\frac{q}{\epsilon_o}$.
+
+\paragraph{2.11}
+For a spherical shell of radius $R$ with a uniform surface charge density $\sigma$, the enclosed
+charge in side the sphere is $Q_{enc} = 0$, thus the electric field inside the sphere is 
+\begin{align*}
+    \vb{E}_i = 0
+\end{align*}
+and using the sphericla symmetry of a Gaussian surface, the electric field outside the sphere is
+\begin{align*}
+    \oint \vb{E}_o \vdot \dd{\vb{a}} &= \frac{1}{\epsilon_o} Q_{enc} \\
+    \abs{\vb{E}_0} \int \dd{\vb{a}} &= \frac{1}{\epsilon_o} (4\pi\sigma R^2) \\
+    \vb{E}_o (4\pi r^2) &= \frac{1}{\epsilon_o} (4\pi\sigma R^2) \vu{r} \\
+    \vb{E}_o &= \frac{\sigma R^2}{\epsilon_o r^2} \vu{r}
+\end{align*}
+
+\paragraph{2.12}
+Inside a solid sphere, the total charge enclosed in the Gaussian surface is
+\begin{align*}
+    Q_{enc} &=  V'\rho = \frac{4}{3} \pi r^3 \rho
+\end{align*}
+where $V'$ is the volume of the sphere enclosed by the Gaussian surface. Using Gauss's law,
+\begin{align*}
+    \oint \vb{E} \vdot \dd{\vb{a}} = \frac{1}{\epsilon_o} Q_{enc}
+    = \frac{1}{\epsilon_o} \frac{4}{3} \pi r^3 \rho
+\end{align*}
+using the spherical symmetry of the Gaussian surface, the electric field is
+\begin{align*}
+    \oint \vb{E} \vdot \dd{\vb{a}} = \abs{\vb{E}} \int \dd{a} 
+    = \abs{\vb{E}} (4\pi r^2)
+\end{align*}
+Thus
+\begin{align*}
+    \abs{\vb{E}} (4\pi r^2) = \frac{1}{\epsilon_o} \frac{4}{3} \pi r^3 \rho
+\end{align*}
+or
+\begin{align*}
+    \vb{E} = \frac{1}{3\epsilon_o} r \rho \vu{r} = \frac{1}{3\epsilon_o} \rho \vb{r}
+\end{align*}
+Since the total charge of the solid sphere is $q = \frac{4}{3} \pi R^3 \rho$, the electric field
+can be rewritten as
+\begin{align*}
+    \vb{E} = \ke \frac{q}{R^3} \vb{r}
+\end{align*}
+which is the same as Prob. 2.8.
+
+\paragraph{2.13}
+Finding the electric field a distance $s$ from an infinitely long straight wire that carries a
+uniform line charge $\lambda$. Using a Gaussian cylinder of radius $s$ and length $L$, 
+enclosed charge is $Q_{enc} = \lambda L$. Using Gauss's law and the symmetry of the cylinder,
+\begin{align*}
+    \oint \vb{E} \vdot \dd{\vb{a}} &= \frac{1}{\epsilon_o} Q_{enc} \\
+    \abs{\vb{E}} \int \dd{s'}\dd{\phi'}\dd{z'} &= \frac{1}{\epsilon_o} \lambda L \\
+    E (2\pi s L) &= \frac{1}{\epsilon_o} \lambda L
+\end{align*}
+or
+\begin{align*}
+    \vb{E} = \frac{\lambda}{2\pi\epsilon_o s} \vu{s} = \ke \frac{2\lambda}{s} \vu{s}
+\end{align*}
+which is similar to Eq. 2.9.
+
+\paragraph{2.14}
+Find the electric field inside a sphere that carries a charge density proportional to the distance
+from the origin, $\rho = kr$, where $k$ is a constant: The enclosed charge is
+\begin{align*}
+    Q_{enc} = \int \rho \dd{\tau} = \int_0^{2\pi} \int_0^\pi \int_0^r kr (r^2 \sin\theta) \dd{r}
+        \dd{\theta} \dd{\phi} = \pi k r^4
+\end{align*}
+Using Gauss's law and the spherical symmetry of the Gaussian surface,
+\begin{align*}
+    \oint \vb{E} \vdot \dd{\vb{a}} &= \frac{1}{\epsilon_o} Q_{enc} \\
+    \abs{\vb{E}} \int \dd{a} &= \frac{1}{\epsilon_o} \pi k r^4 \\
+    E (4\pi r^2) &= \frac{1}{\epsilon_o} \pi k r^4
+\end{align*}
+or 
+\begin{align*}
+    \vb{E} = \frac{1}{4\pi\epsilon_o} \pi k r^2 \vu{r} = \ke kr\vb{r}
+\end{align*}
+
+\paragraph{2.15}
+A thick spherical shell with charge density
+\begin{align*}
+    \rho = \frac{k}{r^2} \quad (a\leq r \leq b)
+\end{align*}
+The electric field in the three regions: \\
+(i) \(r<a\)
+\[ Q_{enc} = 0; \vb{E} = 0 \]
+
+(ii) \(a\leq r \leq b\)
+\[ Q_{enc} = \int_0^{2\pi} \int_0^\pi \int_a^r \rho (r^2 \sin\theta) \dd{r} \dd{\theta} \dd{\phi}
+= 4\pi \int_a^r \frac{k}{r^2} (r^2) \dd{r} = 4\pi k (r - a) \]
+And from Gauss's law,
+\begin{align*}
+    \oint \vb{E} \vdot \dd{\vb{a}} &= \frac{1}{\epsilon_o} Q_{enc} \\
+    \abs{\vb{E}} \int \dd{a} &= \frac{1}{\epsilon_o} 4\pi k (r - a) \\
+    E (4\pi r^2) &= \frac{1}{\epsilon_o} 4\pi k (r - a)
+\end{align*}
+or 
+\begin{align*}
+    \vb{E} &= \frac{k (r - a)}{\epsilon_o r^2} \vu{r} = \ke \frac{4\pi k(r - a)}{r^3} \vb{r}
+\end{align*}
+
+(iii) \(r>b\)
+\[ Q_{enc} = \int_0^{2\pi} \int_0^\pi \int_a^b \rho (r^2 \sin\theta) \dd{r} \dd{\theta} \dd{\phi}
+= 4\pi k (b - a) \]
+And from Gauss's law,
+\begin{align*}
+    \oint \vb{E} \vdot \dd{\vb{a}} &= \frac{1}{\epsilon_o} Q_{enc} \\
+    \abs{\vb{E}} \int \dd{a} &= \frac{1}{\epsilon_o} 4\pi k (b - a) \\
+    E (4\pi r^2) &= \frac{1}{\epsilon_o} 4\pi k (b - a)
+\end{align*}
+or
+\begin{align*}
+    \vb{E} &= \frac{k (b - a)}{\epsilon_o r^2} \vu{r} = \ke \frac{4\pi k(b - a)}{r^3} \vb{r}
+\end{align*}
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.5\linewidth]{images/fig2_15.png}
+    \captionsetup{width=0.8\linewidth}
+    \caption{Plot of $\abs{\vb{E}}$ as a function of $r$, for the case $b = 2a$.}
+    \label{fig:2_15}
+\end{figure}
+
+\paragraph{2.16}
+A long coaxial cable carries a uniform \emph{volume} charge charge density $\rho$ on the inner
+cylinder (radius $a$), and a uniform \emph{surface} charge density $\sigma$ on the outer cylindrical
+shell (radius $b$). This surface charge is negative, and the cable as a whole is electrically
+neutral. Find the electric field in the three regions:
+
+(i) Inside the inner cylinder \(r < a\): The enclosed charge is
+\begin{align*}
+    Q_{enc} = \rho \pi s^2 l
+\end{align*}
+where l is the length of the Gaussian cylinder. Using Gauss's law,
+\begin{align*}
+    \oint \vb{E} \vdot \dd{\vb{a}} &= \frac{1}{\epsilon_o} Q_{enc} \\
+    \abs{\vb{E}} \int \dd{a} &= \frac{1}{\epsilon_o} \rho \pi s^2l \\
+    E (2\pi sl) &= \frac{1}{\epsilon_o} \rho \pi s^2l \\
+    \vb{E} = \frac{\rho s}{2\epsilon_o} \vu{s}
+\end{align*}
+
+(ii) Between the cylinders \(a \leq r \leq b\): The enclosed charge is
+\[ Q_{enc} = \rho \pi a^2 l \]
+thus the electric field is
+\begin{align*}
+    E (2\pi sl) &= \frac{1}{\epsilon_o} \rho \pi a^2 l \\
+    \vb{E} = \frac{\rho a^2}{2\epsilon_o s} \vu{s}
+\end{align*}
+
+(iii) Outside the cable \(r > b\): The enclosed charge is
+\[ Q_{enc} = \rho \pi a^2 l - \sigma \pi b l  = 0\]
+thus the electric field is
+\( \vb{E} = 0 \)
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.5\linewidth]{images/fig2_16.png}
+    \captionsetup{width=0.8\linewidth}
+    \caption{Plot of $\abs{\vb{E}}$ as a function of $r$, for the case $b = 2a$.}
+    \label{fig:2_16}
+\end{figure}
+
+\paragraph{2.17}
+Finding the electric field, as a function of $y$, where $y=0$ is the center of an infinite plane
+slab, of thickness $2d$, carrying a uniform volume charge density $\rho$. For the case \(y > 2d\)
+The enclosed charge is
+\begin{align*}
+    Q_{enc} = \rho (2d) A = 2\rho Ad
+\end{align*}
+where $A$ is the area of the Gaussian pillbox. Using Gauss's law,
+\begin{align*}
+    \oint \vb{E} \vdot \dd{\vb{a}} &= \frac{1}{\epsilon_o} Q_{enc} \\
+    \abs{\vb{E}} \int \dd{a} &= \frac{1}{\epsilon_o} 2\rho Ad \\
+    E (2A) &= \frac{1}{\epsilon_o} 2\rho Ad \\
+    \vb{E} &= \frac{\rho d}{\epsilon_o} \vu{y}
+\end{align*}
+For the case \(0 < y < 2d\), the enclosed charge is
+\begin{align*}
+    Q_{enc} = 2\rho y A
+\end{align*}
+and the electric field is
+\begin{align*}
+    E (2A) &= \frac{1}{\epsilon_o} \rho y A \\
+    \vb{E} &= \frac{\rho y}{\epsilon_o} \vu{y}
+\end{align*}
+In the $-y$ direction, $E$ is negative as shown in Figure \ref{fig:2_17}.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{images/fig2_17.png}
+    \captionsetup{width=0.8\linewidth}
+    \caption{Plot of $\abs{\vb{E}}$ as a function of $y$}
+    \label{fig:2_17}
+\end{figure}
+
+\paragraph{2.18}
+For two spheres of radius $R$ and charge density $+\rho$ and $-\rho$, respectively, are partially
+overlapping. From Prob 2.12, the electric field inside a sphere of radius $R$ with a uniform volume
+charge density $\rho$ is
+\[ \vb{E} = \frac{1}{3\epsilon_o} \rho \vb{r} \]
+where $\vb{r}$ is the position vector from the center of the sphere. The electric field for each 
+sphere is
+\begin{align*}
+    \vb{E}_1 &= \frac{1}{3\epsilon_o} \rho \vb{r}_1 \\
+    \vb{E}_2 &= -\frac{1}{3\epsilon_o} \rho \vb{r}_2
+\end{align*}
+Thus the total electric field is
+\begin{align*}
+    \vb{E} &= \frac{1}{3\epsilon_o} \rho (\vb{r}_1 - \vb{r}_2) \\
+    &= \frac{1}{3\epsilon_o} \rho \vb{d}
+\end{align*}
+where $\vb{d}$ is the vector from the positive center to the negative center. Thus the electric
+field is constant inside the overlapping region.
+
+\paragraph{2.19}
+The electric field inside a sphere of radius $R$ with a uniform volume charge density $\rho$ is
+\[\tag{2.8} \label{eq:2_8}
+\vb{E}(r) = \ke \int \frac{\hat \boldscriptr}{\scriptr^2} \rho(\vb{r}') \dd{\tau'}
+\]
+The curl of \eqref{eq:2_8} is
+\[
+\curl \vb{E} = \ke \int \curl \qt(\frac{\hat \boldscriptr}{\scriptr^2}) \rho(\vb{r}') \dd{\tau'}
+\]
+From Prob 1.63, \( \curl \frac{\hat \boldscriptr}{\scriptr^2} = 0 \), thus
+\[ \curl \vb{E} = 0 \]
 \end{document}
