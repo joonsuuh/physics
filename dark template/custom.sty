@@ -16,16 +16,18 @@
 \usepackage{esint} % for path integral symbol
 
 % input packages
+\usepackage{draculatheme} % dracula theme, the best theme
+% \usepackage[enable]{darkmode}
 \usepackage{import} 
 \usepackage{hyperref} % for hyperlinks
 \hypersetup{
   colorlinks   = true,    % Colours links instead of ugly boxes
-  urlcolor     = Cerulean,    % Colour for external hyperlinks
-  linkcolor    = Cerulean,    % Colour of internal links
-  citecolor    = red      % Colour of citations
+  urlcolor     = draculagreen,    % Colour for external hyperlinks without dracula theme: Cerulean
+  linkcolor    = draculagreen,    % Colour of internal links "Cerulean"
+  citecolor    = draculared      % Colour of citations "Red"
 }
 \usepackage{graphicx}
-\graphicspath{{./images/}} % set graphics path from current directory (./) to images directory for main.tex file
+\graphicspath{{./images/}} % set image path for graphicx
 \usepackage{caption}
 \usepackage{subcaption}
 
@@ -39,6 +41,7 @@
 % custom commmands
 \newcommand{\vect}[1]{\mathbf{#1}} % instead use \vb{#1} from physics package
 \newcommand{\barh}{\vspace{5px} \hrule \vspace{5px}} % horizontal bar
+\newcommand{\qt}{\quantity} % quantity shortcut
 
 % custom environments for code highlighting
 \usepackage{listings}
@@ -72,3 +75,17 @@
 \DeclareMathOperator{\arccosh}{arccosh}
 \DeclareMathOperator{\arcsinh}{arcsinh}
 \DeclareMathOperator{\arctanh}{arctanh}
+
+% more math packages
+\usepackage{cancel}
+
+% seperation vector script r
+\usepackage{calligra}
+
+\DeclareMathAlphabet{\mathcalligra}{T1}{calligra}{m}{n}
+\DeclareFontShape{T1}{calligra}{m}{n}{<->s*[2.2]callig15}{}
+\newcommand{\scriptr}{\mathcalligra{r}\,}
+\newcommand{\boldscriptr}{\pmb{\mathcalligra{r}}\,}
+
+% physics constants
+\newcommand{\ke}{\frac{1}{4\pi\epsilon_0}}

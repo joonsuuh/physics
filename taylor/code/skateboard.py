@@ -18,8 +18,8 @@ def ddot_phi(phi, t):
 # time
 t = np.linspace(0, 10, 1000)
 
-# solve the differential equation
-pos, vel = sp.integrate.odeint(ddot_phi, [phi0, dot_phi0], t).T
+# solve the differential equation 
+pos, vel = sp.integrate.odeint(ddot_phi, [phi0, dot_phi0], t).T # old way instead use solve_ivp
 
 # approximate solution
 omega = np.sqrt(g / R)

@@ -246,7 +246,7 @@ This makes sense: From outside the sphere, the point charge $q$ is the
 charge-per-area $\sigma$ times the surface area of the sphere $4\pi R^2$, or simply
 $q = 4\pi R^2 \sigma$.
 
-\paragraph{2.8}
+\paragraph{2.8}\label{prob:2_8}
 Finding the field inside and outside a solid sphere of radius $R$ with a uniform volume charge
 density $\rho$ is similar to Prob. 2.7. Outside the solid sphere the total charge $q$ contributes
 to the electric field as if it were a point charge:
@@ -256,10 +256,10 @@ to the electric field as if it were a point charge:
 Inside the solid sphere, only the volume of the solid sphere less than $r$ contributes to the
 electric field. The volume of the total sphere is $V = \frac{4}{3}\pi R^3$, and the volume of the
 sphere less than $r$ is $V' = \frac{4}{3}\pi r^3$. So, electric field inside the solid sphere is
-\begin{align*}
+\begin{align*} 
     \vb{E}_{in} &= \frac{V'}{V} \vb{E}_{out} \\
     &= \frac{r^3}{R^3} \ke \frac{q}{r^2} \vu{r} \\
-    &= \ke \frac{q}{R^3} r \vu{r}
+    &= \ke \frac{q}{R^3} r \vu{r} 
 \end{align*}
 or
 \begin{align*}
@@ -374,7 +374,7 @@ can be rewritten as
 \end{align*}
 which is the same as Prob. 2.8.
 
-\paragraph{2.13}
+\paragraph{2.13} \label{prob:2_13}
 Finding the electric field a distance $s$ from an infinitely long straight wire that carries a
 uniform line charge $\lambda$. Using a Gaussian cylinder of radius $s$ and length $L$, 
 enclosed charge is $Q_{enc} = \lambda L$. Using Gauss's law and the symmetry of the cylinder,
@@ -407,7 +407,7 @@ or
     \vb{E} = \frac{1}{4\pi\epsilon_o} \pi k r^2 \vu{r} = \ke kr\vb{r}
 \end{align*}
 
-\paragraph{2.15}
+\paragraph{2.15} \label{prob:2_15}
 A thick spherical shell with charge density
 \begin{align*}
     \rho = \frac{k}{r^2} \quad (a\leq r \leq b)
@@ -451,7 +451,7 @@ or
     \label{fig:2_15}
 \end{figure}
 
-\paragraph{2.16}
+\paragraph{2.16} \label{prob:2_16}
 A long coaxial cable carries a uniform \emph{volume} charge charge density $\rho$ on the inner
 cylinder (radius $a$), and a uniform \emph{surface} charge density $\sigma$ on the outer cylindrical
 shell (radius $b$). This surface charge is negative, and the cable as a whole is electrically
@@ -544,12 +544,156 @@ field is constant inside the overlapping region.
 \paragraph{2.19}
 The electric field inside a sphere of radius $R$ with a uniform volume charge density $\rho$ is
 \[\tag{2.8} \label{eq:2_8}
-\vb{E}(r) = \ke \int \frac{\hat \boldscriptr}{\scriptr^2} \rho(\vb{r}') \dd{\tau'}
+    \vb{E}(r) = \ke \int \frac{\hat \boldscriptr}{\scriptr^2} \rho(\vb{r}') \dd{\tau'}
 \]
 The curl of \eqref{eq:2_8} is
 \[
-\curl \vb{E} = \ke \int \curl \qt(\frac{\hat \boldscriptr}{\scriptr^2}) \rho(\vb{r}') \dd{\tau'}
+    \curl \vb{E} = \ke \int \curl \qt(\frac{\hat \boldscriptr}{\scriptr^2}) \rho(\vb{r}') \dd{\tau'}
 \]
 From Prob 1.63, \( \curl \frac{\hat \boldscriptr}{\scriptr^2} = 0 \), thus
 \[ \curl \vb{E} = 0 \]
+
+\paragraph{2.20}
+From the conservative nature of the electric field, the curl of the electric field is zero:
+(a) \( \vb{E} = k[xy \vu{x} + 2yz \vu{y} + 3xz \vu{z}] \);
+\[
+    \curl{\vb{E}}_a = k \begin{vmatrix}
+        \vu{x} & \vu{y} & \vu{z} \\
+        \pdv{x} & \pdv{y} & \pdv{z} \\
+    xy & 2yz & 3xz
+    \end{vmatrix}
+    = k [-2y \vu{x} - 3z \vu{y} - x \vu{z}] \neq 0
+\]
+Thus (a) is not a possible electric field. \\
+(b) \( \vb{E}_b = k[y^2 \vu{x} + (2xy + z^2) \vu{y} + 2yz \vu{z}] \);
+\[
+    \curl \vb{E}_b = k \begin{vmatrix}
+        \vu{x} & \vu{y} & \vu{z} \\
+        \pdv{x} & \pdv{y} & \pdv{z} \\
+        y^2 & 2xy + z^2 & 2yz    
+    \end{vmatrix}
+    = 0
+\]
+So (b) is a possible electric field. Finding a potential using the origin as the reference point:
+\[ \tag{2.21} \label{eq:2_21}
+    V = - \int_O^{\vb{r}} \vb{E} \vdot \dd{\vb{l}}
+\]
+Setting the path of integration into three parts: \\
+(I) From $O \to A = (x,0, 0)$;
+\[
+    \dd{\vb{l}} = \dd{x} \vu{x}; \quad \vb{E} \vdot \dd{\vb{l}} = ky^2 \dd{x} = 0; \quad
+    \int_O^A \vb{E} \vdot \dd{\vb{l}} = 0
+\]
+(II) From $A \to B = (x,y,0)$;
+\[
+    \dd{\vb{l}} = \dd{y} \vu{y}; \quad \vb{E} \vdot \dd{\vb{l}} = k(2xy + z^2) \dd{y} = 2kxy \dd{y};
+    \quad \int_A^B \vb{E} \vdot \dd{\vb{l}} = 2kx \int_0^y y' \dd{y'} = kxy^2
+\]
+(III) From $B \to C = (x,y,z)$;
+\[
+    \dd{\vb{l}} = \dd{z} \vu{z}; \quad \vb{E} \vdot \dd{\vb{l}} = 2kyz; \quad
+    \int_B^C \vb{E} \vdot \dd{\vb{l}} = 2ky \int_0^z z' \dd{z'} = kyz^2
+\]
+So the potential is
+\begin{align*}
+    V = - \qt( \int_O^A \vb{E} \vdot \dd{\vb{l}} + \int_A^B \vb{E} \vdot \dd{\vb{l}}
+        + \int_B^C \vb{E} \vdot \dd{\vb{l}} ) = -k(xy^2 + yz^2)
+\end{align*}
+Checking the potential function using the gradient:
+\[
+    -\grad V = k(y^2 \vu{x} + (2xy + z^2) \vu{y} + 2yz \vu{z}) = \vb{E}_b
+\]
+
+\paragraph{2.21}
+Find the potential inside and outside a uniformly charged solid sphere whose radius is $R$ and whose
+total charge is $q$. Use infinity as your reference point. Compute the gradient of $V$ in each
+region, and check that it yields the correct field. Sketch $V(r)$.
+\barh
+The electric field outside the sphere is
+\[ \vb{E}_{out} = \ke \frac{q}{r^2} \vu{r} \]
+and from Problem \nameref{prob:2_8}, the electric field inside the sphere is
+\[ \vb{E}_{in} = \ke \frac{q}{R^3} r \vu{r} \]
+For points outside the sphere $(r > R)$,
+\[
+    V(r) = - \int_\infty^r \vb{E} \vdot \dd{\vb{l}} = - \ke \int_\infty^r \frac{q}{r'^2} \vu{r}
+    = \ke \frac{q}{r'} \eval_\infty^r = \ke \frac{q}{r}
+\]
+For points inside the sphere $(r < R)$,
+\begin{align*}
+    V(r) &= - \int_\infty^R \vb{E} \vdot \dd{\vb{l}} - \int_R^r \vb{E} \vdot \dd{\vb{l}} \\
+    &= \ke \frac{q}{R} - \ke \frac{q}{R^3} \int_R^r r' \dd{r'} \\
+    &= \ke \frac{q}{R} - \ke \frac{q}{R^3} \qt(\frac{r'^2}{2}) \eval_R^r \\
+    &= \ke \frac{q}{2R} \qt(3 - \frac{r^2}{R^3}) 
+\end{align*}
+The gradient of $V$ for $r > R$:
+\[ -\grad V = \ke \frac{q}{r^2} \vu{r} = \vb{E}_{out} \]
+and for $r < R$:
+\[ -\grad V = \ke \frac{q}{R^3} r \vu{r} = \vb{E}_{in} \]
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.5\linewidth]{images/fig2_21.png}
+    \captionsetup{width=0.8\linewidth}
+    \caption{Plot of $V(r)$ as a function of $r$.}
+    \label{fig:2_21}
+\end{figure}
+
+\paragraph{2.22}
+From Problem \nameref{prob:2_13}, the electric field a distance $s$ from an infinitely long straight
+wire is
+\[ \vb{E} = \ke \frac{2\lambda}{s} \vu{s} \]
+where $\lambda$ is the linear charge density of the wire. Setting the reference point at an
+arbitrary point $s_0$,
+\begin{align*}
+    V(s) &= - \int_{s_0}^s \vb{E} \vdot \dd{\vb{l}} \\
+    &= - \ke \int_{s_0}^s \frac{2\lambda}{s'} \dd{s'} \\
+    &= - \ke 2\lambda \ln(\frac{s}{s_0})
+\end{align*}
+And the gradient of $V$ is
+\begin{align*}
+    -\grad V &= \ke \frac{2\lambda}{s} \vu{s} = \vb{E}
+\end{align*}
+
+\paragraph{2.23}
+From Problem \nameref{prob:2_15}, the electric field in the three regions are:
+\begin{enumerate}
+    \item[(i)] Inside the inner sphere, $r < a$:
+    \[ \vb{E}_1 = 0 \]
+    \item[(ii)] Between the spheres, $a \leq r \leq b$:
+    \[ \vb{E}_2 = \frac{k(r - a)}{\epsilon_o r^2} \vu{r} \]
+    \item[(iii)] Outside the outer sphere, $r > b$:
+    \[ \vb{E}_3 = \frac{k(b - a)}{\epsilon_o r^2} \vu{r} \]
+\end{enumerate}
+To find the potential at the center, the reference point is set to $\infty$, and the line element is
+$\dd{\vb{l}} = \dd{r} \vu{r}$:
+\begin{align*}
+    V(r) &= - \int_\infty^O \vb{E} \vdot \dd{\vb{l}} \\
+    &= - \int_\infty^b \vb{E}_3 \vdot \dd{\vb{l}} - \int_b^a \vb{E}_2 \vdot \dd{\vb{l}}
+        - \int_a^0 \vb{E}_1 \vdot \dd{\vb{l}} \\
+    &= - \int_\infty^b \frac{k(b - a)}{\epsilon_o r^2} \dd{r}
+        - \int_b^a \frac{k(r - a)}{\epsilon_o r^2} \dd{r} - \int_a^0 0 \dd{r} \\
+    &= \frac{k}{\epsilon_o} \frac{b - a}{b}
+        - \frac{k}{\epsilon_o} \qt(\ln(\frac{a}{b}) + 1 - \frac{a}{b}) \\
+    &= - \frac{k}{\epsilon_o} \ln(\frac{a}{b})
+\end{align*}
+
+\paragraph{2.24}
+From Problem \nameref{prob:2_16}, the potential difference betwen a point on the axis $(s = 0)$ and
+a point on the outside cylinder $(s = b)$ goes through two distinct electric fields:
+\begin{enumerate}
+    \item[(i)] Inside the inner cylinder, $s < a$:
+    \[ \vb{E}_1 = \frac{\rho s}{2\epsilon_o} \vu{s} \]
+    \item[(ii)] Between the cylinders, $a \leq s \leq b$:
+    \[ \vb{E}_2 = \frac{\rho a^2}{2\epsilon_o s} \vu{s} \]
+\end{enumerate}
+So the potential difference is (using the line element $\dd{\vb{l}} = \dd{s} \vu{s}$):
+\begin{align*}
+    V(b) - V(0) &= - \int_0^b \vb{E} \vdot \dd{\vb{l}} \\
+    &= - \int_0^a \vb{E}_1 \vdot \dd{\vb{l}} - \int_a^b \vb{E}_2 \vdot \dd{\vb{l}} \\
+    &= - \int_0^a \frac{\rho s}{2\epsilon_o} \dd{s}
+    - \int_a^b \frac{\rho a^2}{2\epsilon_o s} \dd{s} \\
+    &= - \frac{\rho}{2\epsilon_0} \qt(\int_0^a s \dd{s} + a^2 \int_a^b \frac{1}{s} \dd{s}) \\
+    &= - \frac{\rho}{2\epsilon_o} \qt(\frac{a^2}{2} + a^2 \ln(\frac{b}{a})) \\
+    &= - \frac{\rho a^2}{4\epsilon_o} \qt(1 + 2\ln(\frac{b}{a}))
+\end{align*}
+
 \end{document}
