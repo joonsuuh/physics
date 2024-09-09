@@ -12,3 +12,6 @@
 
 # Ignore vscode settings
 .vscode/settings.json
+
+# Ignore python virtual environment
+.venv
